@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB マウンド - ホームベース 3D 可視化</title>
+    <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        #plot-container {
+            width: 100%;
+            height: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        #controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        select, button {
+            padding: 8px 12px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            background-color: white;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #info-panel {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        #pitch-info {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            min-height: 50px;
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        .error {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        #pitch-selector {
+            margin: 20px 0;
+            text-align: center;
+        }
+        #pitch-selector select {
+            width: 300px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚾ MLB マウンド - ホームベース 3D 可視化</h1>
+        <p style="text-align: center;">マウンドからホームベースまでの距離: 18.44m</p>
+        
+        <div id="controls">
+            <div class="control-group">
+                <label for="pitch-type-filter">球種フィルター</label>
+                <select id="pitch-type-filter">
+                    <option value="all">すべて</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="result-filter">結果フィルター</label>
+                <select id="result-filter">
+                    <option value="all">すべて</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="batter-hand-filter">打者利き手</label>
+                <select id="batter-hand-filter">
+                    <option value="all">すべて</option>
+                    <option value="R">右</option>
+                    <option value="L">左</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="reset-view">&nbsp;</label>
+                <button id="reset-view">視点リセット</button>
+            </div>
+        </div>
+        
+        <div id="pitch-selector">
+            <label for="pitch-select">表示する投球を選択:</label>
+            <select id="pitch-select">
+                <option value="">-- 投球を選択してください --</option>
+            </select>
+        </div>
+        
+        <div id="plot-container">
+            <div class="loading">データを読み込んでいます...</div>
+        </div>
+        
+        <div id="info-panel">
+            <h3>選択した投球情報</h3>
+            <div id="pitch-info">投球をクリックまたは選択して詳細を表示</div>
+        </div>
+    </div>
+
+    <script>
+        // グローバル変数
+        let pitchData = [];
+        let originalPitchData = [];
+        let plotData = [];
+        let currentPlotData = [];
+
+        // カラーマップ（球種ごとの色）
+        const colorMap = {
+            'Four-Seam Fastball': '#e74c3c',
+            'Sinker': '#c0392b',
+            'Cutter': '#d35400',
+            'Slider': '#f39c12',
+            'Curveball': '#2980b9',
+            'Changeup': '#27ae60',
+            'Splitter': '#16a085',
+            'Slurve': '#8e44ad',
+            'Sweeper': '#3498db',
+            'Knuckleball': '#95a5a6',
+            'Other': '#7f8c8d'
+        };
+
+        // ゲームデータを取得して描画
+        async function fetchAndProcessData() {
+            const container = document.getElementById('plot-container');
+            const gamePk = 776779;
+            const url = `https://statsapi.mlb.com/api/v1.1/game/${gamePk}/feed/live`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                processAndPlotData(data);
+            } catch (error) {
+                container.innerHTML = `<div class="error">データの読み込みに失敗しました: ${error.message}</div>`;
+                console.error("Error fetching game ", error);
+            }
+        }
+
+        // データ処理とプロット
+        function processAndPlotData(data) {
+            const container = document.getElementById('plot-container');
+            const allPlays = data.liveData.plays.allPlays || [];
+            
+            // 投球データを抽出
+            allPlays.forEach((play, playIndex) => {
+                const playEvents = play.playEvents || [];
+                const batterSide = play.matchup?.batSide?.code || '不明';
+                const pitcherHand = play.matchup?.pitchHand?.code || '不明';
+                const playResult = play.result?.event || '不明';
+                
+                playEvents.forEach((event, eventIndex) => {
+                    if (event.type === 'pitch' && event.pitchData && event.pitchData.coordinates) {
+                        const coords = event.pitchData.coordinates;
+                        const details = event.details || {};
+                        const call = details.call || {};
+                        const pitchType = details.type?.description || 'Other';
+                        
+                        // 有効な座標データがある場合のみ追加
+                        if (coords.x != null && coords.y != null && coords.x0 != null && coords.y0 != null) {
+                            // 座標系をインチからメートルに変換
+                            // MLBの座標系: xが横、yが奥行き(ピッチャーからキャッチャー方向がマイナス)、zが高さ
+                            // Plotlyの座標系に合わせる: xが横、yが奥行き(プラス方向をキャッチャー方向)、zが高さ
+                            
+                            // リリースポイント (マウンド上)
+                            const x0_m = coords.x0 * 0.0254; // インチ→メートル
+                            const y0_m = -coords.y0 * 0.0254; // インチ→メートル (符号反転)
+                            const z0_m = (coords.z0 || 0) * 0.3048; // フィート→メートル (z0がフィートの場合)
+                            
+                            // プレート到達点
+                            const x_m = coords.x * 0.0254; // インチ→メートル
+                            const y_m = -coords.y * 0.0254; // インチ→メートル (符号反転)
+                            const z_m = 0; // プレート高さは0とする
+                            
+                            // プレートでの位置 (pX, pZ) もメートルに変換
+                            const pX_m = (coords.pX || 0) * 0.0254; // インチ→メートル
+                            const pZ_m = (coords.pZ || 0) * 0.3048; // フィート→メートル
+                            
+                            // 初速と終速もマイル/時からkm/hに変換
+                            const startSpeed_kmh = event.pitchData.startSpeed ? event.pitchData.startSpeed * 1.60934 : 0;
+                            const endSpeed_kmh = event.pitchData.endSpeed ? event.pitchData.endSpeed * 1.60934 : 0;
+                            
+                            pitchData.push({
+                                x0: x0_m,
+                                y0: y0_m,
+                                z0: z0_m,
+                                x: x_m,
+                                y: y_m,
+                                z: z_m,
+                                pX: pX_m,
+                                pZ: pZ_m,
+                                startSpeed: startSpeed_kmh,
+                                endSpeed: endSpeed_kmh,
+                                pitchType: pitchType,
+                                result: call.description || '不明',
+                                code: call.code || '不明',
+                                batterSide: batterSide,
+                                pitcherHand: pitcherHand,
+                                playResult: playResult,
+                                spinRate: event.pitchData.breaks?.spinRate || 'N/A',
+                                spinDirection: event.pitchData.breaks?.spinDirection || 'N/A',
+                                breakVertical: event.pitchData.breaks?.breakVertical ? event.pitchData.breaks.breakVertical * 0.0254 : 'N/A', // インチ→メートル
+                                breakHorizontal: event.pitchData.breaks?.breakHorizontal ? event.pitchData.breaks.breakHorizontal * 0.0254 : 'N/A', // インチ→メートル
+                                extension: event.pitchData.extension ? event.pitchData.extension * 0.3048 : 'N/A', // フィート→メートル
+                                plateTime: event.pitchData.plateTime || 'N/A',
+                                // 軌道を計算するために必要な追加パラメータ
+                                vX0: coords.vX0 ? coords.vX0 * 0.0254 : 0, // インチ/秒→メートル/秒
+                                vY0: coords.vY0 ? -coords.vY0 * 0.0254 : 0, // インチ/秒→メートル/秒 (符号反転)
+                                vZ0: coords.vZ0 ? coords.vZ0 * 0.3048 : 0, // フィート/秒→メートル/秒
+                                aX: coords.aX ? coords.aX * 0.0254 : 0, // インチ/秒²→メートル/秒²
+                                aY: coords.aY ? -coords.aY * 0.0254 : 0, // インチ/秒²→メートル/秒² (符号反転)
+                                aZ: coords.aZ ? coords.aZ * 0.3048 : 0, // フィート/秒²→メートル/秒²
+                                // 識別用のID
+                                id: `${playIndex}-${eventIndex}`,
+                                // ドロップダウン表示用のラベル
+                                label: `${pitchType} (${call.description || '不明'}) - 打者: ${batterSide}`
+                            });
+                        }
+                    }
+                });
+            });
+
+            // 元のデータを保存
+            originalPitchData = [...pitchData];
+            
+            // フィルターオプションを設定
+            setupFilters();
+            
+            // ドロップダウンリストを設定
+            setupPitchSelector();
+            
+            // プロットを描画（初期状態ではすべて表示）
+            plot3DPitches();
+        }
+
+        // フィルターオプションを設定
+        function setupFilters() {
+            const pitchTypeFilter = document.getElementById('pitch-type-filter');
+            const resultFilter = document.getElementById('result-filter');
+            
+            // 球種オプションを追加
+            const pitchTypes = [...new Set(originalPitchData.map(p => p.pitchType))];
+            pitchTypes.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                pitchTypeFilter.appendChild(option);
+            });
+            
+            // 結果オプションを追加
+            const results = [...new Set(originalPitchData.map(p => p.result))];
+            results.forEach(result => {
+                const option = document.createElement('option');
+                option.value = result;
+                option.textContent = result;
+                resultFilter.appendChild(option);
+            });
+            
+            // フィルターイベントを設定
+            pitchTypeFilter.addEventListener('change', applyFilters);
+            resultFilter.addEventListener('change', applyFilters);
+            document.getElementById('batter-hand-filter').addEventListener('change', applyFilters);
+        }
+
+        // ドロップダウンリストを設定
+        function setupPitchSelector() {
+            const pitchSelect = document.getElementById('pitch-select');
+            
+            // 既存のオプションをクリア
+            pitchSelect.innerHTML = '<option value="">-- 投球を選択してください --</option>';
+            
+            // 投球データをドロップダウンに追加
+            pitchData.forEach((pitch, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = pitch.label;
+                pitchSelect.appendChild(option);
+            });
+            
+            // イベントリスナーを設定
+            pitchSelect.addEventListener('change', function() {
+                const selectedIndex = this.value;
+                if (selectedIndex !== '') {
+                    displaySelectedPitch(selectedIndex);
+                } else {
+                    // すべての投球を表示
+                    plot3DPitches();
+                }
+            });
+        }
+
+        // フィルターを適用
+        function applyFilters() {
+            const pitchTypeFilter = document.getElementById('pitch-type-filter').value;
+            const resultFilter = document.getElementById('result-filter').value;
+            const batterHandFilter = document.getElementById('batter-hand-filter').value;
+            
+            pitchData = originalPitchData.filter(pitch => {
+                return (pitchTypeFilter === 'all' || pitch.pitchType === pitchTypeFilter) &&
+                       (resultFilter === 'all' || pitch.result === resultFilter) &&
+                       (batterHandFilter === 'all' || pitch.batterSide === batterHandFilter);
+            });
+            
+            // ドロップダウンリストを更新
+            setupPitchSelector();
+            
+            // プロットを再描画
+            plot3DPitches();
+        }
+
+        // 投球軌道を計算（3次元放物線運動）
+        function calculateTrajectory(pitch, numPoints = 50) {
+            const x = [];
+            const y = [];
+            const z = [];
+            
+            // リリースポイント
+            const x0 = pitch.x0;
+            const y0 = pitch.y0;
+            const z0 = pitch.z0;
+            
+            // 初速度 (メートル/秒)
+            const vx0 = pitch.vX0;
+            const vy0 = pitch.vY0;
+            const vz0 = pitch.vZ0;
+            
+            // 加速度 (メートル/秒²)
+            const ax = pitch.aX;
+            const ay = pitch.aY;
+            const az = pitch.aZ;
+            
+            // プレート到達時間（仮に設定、実際のデータがあればそれを使う）
+            // プレートまでの距離が約18.44m、平均的な球速で計算
+            const tMax = pitch.plateTime || 0.4; // 秒
+            
+            // 軌道を計算
+            for (let i = 0; i <= numPoints; i++) {
+                const t = (i / numPoints) * tMax;
+                
+                // 位置を計算 (等加速度運動の式)
+                const xPos = x0 + vx0 * t + 0.5 * ax * t * t;
+                const yPos = y0 + vy0 * t + 0.5 * ay * t * t;
+                const zPos = z0 + vz0 * t + 0.5 * az * t * t;
+                
+                x.push(xPos);
+                y.push(yPos);
+                z.push(zPos);
+            }
+            
+            return { x, y, z };
+        }
+
+        // 3Dプロットを描画
+        function plot3DPitches() {
+            const container = document.getElementById('plot-container');
+            
+            // データが空の場合
+            if (pitchData.length === 0) {
+                container.innerHTML = '<div class="loading">表示するデータがありません</div>';
+                return;
+            }
+            
+            // 各球種ごとにトレースを作成
+            const pitchTypes = [...new Set(pitchData.map(p => p.pitchType))];
+            plotData = [];
+            
+            pitchTypes.forEach(type => {
+                const typePitches = pitchData.filter(p => p.pitchType === type);
+                
+                // 各投球の軌道を追加
+                typePitches.forEach(pitch => {
+                    // 軌道を計算
+                    const trajectory = calculateTrajectory(pitch);
+                    
+                    // 軌道線用データ
+                    const traceLine = {
+                        type: 'scatter3d',
+                        mode: 'lines',
+                        x: trajectory.x,
+                        y: trajectory.y,
+                        z: trajectory.z,
+                        line: {
+                            width: 3,
+                            color: colorMap[type] || '#7f8c8d'
+                        },
+                        name: type,
+                        showlegend: false,
+                        hoverinfo: 'none'
+                    };
+                    
+                    plotData.push(traceLine);
+                    
+                    // リリースポイントとプレート到達点を表示
+                    const tracePoints = {
+                        type: 'scatter3d',
+                        mode: 'markers',
+                        x: [pitch.x0, pitch.x],
+                        y: [pitch.y0, pitch.y],
+                        z: [pitch.z0, pitch.z],
+                        marker: {
+                            size: [8, 10],
+                            color: [colorMap[type] || '#7f8c8d', colorMap[type] || '#7f8c8d'],
+                            opacity: [0.8, 1.0]
+                        },
+                        name: type,
+                        text: [`リリースポイント (${type})`, `プレート到達点 (${type})`],
+                        hovertemplate: '%{text}<extra></extra>',
+                        showlegend: false
+                    };
+                    
+                    plotData.push(tracePoints);
+                });
+            });
+            
+            // ホームプレートの可視化 (標準的なホームプレートの寸法)
+            // ホームプレートは五角形で、前側が17インチ(0.43m)、後ろ側が2つの12インチ(0.30m)の辺を持つ
+            const plateX = [0.215, -0.215, -0.15, 0.15, 0.215]; // メートル
+            const plateY = [0, 0, -0.30, -0.30, 0]; // メートル
+            const plateZ = [0, 0, 0, 0, 0]; // 高さ0
+            
+            const plateTrace = {
+                type: 'scatter3d',
+                mode: 'lines+markers',
+                x: plateX,
+                y: plateY,
+                z: plateZ,
+                line: {
+                    color: 'black',
+                    width: 3
+                },
+                marker: {
+                    size: 4,
+                    color: 'black'
+                },
+                name: 'ホームプレート',
+                hoverinfo: 'skip',
+                showlegend: true
+            };
+            
+            plotData.push(plateTrace);
+            
+            // ストライクゾーンの可視化（簡略化）
+            // 平均的なストライクゾーン: 幅約0.43m (ホームプレート幅), 高さ約0.5m (膝から胸まで)
+            const strikeZoneX = [0.215, -0.215, -0.215, 0.215, 0.215];
+            const strikeZoneY = [0, 0, 0, 0, 0];
+            const strikeZoneZ = [0, 0, 0.5, 0.5, 0];
+            
+            const strikeZoneTrace = {
+                type: 'scatter3d',
+                mode: 'lines',
+                x: strikeZoneX,
+                y: strikeZoneY,
+                z: strikeZoneZ,
+                line: {
+                    color: 'blue',
+                    width: 2
+                },
+                name: 'ストライクゾーン',
+                hoverinfo: 'skip',
+                showlegend: true
+            };
+            
+            plotData.push(strikeZoneTrace);
+            
+            // マウンドの可視化 (簡略化)
+            // マウンドは直径5フィート(1.52m)の円、高さ10インチ(0.25m)
+            const moundRadius = 0.76; // メートル
+            const moundHeight = 0.25; // メートル
+            const moundCenterY = -18.44; // マウンド中心はホームから18.44m
+            
+            // 円の点を生成
+            const moundX = [];
+            const moundY = [];
+            const moundZ = [];
+            for (let i = 0; i <= 36; i++) {
+                const angle = (i * 10) * Math.PI / 180;
+                moundX.push(moundRadius * Math.cos(angle));
+                moundY.push(moundCenterY);
+                moundZ.push(moundHeight);
+            }
+            
+            const moundTrace = {
+                type: 'scatter3d',
+                mode: 'lines',
+                x: moundX,
+                y: moundY,
+                z: moundZ,
+                line: {
+                    color: '#8B4513', // 茶色
+                    width: 2
+                },
+                name: 'マウンド',
+                hoverinfo: 'skip',
+                showlegend: true
+            };
+            
+            plotData.push(moundTrace);
+            
+            // レイアウト設定
+            const layout = {
+                title: 'MLB マウンド - ホームベース 3D 可視化 (メートル単位)',
+                scene: {
+                    xaxis: {
+                        title: '横方向 (m)',
+                        showgrid: true,
+                        gridcolor: 'lightgray',
+                        range: [-1, 1]
+                    },
+                    yaxis: {
+                        title: '奥行き (m)',
+                        showgrid: true,
+                        gridcolor: 'lightgray',
+                        range: [-20, 1] // マウンド(-18.44m)からホーム(0m)まで
+                    },
+                    zaxis: {
+                        title: '高さ (m)',
+                        showgrid: true,
+                        gridcolor: 'lightgray',
+                        range: [0, 2]
+                    },
+                    camera: {
+                        eye: {x: 1.5, y: 1.5, z: 0.5}
+                    },
+                    aspectmode: 'manual',
+                    aspectratio: {x: 1, y: 10, z: 1} // 縦方向を強調
+                },
+                showlegend: true,
+                legend: {
+                    x: 0.8,
+                    y: 0.9
+                },
+                margin: {
+                    l: 0,
+                    r: 0,
+                    b: 0,
+                    t: 50
+                }
+            };
+            
+            // コンフィグ設定
+            const config = {
+                responsive: true,
+                displayModeBar: true
+            };
+            
+            // プロットを描画
+            Plotly.newPlot(container, plotData, layout, config).then(() => {
+                // クリックイベントを追加
+                container.on('plotly_click', function(data) {
+                    if (data.points && data.points.length > 0) {
+                        const point = data.points[0];
+                        // カスタムデータがある場合は表示
+                        if (point.customdata) {
+                            displayPitchInfo(point.customdata);
+                        }
+                    }
+                });
+            });
+            
+            // 視点リセットボタンのイベント
+            document.getElementById('reset-view').addEventListener('click', function() {
+                const update = {
+                    'scene.camera.eye': {x: 1.5, y: 1.5, z: 0.5}
+                };
+                Plotly.relayout(container, update);
+            });
+        }
+
+        // 選択した投球のみを表示
+        function displaySelectedPitch(index) {
+            const container = document.getElementById('plot-container');
+            const selectedPitch = pitchData[index];
+            
+            if (!selectedPitch) return;
+            
+            // 軌道を計算
+            const trajectory = calculateTrajectory(selectedPitch);
+            
+            // 選択した投球のデータを作成
+            const selectedPlotData = [];
+            
+            // 軌道線
+            const traceLine = {
+                type: 'scatter3d',
+                mode: 'lines',
+                x: trajectory.x,
+                y: trajectory.y,
+                z: trajectory.z,
+                line: {
+                    width: 6, // 太めの線で強調
+                    color: colorMap[selectedPitch.pitchType] || '#7f8c8d'
+                },
+                name: selectedPitch.pitchType,
+                showlegend: true
+            };
+            
+            selectedPlotData.push(traceLine);
+            
+            // リリースポイントとプレート到達点
+            const tracePoints = {
+                type: 'scatter3d',
+                mode: 'markers',
+                x: [selectedPitch.x0, selectedPitch.x],
+                y: [selectedPitch.y0, selectedPitch.y],
+                z: [selectedPitch.z0, selectedPitch.z],
+                marker: {
+                    size: [10, 12],
+                    color: [colorMap[selectedPitch.pitchType] || '#7f8c8d', colorMap[selectedPitch.pitchType] || '#7f8c8d'],
+                    opacity: [1.0, 1.0]
+                },
+                name: `${selectedPitch.pitchType} ポイント`,
+                text: [`リリースポイント`, `プレート到達点`],
+                hovertemplate: '%{text}<extra></extra>'
+            };
+            
+            selectedPlotData.push(tracePoints);
+            
+            // ホームプレート
+            const plateX = [0.215, -0.215, -0.15, 0.15, 0.215]; // メートル
+            const plateY = [0, 0, -0.30, -0.30, 0]; // メートル
+            const plateZ = [0, 0, 0, 0, 0]; // 高さ0
+            
+            const plateTrace = {
+                type: 'scatter3d',
+                mode: 'lines+markers',
+                x: plateX,
+                y: plateY,
+                z: plateZ,
+                line: {
+                    color: 'black',
+                    width: 3
+                },
+                marker: {
+                    size: 4,
+                    color: 'black'
+                },
+                name: 'ホームプレート',
+                hoverinfo: 'skip',
+                showlegend: true
+            };
+            
+            selectedPlotData.push(plateTrace);
+            
+            // ストライクゾーン
+            const strikeZoneX = [0.215, -0.215, -0.215, 0.215, 0.215];
+            const strikeZoneY = [0, 0, 0, 0, 0];
+            const strikeZoneZ = [0, 0, 0.5, 0.5, 0];
+            
+            const strikeZoneTrace = {
+                type: 'scatter3d',
+                mode: 'lines',
+                x: strikeZoneX,
+                y: strikeZoneY,
+                z: strikeZoneZ,
+                line: {
+                    color: 'blue',
+                    width: 2
+                },
+                name: 'ストライクゾーン',
+                hoverinfo: 'skip',
+                showlegend: true
+            };
+            
+            selectedPlotData.push(strikeZoneTrace);
+            
+            // マウンド
+            const moundRadius = 0.76; // メートル
+            const moundHeight = 0.25; // メートル
+            const moundCenterY = -18.44; // マウンド中心はホームから18.44m
+            
+            // 円の点を生成
+            const moundX = [];
+            const moundY = [];
+            const moundZ = [];
+            for (let i = 0; i <= 36; i++) {
+                const angle = (i * 10) * Math.PI / 180;
+                moundX.push(moundRadius * Math.cos(angle));
+                moundY.push(moundCenterY);
+                moundZ.push(moundHeight);
+            }
+            
+            const moundTrace = {
+                type: 'scatter3d',
+                mode: 'lines',
+                x: moundX,
+                y: moundY,
+                z: moundZ,
+                line: {
+                    color: '#8B4513', // 茶色
+                    width: 2
+                },
+                name: 'マウンド',
+                hoverinfo: 'skip',
+                showlegend: true
+            };
+            
+            selectedPlotData.push(moundTrace);
+            
+            // レイアウト設定（選択モード用に調整）
+            const layout = {
+                title: `選択した投球: ${selectedPitch.pitchType}`,
+                scene: {
+                    xaxis: {
+                        title: '横方向 (m)',
+                        showgrid: true,
+                        gridcolor: 'lightgray',
+                        range: [-1, 1]
+                    },
+                    yaxis: {
+                        title: '奥行き (m)',
+                        showgrid: true,
+                        gridcolor: 'lightgray',
+                        range: [-20, 1]
+                    },
+                    zaxis: {
+                        title: '高さ (m)',
+                        showgrid: true,
+                        gridcolor: 'lightgray',
+                        range: [0, 2]
+                    },
+                    camera: {
+                        eye: {x: 1.5, y: 1.5, z: 0.5}
+                    },
+                    aspectmode: 'manual',
+                    aspectratio: {x: 1, y: 10, z: 1}
+                },
+                showlegend: true,
+                legend: {
+                    x: 0.8,
+                    y: 0.9
+                },
+                margin: {
+                    l: 0,
+                    r: 0,
+                    b: 0,
+                    t: 50
+                }
+            };
+            
+            // プロットを更新
+            Plotly.newPlot(container, selectedPlotData, layout);
+            
+            // 投球情報を表示
+            displayPitchInfo(selectedPitch);
+        }
+
+        // 投球情報を表示
+        function displayPitchInfo(pitch) {
+            const infoDiv = document.getElementById('pitch-info');
+            infoDiv.innerHTML = `
+球種: ${pitch.pitchType}
+結果: ${pitch.result}
+打者利き手: ${pitch.batterSide === 'R' ? '右' : pitch.batterSide === 'L' ? '左' : pitch.batterSide}
+投手利き手: ${pitch.pitcherHand === 'R' ? '右' : pitch.pitcherHand === 'L' ? '左' : pitch.pitcherHand}
+初速: ${pitch.startSpeed.toFixed(1)} km/h
+終速: ${pitch.endSpeed.toFixed(1)} km/h
+プレート位置: (${pitch.pX.toFixed(3)}m, ${pitch.pZ.toFixed(3)}m)
+回転数: ${pitch.spinRate} rpm
+回転方向: ${pitch.spinDirection}°
+縦のブレイク: ${typeof pitch.breakVertical === 'number' ? pitch.breakVertical.toFixed(3) + 'm' : pitch.breakVertical}
+横のブレイク: ${typeof pitch.breakHorizontal === 'number' ? pitch.breakHorizontal.toFixed(3) + 'm' : pitch.breakHorizontal}
+リリース距離: ${typeof pitch.extension === 'number' ? pitch.extension.toFixed(3) + 'm' : pitch.extension}
+プレート到達時間: ${pitch.plateTime} 秒
+            `.trim();
+        }
+
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchAndProcessData();
+        });
+    </script>
+</body>
+</html>

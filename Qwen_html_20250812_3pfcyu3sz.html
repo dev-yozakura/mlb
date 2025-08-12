@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLB Pitch Trajectory Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    #status { margin-bottom: 20px; padding: 10px; border-radius: 4px; }
+    .loading { background-color: #e0e0e0; }
+    .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    #pitchChart { width:100%; height:700px; border: 1px solid #ddd; }
+    #controls { margin-bottom: 20px; }
+    label { margin-right: 10px; }
+    input, button { margin-right: 20px; padding: 5px; }
+  </style>
+</head>
+<body>
+
+<h2>MLB Pitch Trajectory Visualization</h2>
+
+<div id="status" class="loading">Loading game data...</div>
+
+<div id="controls" style="display:none;">
+  <label for="atBatSelect">Select At-Bat:</label>
+  <select id="atBatSelect"></select>
+  <label for="pitchSelect">Select Pitch:</label>
+  <select id="pitchSelect"></select>
+  <button id="drawButton">Draw Trajectory</button>
+</div>
+
+<div id="pitchChart"></div>
+
+<script>
+  const GAME_PK = 776779;
+  const API_URL = `https://statsapi.mlb.com/api/v1.1/game/${GAME_PK}/feed/live`;
+  let gameData = null; // 取得したデータを格納
+
+  // 1. データ取得
+  async function fetchGameData() {
+    const statusDiv = document.getElementById('status');
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      gameData = await response.json();
+      console.log("Game data fetched:", gameData);
+      statusDiv.className = 'success';
+      statusDiv.textContent = 'Game data loaded successfully.';
+      populateControls(); // コントロールを設定
+      document.getElementById('controls').style.display = 'block';
+    } catch (error) {
+      console.error("Error fetching game data:", error);
+      statusDiv.className = 'error';
+      statusDiv.textContent = `Error loading game data: ${error.message}`;
+    }
+  }
+
+  // 2. コントロール (セレクトボックス) を設定
+  function populateControls() {
+    const atBatSelect = document.getElementById('atBatSelect');
+    const pitchSelect = document.getElementById('pitchSelect');
+    const allPlays = gameData.liveData.plays.allPlays;
+
+    // atBatSelect に打席を追加
+    allPlays.forEach((play, index) => {
+        // 打席であることを確認 (result.type === "atBat" または playEvents に pitch がある)
+        const hasPitch = play.playEvents && play.playEvents.some(event => event.type === 'pitch');
+        if (hasPitch) {
+            const batterName = play.matchup?.batter?.fullName || `Batter ${play.matchup?.batter?.id || 'Unknown'}`;
+            const inning = play.about?.inning || 'N/A';
+            const halfInning = play.about?.halfInning === 'top' ? 'Top' : 'Bot';
+            const optionText = `At-Bat ${index}: ${batterName} (${halfInning} ${inning})`;
+
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = optionText;
+            atBatSelect.appendChild(option);
+        }
+    });
+
+    // 初期選択時に最初の打席の投球を設定
+    if (atBatSelect.options.length > 0) {
+        atBatSelect.selectedIndex = 0;
+        updatePitchSelect(0); // 最初の打席の投球で更新
+    }
+
+    // イベントリスナーを設定
+    atBatSelect.addEventListener('change', () => {
+        const selectedAtBatIndex = parseInt(atBatSelect.value, 10);
+        updatePitchSelect(selectedAtBatIndex);
+    });
+
+    document.getElementById('drawButton').addEventListener('click', () => {
+        const selectedAtBatIndex = parseInt(atBatSelect.value, 10);
+        const selectedPitchIndex = parseInt(pitchSelect.value, 10);
+        drawTrajectory(selectedAtBatIndex, selectedPitchIndex);
+    });
+
+    // 最初の軌道を描画
+    if (atBatSelect.options.length > 0 && pitchSelect.options.length > 0) {
+        drawTrajectory(0, 0);
+    }
+  }
+
+  // 3. 選択された打席に応じて投球セレクトボックスを更新
+  function updatePitchSelect(atBatIndex) {
+    const pitchSelect = document.getElementById('pitchSelect');
+    pitchSelect.innerHTML = ''; // 既存の選択肢をクリア
+
+    const play = gameData.liveData.plays.allPlays[atBatIndex];
+    if (play && play.playEvents) {
+        play.playEvents.forEach((event, index) => {
+            if (event.type === 'pitch' && event.pitchData) {
+                const pitchType = event.details?.type?.description || 'Pitch';
+                const startSpeed = event.pitchData.startSpeed ? `${event.pitchData.startSpeed} mph` : 'N/A';
+                const optionText = `Pitch ${index + 1}: ${pitchType} (${startSpeed})`;
+
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = optionText;
+                pitchSelect.appendChild(option);
+            }
+        });
+    }
+    // 最初の投球を選択
+    if (pitchSelect.options.length > 0) {
+        pitchSelect.selectedIndex = 0;
+    }
+  }
+
+  // 4. 軌道描画 (以前のコードとほぼ同じ)
+  function drawTrajectory(atBatIndex, pitchIndex) {
+    if (!gameData) {
+        console.error("Game data not loaded.");
+        document.getElementById('status').className = 'error';
+        document.getElementById('status').textContent = 'Error: Game data not loaded.';
+        return;
+    }
+
+    const statusDiv = document.getElementById('status');
+    try {
+        const play = gameData.liveData.plays.allPlays[atBatIndex];
+        if (!play) {
+            throw new Error(`At-Bat index ${atBatIndex} not found.`);
+        }
+
+        const pitchEvent = play.playEvents[pitchIndex];
+        if (!pitchEvent || !pitchEvent.pitchData) {
+            throw new Error(`Pitch index ${pitchIndex} not found or has no pitchData in at-bat ${atBatIndex}.`);
+        }
+
+        const pitchData = pitchEvent.pitchData;
+        statusDiv.className = 'success';
+        statusDiv.textContent = `Drawing trajectory for At-Bat ${atBatIndex}, Pitch ${pitchIndex + 1}...`;
+
+        // --- 以下、軌道計算と描画 (以前のコードと同様) ---
+        const feetToInch = (feet) => feet * 12;
+        const moundPositionY = feetToInch(60.5); // 60.5フィート = 726インチ
+
+        // 初期位置 (データが不完全な場合のデフォルト値を考慮)
+        const x0 = pitchData.coordinates?.x0 ?? 0;
+        const y0 = moundPositionY - ((pitchData.extension ?? 0) * 12);
+        const z0 = pitchData.coordinates?.z0 ?? 5.5;
+
+        // 終了位置
+        const px = pitchData.coordinates?.pX ?? 0;
+        const pz = pitchData.coordinates?.pZ ?? 2.5;
+
+        // ストライクゾーン
+        const sz_top = pitchData.strikeZoneTop ?? 3.5;
+        const sz_bottom = pitchData.strikeZoneBottom ?? 1.5;
+        const sz_width_feet = (pitchData.strikeZoneWidth ?? 17) / 12;
+        const sz_depth_feet = (pitchData.strikeZoneDepth ?? 17) / 12;
+
+        // 軌道生成 (符号反転ロジックを追加)
+function generateTrajectory(data, steps = 100) {
+    const coords = data.coordinates;
+    if (!coords) return { x: [0], y: [y0], z: [z0] };
+
+    if (coords.vY0 == null || coords.aY == null) {
+        console.warn("Insufficient coordinate data for trajectory calculation. Drawing straight line.");
+        return {
+            // X座標の符号を反転
+            x: [-(coords.x0 ?? 0), -(coords.pX ?? 0)],
+            y: [y0, 0],
+            // Z座標はそのまま
+            z: [coords.z0 ?? 5.5, coords.pZ ?? 2.5]
+        };
+    }
+
+    // 反転前の初期値
+    const { x0: orig_x0, y0, z0, vX0: orig_vX0, vY0, vZ0, aX: orig_aX, aY, aZ } = coords;
+    
+    // X軸の値を反転 (投手視点 -> グラフ視点)
+    const x0 = -orig_x0;
+    const vX0 = -orig_vX0;
+    const aX = -orig_aX;
+
+    const t = data.plateTime ?? 0.4;
+    const dt = t / steps;
+
+    const xTraj = [];
+    const yTraj = [];
+    const zTraj = [];
+
+    for (let i = 0; i <= steps; i++) {
+        const ti = dt * i;
+        // X座標計算に反転した値を使用
+        const xi = x0 + vX0 * ti + 0.5 * aX * ti * ti;
+        const yi = y0 + vY0 * ti + 0.5 * aY * ti * ti;
+        const zi = z0 + vZ0 * ti + 0.5 * aZ * ti * ti;
+
+        xTraj.push(xi); // ここで符号は既に反転済み
+        yTraj.push(yi);
+        zTraj.push(zi);
+    }
+
+    return { x: xTraj, y: yTraj, z: zTraj };
+}
+
+const trajectory = generateTrajectory(pitchData);
+
+// ストライクゾーンの3Dボックス (X座標の符号を反転)
+const sz_half_width_feet = sz_width_feet / 2;
+const strikeZone = {
+    // X座標の符号を反転
+    x: [
+        sz_half_width_feet, -sz_half_width_feet, -sz_half_width_feet, sz_half_width_feet, sz_half_width_feet,
+        sz_half_width_feet, -sz_half_width_feet, -sz_half_width_feet, sz_half_width_feet, sz_half_width_feet,
+        sz_half_width_feet, sz_half_width_feet, -sz_half_width_feet, -sz_half_width_feet, -sz_half_width_feet, -sz_half_width_feet
+    ],
+    y: [
+        0, 0, 0, 0, 0,
+        -sz_depth_feet, -sz_depth_feet, -sz_depth_feet, -sz_depth_feet, -sz_depth_feet,
+        0, -sz_depth_feet, -sz_depth_feet, 0, 0, -sz_depth_feet
+    ],
+    z: [
+        sz_bottom, sz_bottom, sz_top, sz_top, sz_bottom,
+        sz_bottom, sz_bottom, sz_top, sz_top, sz_bottom,
+        sz_bottom, sz_bottom, sz_top, sz_top, sz_top, sz_top
+    ],
+    type: 'scatter3d',
+    mode: 'lines',
+    line: { color: 'red', width: 2 },
+    name: 'Strike Zone'
+};
+
+// 軌道プロット (X座標の符号は generateTrajectory で既に反転済み)
+const trace = {
+    x: trajectory.x, // 反転済み
+    y: trajectory.y,
+    z: trajectory.z,
+    type: 'scatter3d',
+    mode: 'lines',
+    line: { color: 'blue', width: 4 },
+    name: 'Ball Trajectory'
+};
+
+        // プロットデータ
+        const layout = {
+            title: `Pitch Trajectory (At-Bat ${atBatIndex}, Pitch ${pitchIndex + 1})`,
+            scene: {
+                xaxis: { title: 'Horizontal (feet)' },
+                yaxis: { title: 'Distance from Home (feet)', autorange: 'reversed' }, // マウンドが遠く、ホームが近く(0)
+                zaxis: { title: 'Height (feet)' },
+                aspectmode: 'data',
+                camera: {
+                    eye: { x: 1.25, y: -1.25, z: 0.7 } // デフォルトカメラ角度を調整
+                }
+            },
+            margin: { l: 0, r: 0, b: 0, t: 50 }
+        };
+
+        Plotly.newPlot('pitchChart', [trace, strikeZone], layout)
+            .then(() => {
+                statusDiv.textContent = `Trajectory for At-Bat ${atBatIndex}, Pitch ${pitchIndex + 1} drawn successfully.`;
+            })
+            .catch((err) => {
+                console.error("Plotly error:", err);
+                statusDiv.className = 'error';
+                statusDiv.textContent = `Error drawing plot: ${err.message}`;
+            });
+
+    } catch (error) {
+        console.error("Error drawing trajectory:", error);
+        statusDiv.className = 'error';
+        statusDiv.textContent = `Error: ${error.message}`;
+    }
+  }
+
+  // ページ読み込み時にデータ取得を開始
+  window.addEventListener('DOMContentLoaded', (event) => {
+    fetchGameData();
+  });
+</script>
+
+</body>
+</html>

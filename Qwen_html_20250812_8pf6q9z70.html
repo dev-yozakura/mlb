@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Pitch Trajectory Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h2>Pitch Trajectory (Real Scale)</h2>
+  <div id="pitchChart" style="width:100%;height:700px;"></div>
+
+  <script>
+    // 与えられたデータ
+    const pitchData ={
+                "startSpeed": 92.9,
+                "endSpeed": 85.1,
+                "strikeZoneTop": 3.52,
+                "strikeZoneBottom": 1.74,
+                "strikeZoneWidth": 17.0,
+                "strikeZoneDepth": 17.0,
+                "coordinates": {
+                  "aY": 28.523585739137964,
+                  "aZ": -14.974159337897268,
+                  "pfxX": 6.508590862695092,
+                  "pfxZ": 9.285549239690269,
+                  "pX": -0.16207815911304993,
+                  "pZ": 2.9898448123219694,
+                  "vX0": -9.272410759148702,
+                  "vY0": -135.02033324111085,
+                  "vZ0": -4.867029395592201,
+                  "x": 123.18,
+                  "y": 158.05,
+                  "x0": 2.465913496574307,
+                  "y0": 50.00227022774991,
+                  "z0": 5.864321316125909,
+                  "aX": 12.055892566419462
+                },
+                "breaks": {
+                  "breakAngle": 32.4,
+                  "breakLength": 3.6,
+                  "breakY": 24.0,
+                  "breakVertical": -15.7,
+                  "breakVerticalInduced": 16.0,
+                  "breakHorizontal": -9.8,
+                  "spinRate": 2349,
+                  "spinDirection": 143
+                },
+                "zone": 2,
+                "typeConfidence": 0.9,
+                "plateTime": 0.4051721562117181,
+                "extension": 6.170444407138986
+              };
+
+    // 単位変換（フィート → インチ）
+    const feetToInch = (feet) => feet * 12;
+
+    // マウンド位置（y軸方向、ホームベースが0インチ）
+    const moundPositionY = feetToInch(60.5); // 60.5フィート = 726インチ
+
+    // 初期位置
+    const x0 = pitchData.coordinates.x0; // feet
+    const y0 = moundPositionY - pitchData.extension * 12; // extensionはフィート
+    const z0 = pitchData.coordinates.z0;
+
+    // 終了位置（キャッチャーの手前）
+    const px = pitchData.coordinates.pX;
+    const pz = pitchData.coordinates.pZ;
+
+    // ストライクゾーン
+    const sz_top = pitchData.strikeZoneTop;
+    const sz_bottom = pitchData.strikeZoneBottom;
+    const sz_width = pitchData.strikeZoneWidth / 12; // feetに変換
+    const sz_depth = pitchData.strikeZoneDepth / 12;
+
+    // 軌道生成（単純な3次元軌道のシミュレーション）
+    function generateTrajectory(data, steps = 100) {
+      const { x0, y0, z0, vX0, vY0, vZ0, aX, aY, aZ } = data.coordinates;
+      const t = data.plateTime;
+      const dt = t / steps;
+
+      const xTraj = [];
+      const yTraj = [];
+      const zTraj = [];
+
+      for (let i = 0; i <= steps; i++) {
+        const ti = dt * i;
+        const xi = x0 + vX0 * ti + 0.5 * aX * ti * ti;
+        const yi = y0 + vY0 * ti + 0.5 * aY * ti * ti;
+        const zi = z0 + vZ0 * ti + 0.5 * aZ * ti * ti;
+
+        xTraj.push(xi);
+        yTraj.push(yi);
+        zTraj.push(zi);
+      }
+
+      return { x: xTraj, y: yTraj, z: zTraj };
+    }
+
+    const trajectory = generateTrajectory(pitchData);
+
+    // ストライクゾーンの3Dボックス
+    const strikeZone = {
+      x: [
+        -sz_width / 2, sz_width / 2, sz_width / 2, -sz_width / 2, -sz_width / 2,
+        -sz_width / 2, sz_width / 2, sz_width / 2, -sz_width / 2, -sz_width / 2,
+        -sz_width / 2, -sz_width / 2, sz_width / 2, sz_width / 2, sz_width / 2, sz_width / 2
+      ],
+      y: [
+        0, 0, 0, 0, 0,
+        -sz_depth, -sz_depth, -sz_depth, -sz_depth, -sz_depth,
+        0, -sz_depth, -sz_depth, 0, 0, -sz_depth
+      ],
+      z: [
+        sz_bottom, sz_bottom, sz_top, sz_top, sz_bottom,
+        sz_bottom, sz_bottom, sz_top, sz_top, sz_bottom,
+        sz_bottom, sz_bottom, sz_top, sz_top, sz_top, sz_top
+      ],
+      type: 'scatter3d',
+      mode: 'lines',
+      line: { color: 'red', width: 2 },
+      name: 'Strike Zone'
+    };
+
+    // 軌道プロット
+    const trace = {
+      x: trajectory.x,
+      y: trajectory.y,
+      z: trajectory.z,
+      type: 'scatter3d',
+      mode: 'lines',
+      line: { color: 'blue', width: 4 },
+      name: 'Ball Trajectory'
+    };
+
+    // プロットデータ
+    const layout = {
+      title: 'Pitch Trajectory (Real Scale)',
+      scene: {
+        xaxis: { title: 'Horizontal (feet)' },
+        yaxis: { title: 'Distance from Home (feet)', autorange: 'reversed' },
+        zaxis: { title: 'Height (feet)' },
+        aspectmode: 'data'
+      },
+      margin: { l: 0, r: 0, b: 0, t: 50 }
+    };
+
+    Plotly.newPlot('pitchChart', [trace, strikeZone], layout);
+  </script>
+</body>
+</html>

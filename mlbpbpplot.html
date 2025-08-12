@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLB Pitch & Hit Trajectory Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    /* --- ダークテーマ スタイル --- */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #121212;
+      color: #ffffff;
+    }
+    h2 {
+       color: #e0e0e0;
+       border-bottom: 1px solid #333;
+       padding-bottom: 10px;
+    }
+    #status {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .loading {
+      background-color: #2c2c2c;
+      color: #bbbbbb;
+      border: 1px solid #444;
+    }
+    .error {
+      background-color: #3a1f20;
+      color: #f8d7da;
+      border: 1px solid #782d2f;
+    }
+    .success {
+      background-color: #1e3a2a;
+      color: #d4edda;
+      border: 1px solid #3d6f50;
+    }
+    #pitchChart {
+      width: 100%;
+      height: 75vh;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #1e1e1e;
+    }
+    #controls {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #1e1e1e;
+      border-radius: 4px;
+      border: 1px solid #333;
+    }
+    label {
+      margin-right: 10px;
+      color: #cccccc;
+    }
+    select, button {
+      margin-right: 20px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid #555;
+      background-color: #2d2d2d;
+      color: #ffffff;
+    }
+    select:focus, button:focus {
+        outline: 2px solid #64b5f6;
+    }
+    button {
+        background-color: #333333;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    button:hover {
+        background-color: #444444;
+    }
+    /* -------------------------- */
+  </style>
+</head>
+<body>
+
+<h2>MLB Pitch & Hit Trajectory Visualization (Dark Mode)</h2>
+
+<div id="status" class="loading">Loading game data...</div>
+
+<div id="controls" style="display:none;">
+  <label for="atBatSelect">Select At-Bat (Index):</label>
+  <select id="atBatSelect"></select>
+  <button id="drawButton">Draw All Pitches & Hits in Selected At-Bat</button>
+</div>
+
+<div id="pitchChart"></div>
+
+<script>
+  const GAME_PK = 776779;
+  const API_URL = `https://statsapi.mlb.com/api/v1.1/game/${GAME_PK}/feed/live`;
+  let gameData = null;
+  let currentAtBatPlays = [];
+
+  async function fetchGameData() {
+    const statusDiv = document.getElementById('status');
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      gameData = await response.json();
+      console.log("Game data fetched:", gameData);
+      statusDiv.className = 'success';
+      statusDiv.textContent = 'Game data loaded successfully.';
+      populateControls();
+      document.getElementById('controls').style.display = 'block';
+    } catch (error) {
+      console.error("Error fetching game ", error);
+      statusDiv.className = 'error';
+      statusDiv.textContent = `Error loading game  ${error.message}`;
+    }
+  }
+
+  function populateControls() {
+    const atBatSelect = document.getElementById('atBatSelect');
+    const allPlays = gameData.liveData.plays.allPlays;
+
+    const atBatGroups = {};
+    allPlays.forEach((play, index) => {
+        const hasPitch = play.playEvents && play.playEvents.some(event => event.type === 'pitch');
+        if (hasPitch) {
+            const atBatIndex = play.about?.atBatIndex;
+            if (atBatIndex !== undefined && atBatIndex !== null) {
+                if (!atBatGroups[atBatIndex]) {
+                    atBatGroups[atBatIndex] = [];
+                }
+                atBatGroups[atBatIndex].push({ play, originalIndex: index });
+            }
+        }
+    });
+
+    Object.keys(atBatGroups)
+      .sort((a, b) => parseInt(a) - parseInt(b))
+      .forEach(atBatIndex => {
+        const playsForThisAtBat = atBatGroups[atBatIndex];
+        const firstPlay = playsForThisAtBat[0].play;
+        const batterName = firstPlay.matchup?.batter?.fullName || `Batter ${firstPlay.matchup?.batter?.id || 'Unknown'}`;
+        const inning = firstPlay.about?.inning || 'N/A';
+        const halfInning = firstPlay.about?.halfInning === 'top' ? 'Top' : 'Bot';
+        const optionText = `At-Bat Index ${atBatIndex}: ${batterName} (${halfInning} ${inning})`;
+
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = optionText;
+        optgroup.dataset.atBatIndex = atBatIndex;
+
+         playsForThisAtBat.forEach(({ play, originalIndex }) => {
+             const option = document.createElement('option');
+             option.value = originalIndex;
+             const playInning = play.about?.inning || 'N/A';
+             const playHalfInning = play.about?.halfInning === 'top' ? 'Top' : 'Bot';
+             const pitchCount = play.playEvents ? play.playEvents.filter(e => e.type === 'pitch' && e.pitchData).length : 0;
+             option.textContent = `Play ${originalIndex} (${playHalfInning} ${playInning}) - ${pitchCount} pitch${pitchCount !== 1 ? 'es' : ''}`;
+             optgroup.appendChild(option);
+        });
+
+        atBatSelect.appendChild(optgroup);
+    });
+
+    function updateCurrentPlaysAndDraw() {
+        const selectedOption = atBatSelect.options[atBatSelect.selectedIndex];
+        if (!selectedOption) return;
+
+        const selectedPlayIndex = parseInt(selectedOption.value, 10);
+        const selectedPlay = gameData.liveData.plays.allPlays[selectedPlayIndex];
+        if (!selectedPlay || selectedPlay.about?.atBatIndex === undefined) return;
+
+        const selectedAtBatIndex = selectedPlay.about.atBatIndex;
+        currentAtBatPlays = (atBatGroups[selectedAtBatIndex] || []).map(item => item.play);
+        drawTrajectory(selectedAtBatIndex);
+    }
+
+    if (atBatSelect.options.length > 0) {
+        atBatSelect.selectedIndex = 0;
+        updateCurrentPlaysAndDraw();
+    }
+
+    atBatSelect.addEventListener('change', updateCurrentPlaysAndDraw);
+
+    document.getElementById('drawButton').addEventListener('click', () => {
+         const selectedOption = atBatSelect.options[atBatSelect.selectedIndex];
+         if (!selectedOption) return;
+         const selectedPlayIndex = parseInt(selectedOption.value, 10);
+         const selectedPlay = gameData.liveData.plays.allPlays[selectedPlayIndex];
+         if (!selectedPlay || selectedPlay.about?.atBatIndex === undefined) return;
+         const selectedAtBatIndex = selectedPlay.about.atBatIndex;
+         drawTrajectory(selectedAtBatIndex);
+    });
+
+  }
+
+ // --- 空気抵抗込みの打球軌道計算 ---
+// ... (定数定義は同じ) ...
+
+/**
+ * 空気抵抗込みで打球軌道を計算します。
+ * @param {Object} hitData - MLB API から取得した hitData オブジェクト。
+ * @param {number} startX_feet - 打球開始点X (フィート)。
+ * @param {number} startZ_feet - 打球開始点Z (フィート)。
+ * @param {number} [Cd=0.35] - 空気抵抗係数 (Drag Coefficient)。
+ * @param {number} [timeStep=0.01] - 計算ステップ間隔 (秒)。
+ * @param {number} [maxTime=10] - 最大計算時間 (秒)。
+ * @returns {Object} {x: [...], y: [...], z: [...]} - フィート単位の軌道座標配列。
+ */
+function calculateHitTrajectoryWithDrag(hitData, startX_feet, startZ_feet, Cd = 0.35, timeStep = 0.01, maxTime = 10) {
+    // 1. 初期条件設定
+    const v0_mps = hitData.launchSpeed * MPH_TO_M_PER_S;
+    const angle_rad = hitData.launchAngle * Math.PI / 180;
+
+    const startX_m = startX_feet * FEET_TO_M;
+    const startZ_m = startZ_feet * FEET_TO_M;
+    let x_m = startX_m;
+    let y_m = 0.0;
+    let z_m = startZ_m;
+
+    // Y方向 (キャッチャー/外野方向) に全速度を向ける単純化は避ける
+    const vx_mps = v0_mps * Math.sin(angle_rad); // X方向速度 (左右)
+    const vy_mps = v0_mps * Math.cos(angle_rad); // Y方向速度 (前後)
+    const vz_mps = 0.0; // Z方向初期速度 (鉛直)
+
+    const area_m2 = Math.PI * Math.pow(BALL_DIAMETER_M / 2, 2);
+    const drag_constant = 0.5 * Cd * AIR_DENSITY_KG_PER_M3 * area_m2 / BALL_MASS_KG;
+
+    const xTraj_feet = [startX_feet];
+    const yTraj_feet = [0.0];
+    const zTraj_feet = [startZ_feet];
+
+    let currentTime = 0;
+    let prev_vx = vx_mps;
+    let prev_vy = vy_mps;
+    let prev_vz = vz_mps;
+
+    // --- 追加: hitData.coordinates を変換して比較用に保存 ---
+    const coordX_inches = hitData.coordinates?.coordX ?? 125;
+    const coordY_inches = hitData.coordinates?.coordY ?? 199;
+    const targetX_feet = (coordX_inches - 125) / 12;
+    const targetY_feet = -((coordY_inches - 199) / 12); // Y軸反転
+    const targetZ_feet = 0; // 通常地面と仮定
+    // --- 追加 ここまで ---
+
+    // 2. 時間発展ループ
+    while (currentTime < maxTime) {
+        const speed_mps = Math.sqrt(prev_vx * prev_vx + prev_vy * prev_vy + prev_vz * prev_vz);
+        const drag_accel = drag_constant * speed_mps * speed_mps;
+        const ax_mps2 = -drag_accel * (prev_vx / speed_mps);
+        const ay_mps2 = -drag_accel * (prev_vy / speed_mps);
+        const az_mps2 = -drag_accel * (prev_vz / speed_mps) - GRAVITY_M_PER_S2;
+
+        const new_vx = prev_vx + ax_mps2 * timeStep;
+        const new_vy = prev_vy + ay_mps2 * timeStep;
+        const new_vz = prev_vz + az_mps2 * timeStep;
+
+        x_m += new_vx * timeStep;
+        y_m += new_vy * timeStep;
+        z_m += new_vz * timeStep;
+
+        const currentX_feet = x_m / FEET_TO_M;
+        const currentY_feet = y_m / FEET_TO_M;
+        const currentZ_feet = z_m / FEET_TO_M;
+
+        xTraj_feet.push(currentX_feet);
+        yTraj_feet.push(currentY_feet);
+        zTraj_feet.push(currentZ_feet);
+
+        // --- オプション: coordinates の点に近いかどうかをチェック ---
+        // 例: Z座標が地面に近くなり、X,Yが指定された点に近づいた瞬間を記録
+        // または、軌道全体から最も近い点を探すなど。
+        // ここでは簡単のため、Zが0以下になった時点で終了。
+        // --- オプション ここまで ---
+
+        if (z_m < 0) {
+            // 落下点の座標を最終点として設定
+            // xTraj_feet[xTraj_feet.length-1] = currentX_feet;
+            // yTraj_feet[yTraj_feet.length-1] = currentY_feet;
+            // zTraj_feet[zTraj_feet.length-1] = 0;
+            break;
+        }
+
+        prev_vx = new_vx;
+        prev_vy = new_vy;
+        prev_vz = new_vz;
+
+        currentTime += timeStep;
+    }
+
+    // 3. 計算された軌道と hitData.coordinates の比較 (オプション)
+    // 例: 軌道の最終点と coordinates の点の距離を計算
+    // const finalX = xTraj_feet[xTraj_feet.length - 1];
+    // const finalY = yTraj_feet[yTraj_feet.length - 1];
+    // const distanceToTarget = Math.sqrt(
+    //   Math.pow(finalX - targetX_feet, 2) +
+    //   Math.pow(finalY - targetY_feet, 2)
+    // );
+    // console.log(`Distance from landing to hitData.coord: ${distanceToTarget.toFixed(2)} feet`);
+
+    return { x: xTraj_feet, y: yTraj_feet, z: zTraj_feet };
+}
+// --- 空気抵抗込みの打球軌道計算 ここまで ---
+
+
+  // --- 球場概形を生成する関数 (内野を45度反時計回りに回転) ---
+  function generateFieldOutline() {
+      const fieldTraces = [];
+      const feetToInch = 12;
+
+      // --- 1. 内野の菱形 (ベースライン) - 45度反時計回り回転 ---
+      const baseDistance = 90;
+      // 回転角度 (45度 = π/4 ラジアン)
+      const angle_rad = Math.PI / 4;
+      const cos_angle = Math.cos(angle_rad);
+      const sin_angle = Math.sin(angle_rad);
+
+      // 回転前の座標 (ホームが原点)
+      const homeX_orig = 0, homeY_orig = 0;
+      const firstX_orig = baseDistance, firstY_orig = 0;
+      const secondX_orig = baseDistance, secondY_orig = baseDistance;
+      const thirdX_orig = 0, thirdY_orig = baseDistance;
+
+      // 回転後の座標を計算
+      function rotate(x_orig, y_orig) {
+          // 回転の中心は (0, 0) なので、平行移動は不要
+          const x_rot = x_orig * cos_angle - y_orig * sin_angle;
+          const y_rot = x_orig * sin_angle + y_orig * cos_angle;
+          return { x: x_rot, y: y_rot };
+      }
+
+      const home = rotate(homeX_orig, homeY_orig);
+      const first = rotate(firstX_orig, firstY_orig);
+      const second = rotate(secondX_orig, secondY_orig);
+      const third = rotate(thirdX_orig, thirdY_orig);
+
+      const baseLinesTrace = {
+          x: [home.x, first.x, second.x, third.x, home.x],
+          y: [home.y, first.y, second.y, third.y, home.y],
+          z: [0, 0, 0, 0, 0],
+          type: 'scatter3d',
+          mode: 'lines',
+          line: { color: 'rgba(200, 200, 200, 0.8)', width: 2 },
+          name: 'Infield Diamond (Rotated)',
+          showlegend: true
+      };
+      fieldTraces.push(baseLinesTrace);
+
+      // --- 2. 外野の境界線 (フェアゾーン) - 簡略化のためY軸対称のまま ---
+      // 実際には、内野の回転に合わせて境界線も回転させた方が正確です。
+      const foulLineDistance = 350;
+      const leftFieldX = foulLineDistance * Math.cos(Math.PI * 3/4);
+      const leftFieldY = foulLineDistance * Math.sin(Math.PI * 3/4);
+      const rightFieldX = foulLineDistance * Math.cos(Math.PI * 1/4);
+      const rightFieldY = foulLineDistance * Math.sin(Math.PI * 1/4);
+
+      const leftFoulTrace = {
+          x: [home.x, leftFieldX], // 回転後のホーム位置を使用
+          y: [home.y, leftFieldY],
+          z: [0, 0],
+          type: 'scatter3d',
+          mode: 'lines',
+          line: { color: 'rgba(150, 150, 150, 0.6)', width: 1, dash: 'dot' },
+          name: 'Left Foul Line (Est.)',
+          showlegend: true
+      };
+      fieldTraces.push(leftFoulTrace);
+
+      const rightFoulTrace = {
+          x: [home.x, rightFieldX], // 回転後のホーム位置を使用
+          y: [home.y, rightFieldY],
+          z: [0, 0],
+          type: 'scatter3d',
+          mode: 'lines',
+          line: { color: 'rgba(150, 150, 150, 0.6)', width: 1, dash: 'dot' },
+          name: 'Right Foul Line (Est.)',
+          showlegend: true
+      };
+      fieldTraces.push(rightFoulTrace);
+
+      // --- 3. 外野フェンス (簡易) - Y軸対称のまま ---
+      const centerFieldDistance = 400;
+      const sideFieldDistance = 330;
+
+      const centerFieldX = 0;
+      const centerFieldY = centerFieldDistance;
+
+      const leftFenceX = sideFieldDistance * Math.cos(Math.PI * 3/4);
+      const leftFenceY = sideFieldDistance * Math.sin(Math.PI * 3/4);
+
+      const rightFenceX = sideFieldDistance * Math.cos(Math.PI * 1/4);
+      const rightFenceY = sideFieldDistance * Math.sin(Math.PI * 1/4);
+
+      const outfieldFenceTrace = {
+          x: [leftFenceX, centerFieldX, rightFenceX],
+          y: [leftFenceY, centerFieldY, rightFenceY],
+          z: [0, 0, 0],
+          type: 'scatter3d',
+          mode: 'lines',
+          line: { color: 'rgba(255, 255, 0, 0.7)', width: 3 },
+          name: 'Outfield Fence (Est.)',
+          showlegend: true
+      };
+      fieldTraces.push(outfieldFenceTrace);
+
+      return fieldTraces;
+  }
+  // --- 球場概形生成関数 ここまで ---
+
+
+  function drawTrajectory(atBatIndex) {
+    if (!gameData || !currentAtBatPlays || currentAtBatPlays.length === 0) {
+        const msg = `No plays found for At-Bat Index ${atBatIndex}.`;
+        console.error("Error drawing trajectory:", msg);
+        document.getElementById('status').className = 'error';
+        document.getElementById('status').textContent = `Error: ${msg}`;
+        return;
+    }
+
+    const statusDiv = document.getElementById('status');
+    statusDiv.className = 'loading';
+    statusDiv.textContent = `Drawing trajectories for At-Bat Index ${atBatIndex}...`;
+
+    try {
+        const traces = [];
+        let strikeZoneTrace = null;
+        let strikeZoneDefined = false;
+
+        // --- 1. 球場の概形を最初に追加 ---
+        const fieldTraces = generateFieldOutline();
+        traces.push(...fieldTraces);
+        // --- 球場概形追加 ここまで ---
+
+        for (const play of currentAtBatPlays) {
+            if (!play.playEvents) continue;
+
+            for (const event of play.playEvents) {
+                if (event.type === 'pitch' && event.pitchData) {
+                    const pitchData = event.pitchData;
+                    const pitchDetails = event.details;
+                    const hitData = event.hitData;
+
+                    const feetToInch = (feet) => feet * 12;
+                    const moundPositionY = feetToInch(60.5);
+
+                    // X座標符号反転なし
+                    const x0_orig = pitchData.coordinates?.x0 ?? 0;
+                    const y0 = moundPositionY - ((pitchData.extension ?? 0) * 12);
+                    const z0 = pitchData.coordinates?.z0 ?? 5.5;
+                    const x0 = x0_orig; // 符号反転削除
+
+                    if (!strikeZoneDefined) {
+                        const sz_top = pitchData.strikeZoneTop ?? 3.5;
+                        const sz_bottom = pitchData.strikeZoneBottom ?? 1.5;
+                        const sz_width_feet = (pitchData.strikeZoneWidth ?? 17) / 12;
+                        const sz_depth_feet = (pitchData.strikeZoneDepth ?? 17) / 12;
+                        const sz_half_width_feet = sz_width_feet / 2;
+
+                        // ストライクゾーンX座標符号反転なし
+                        strikeZoneTrace = {
+                            x: [
+                                -sz_half_width_feet, sz_half_width_feet, sz_half_width_feet, -sz_half_width_feet, -sz_half_width_feet,
+                                -sz_half_width_feet, sz_half_width_feet, sz_half_width_feet, -sz_half_width_feet, -sz_half_width_feet,
+                                -sz_half_width_feet, -sz_half_width_feet, sz_half_width_feet, sz_half_width_feet, sz_half_width_feet, sz_half_width_feet
+                            ],
+                            y: [
+                                0, 0, 0, 0, 0,
+                                -sz_depth_feet, -sz_depth_feet, -sz_depth_feet, -sz_depth_feet, -sz_depth_feet,
+                                0, -sz_depth_feet, -sz_depth_feet, 0, 0, -sz_depth_feet
+                            ],
+                            z: [
+                                sz_bottom, sz_bottom, sz_top, sz_top, sz_bottom,
+                                sz_bottom, sz_bottom, sz_top, sz_top, sz_bottom,
+                                sz_bottom, sz_bottom, sz_top, sz_top, sz_top, sz_top
+                            ],
+                            type: 'scatter3d',
+                            mode: 'lines',
+                            line: { color: 'rgba(255, 100, 100, 0.7)', width: 2 },
+                            name: 'Strike Zone',
+                            showlegend: true,
+                            hoverinfo: 'name'
+                        };
+                        strikeZoneDefined = true;
+                    }
+
+                    function generateTrajectory(data, steps = 100) {
+                        const coords = data.coordinates;
+                        if (!coords) return { x: [x0], y: [y0], z: [z0] };
+
+                        if (coords.vY0 == null || coords.aY == null) {
+                             console.warn("Insufficient pitch coordinate data. Drawing straight line.");
+                             const px_orig = coords.pX ?? 0;
+                             const px = px_orig; // 符号反転削除
+                             return {
+                                 x: [x0, px],
+                                 y: [y0, 0],
+                                 z: [coords.z0 ?? 5.5, coords.pZ ?? 2.5]
+                             };
+                        }
+
+                        // X座標符号反転なし
+                        const x0_adj = coords.x0;
+                        const vX0_adj = coords.vX0;
+                        const aX_adj = coords.aX;
+
+                        const t = data.plateTime ?? 0.4;
+                        const dt = t / steps;
+
+                        const xTraj = [];
+                        const yTraj = [];
+                        const zTraj = [];
+
+                        for (let i = 0; i <= steps; i++) {
+                            const ti = dt * i;
+                            const xi = x0_adj + vX0_adj * ti + 0.5 * aX_adj * ti * ti;
+                            const yi = coords.y0 + coords.vY0 * ti + 0.5 * coords.aY * ti * ti;
+                            const zi = coords.z0 + coords.vZ0 * ti + 0.5 * coords.aZ * ti * ti;
+
+                            xTraj.push(xi);
+                            yTraj.push(yi);
+                            zTraj.push(zi);
+                        }
+                        return { x: xTraj, y: yTraj, z: zTraj };
+                    }
+
+                    const trajectory = generateTrajectory(pitchData);
+
+                    const pitchTypeDesc = pitchDetails?.type?.description || 'Pitch';
+                    const startSpeed = pitchData.startSpeed ? `${pitchData.startSpeed} mph` : 'N/A';
+                    const resultDesc = pitchDetails?.call?.description || 'Unknown Result';
+
+                    const trace = {
+                        x: trajectory.x,
+                        y: trajectory.y,
+                        z: trajectory.z,
+                        type: 'scatter3d',
+                        mode: 'lines',
+                        line: { width: 3, color: pitchDetails?.ballColor || 'blue' },
+                        name: `${pitchTypeDesc} ${startSpeed} (${resultDesc})`,
+                        hovertemplate: `<b>${pitchTypeDesc}</b><br>Speed: ${startSpeed}<br>Result: ${resultDesc}<extra></extra>`
+                    };
+                    traces.push(trace);
+
+                    // --- 打球軌道と落下地点の描画 ---
+                    if (hitData && hitData.launchSpeed != null && hitData.launchAngle != null) {
+                         console.log(`Hit data found for pitch in At-Bat ${atBatIndex}:`, hitData);
+
+                         // 1. 落下地点マーカー
+                         // *** 注意: coordX/coordY の単位がフィートでない可能性あり ***
+                         // 例: インチだった場合、coordX_feet = hitData.coordinates?.coordX / 12;
+                         const coordX_feet = 2*hitData.coordinates?.coordX ?? 0; // 単位変換が必要な場合はここに処理を追加
+                         const coordY_feet = 2*hitData.coordinates?.coordY ?? 0; // 単位変換が必要な場合はここに処理を追加
+
+                         const landingPointTrace = {
+                             // X/Y軸入れ替え & 符号反転なし (単位はフィートと仮定)
+                             x: [coordY_feet], // coordY -> X
+                             y: [coordX_feet], // coordX -> Y
+                             z: [0],
+                             type: 'scatter3d',
+                             mode: 'markers',
+                             marker: { color: 'red', size: 5 },
+                             name: `Landing Point (${hitData.trajectory || 'N/A'})`,
+                             hovertemplate: `<b>Landing Point</b><br>Distance: ${hitData.totalDistance ?? 'N/A'} ft<br>Location: ${hitData.location || 'N/A'}<extra></extra>`
+                         };
+                         traces.push(landingPointTrace);
+
+                         // 2. 打球軌道 (空気抵抗込み計算)
+try {
+    const px_plate = pitchData.coordinates?.pX ?? 0;
+    const pz_plate = pitchData.coordinates?.pZ ?? 2.5;
+
+    const hitTrajectory = calculateHitTrajectoryWithDrag(hitData, px_plate, pz_plate);
+
+    const hitTrace = {
+        x: hitTrajectory.x,
+        y: hitTrajectory.y,
+        z: hitTrajectory.z,
+        type: 'scatter3d',
+        mode: 'lines',
+        line: { color: 'limegreen', width: 4 },
+        name: `Batted Ball (${hitData.trajectory || 'N/A'})`,
+        hovertemplate: `<b>Batted Ball</b><br>Launch Speed: ${hitData.launchSpeed} mph<br>Launch Angle: ${hitData.launchAngle}°<br>Trajectory: ${hitData.trajectory || 'N/A'}<extra></extra>`
+    };
+    traces.push(hitTrace);
+
+    // --- オプション: coordinates の点をマーカーで表示 ---
+    // hitData.coordinates を MLB Statcast 座標系 (インチ) から
+    // Plotly 座標系 (フィート, ホーム原点) に変換
+    const coordX_inches = hitData.coordinates?.coordX ?? 125; // デフォルトはホームベース
+    const coordY_inches = hitData.coordinates?.coordY ?? 199; // デフォルトはホームベース
+
+    // 変換: ホームベース (125, 199) インチ -> (0, 0) フィート
+    // Y軸: 外野方向が正になるように調整 (元の座標系でYが減ると外野)
+    // ただし、実際の打球方向を確認し、必要に応じて調整
+    const coordX_feet = (coordX_inches - 125) / 12;
+    const coordY_feet = (coordY_inches - 199) / 12; // このままだと、外野に行くとYが負になる
+
+    // *** 調整: Y軸を反転して、外野方向を正にする ***
+    // これは、Statcast座標系のY軸とPlotlyのY軸の向きが逆であると仮定した場合です。
+    // coordY_inches がホーム(199)から離れる（減少）につれて、外野(Y正)になる。
+    const coordY_feet_adjusted = -(coordY_feet); // Y軸反転
+
+    const coordMarkerTrace = {
+        x: [coordX_feet], // X軸 (左右)
+        y: [coordY_feet_adjusted], // Y軸 (前後、調整済み)
+        z: [0], // 地面
+        type: 'scatter3d',
+        mode: 'markers',
+        marker: { color: 'orange', size: 6, symbol: 'diamond' },
+        name: 'Hit Coord (Data)',
+        hovertemplate: `<b>Hit Coord (Data)</b><br>Statcast X: ${coordX_inches} in<br>Statcast Y: ${coordY_inches} in<br>Plotly X: ${coordX_feet.toFixed(2)} ft<br>Plotly Y: ${coordY_feet_adjusted.toFixed(2)} ft<extra></extra>`,
+        showlegend: true
+    };
+    traces.push(coordMarkerTrace);
+    // --- coordinates マーカー表示 ここまで ---
+
+} catch (hitError) {
+    console.error("Error calculating hit trajectory with drag:", hitError);
+    statusDiv.textContent += ` (Hit traj (drag) calc error: ${hitError.message})`;
+}
+                    }
+                    // --- 打球描画 ここまで ---
+                }
+            }
+        }
+
+        if (strikeZoneTrace) {
+            traces.push(strikeZoneTrace);
+        }
+
+        if (traces.length <= (strikeZoneTrace ? 1 : 0) + fieldTraces.length) {
+             throw new Error("No valid pitch or hit trajectories found to draw.");
+        }
+
+        const layout = {
+            title: {
+                 text: `Pitch & Hit Trajectories (At-Bat Index ${atBatIndex})`,
+                 font: { color: '#ffffff' }
+            },
+            scene: {
+                xaxis: {
+                    title: { text: 'Horizontal', font: { color: '#cccccc' } },
+                    color: '#666666',
+                    backgroundcolor: "#1e1e1e",
+                    gridcolor: "#444444",
+                    zerolinecolor: "#555555"
+                },
+                yaxis: {
+                    title: { text: 'Distance from Home', font: { color: '#cccccc' } },
+                    // autorange: 'reversed', // 削除
+                    color: '#666666',
+                    backgroundcolor: "#1e1e1e",
+                    gridcolor: "#444444",
+                    zerolinecolor: "#555555"
+                },
+                zaxis: {
+                    title: { text: 'Height', font: { color: '#cccccc' } },
+                    color: '#666666',
+                    backgroundcolor: "#1e1e1e",
+                    gridcolor: "#444444",
+                    zerolinecolor: "#555555"
+                },
+                aspectmode: 'data',
+                // カメラアングル調整 (キャッチャー側から見た自然な視点)
+                camera: {
+                     eye: { x: 0, y: -2.5, z: 0.5 }, // キャッチャー側から、やや上から
+                     center: { x: 0, y: 0, z: 0 },
+                     up: { x: 0, y: 0, z: 1 }
+                },
+                bgcolor: "#1e1e1e"
+            },
+            margin: { l: 0, r: 0, b: 0, t: 50 },
+            paper_bgcolor: "#121212",
+            plot_bgcolor: "#121212",
+            legend: {
+                 bgcolor: "#1e1e1e",
+                 bordercolor: "#333333",
+                 borderwidth: 1,
+                 font: { color: '#ffffff' }
+            }
+        };
+
+        Plotly.newPlot('pitchChart', traces, layout)
+            .then(() => {
+                statusDiv.className = 'success';
+                statusDiv.textContent = `All trajectories for At-Bat Index ${atBatIndex} drawn successfully.`;
+            })
+            .catch((err) => {
+                console.error("Plotly error:", err);
+                statusDiv.className = 'error';
+                statusDiv.textContent = `Error drawing plot: ${err.message}`;
+            });
+
+    } catch (error) {
+        console.error("Error drawing trajectory:", error);
+        statusDiv.className = 'error';
+        statusDiv.textContent = `Error: ${error.message}`;
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    fetchGameData();
+  });
+</script>
+
+</body>
+</html>

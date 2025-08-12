@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB ゲーム詳細</title>
+    <style>
+        :root {
+            --phillies-red: #E81828;
+            --reds-red: #C6011F;
+            --phillies-blue: #003087;
+            --reds-blue: #000000;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--phillies-red), var(--reds-red));
+            color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 45%;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .team.away {
+            border-top: 5px solid var(--phillies-blue);
+        }
+
+        .team.home {
+            border-top: 5px solid var(--reds-blue);
+        }
+
+        .team-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .team-score {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .vs {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #777;
+        }
+
+        .game-status {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: var(--light-gray);
+            border-radius: 5px;
+        }
+
+        .linescore {
+            width: 100%;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .inning-header {
+            background-color: #e9ecef;
+            font-weight: bold;
+        }
+
+        .pitcher-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .pitcher-card {
+            width: 45%;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .pitcher-card h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .at-bat {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .at-bat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .batter-name {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .count {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .pitches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .pitch {
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9em;
+            background-color: #000000;
+        }
+
+        .ball {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .strike {
+            background-color: #FFC107; /* yellow */
+        }
+
+        .foul {
+            background-color: #FF9800; /* Orange */
+        }
+
+        .in-play {
+            background-color: #2196F3; /* Blue */
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .out {
+            background-color: #ffcdd2;
+            color: #c62828;
+        }
+
+        .hit {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.5em;
+        }
+
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .team, .pitcher-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .game-info {
+                flex-direction: column;
+            }
+            
+            .vs {
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MLB ゲーム詳細</h1>
+            <p>Philadelphia Phillies vs Cincinnati Reds</p>
+        </header>
+
+        <div id="game-content">
+            <div class="loading">データを読み込んでいます...</div>
+        </div>
+    </div>
+
+    <script>
+        // ゲームデータを取得して表示する関数
+        async function fetchAndDisplayGame() {
+            const gameContent = document.getElementById('game-content');
+            const gamePk = 776779; // ゲームID
+            const url = `https://statsapi.mlb.com/api/v1.1/game/${gamePk}/feed/live`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                renderGame(data);
+            } catch (error) {
+                gameContent.innerHTML = `
+                    <div class="error">
+                        データの読み込みに失敗しました: ${error.message}
+                    </div>
+                `;
+                console.error("Error fetching game ", error);
+            }
+        }
+
+        // ゲームデータをHTMLにレンダリングする関数
+        function renderGame(data) {
+            const gameContent = document.getElementById('game-content');
+            const gameData = data.gameData;
+            const liveData = data.liveData;
+
+            // チーム情報
+            const awayTeam = gameData.teams.away;
+            const homeTeam = gameData.teams.home;
+
+            // スコア情報
+            const linescore = liveData.linescore;
+            const awayRuns = linescore.teams?.away?.runs ?? 0;
+            const homeRuns = linescore.teams?.home?.runs ?? 0;
+
+            // ゲーム状況
+            const currentInning = linescore.currentInningOrdinal || '';
+            const inningState = linescore.inningState === 'Top' ? '表' : linescore.inningState === 'Bottom' ? '裏' : '';
+            const gameStatus = data.gameData.status.detailedState;
+
+            // 先発投手情報
+            const awayProbablePitcher = gameData.probablePitchers?.away || {};
+            const homeProbablePitcher = gameData.probablePitchers?.home || {};
+
+            // 打席データ
+            const plays = liveData.plays.allPlays || [];
+
+            // HTML構造を作成
+            let html = `
+                <div class="game-info">
+                    <div class="team away">
+                        <div class="team-name">${awayTeam.name}</div>
+                        <div class="team-score">${awayRuns}</div>
+                        <div>先発: ${awayProbablePitcher.fullName || '未定'}</div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team home">
+                        <div class="team-name">${homeTeam.name}</div>
+                        <div class="team-score">${homeRuns}</div>
+                        <div>先発: ${homeProbablePitcher.fullName || '未定'}</div>
+                    </div>
+                </div>
+
+                <div class="game-status">
+                    ${gameStatus} ${currentInning} ${inningState}
+                </div>
+
+                <div class="linescore">
+                    <h2>得点経過</h2>
+                    ${renderLinescore(linescore)}
+                </div>
+
+                <div class="pitcher-info">
+                    <div class="pitcher-card">
+                        <h3>${awayTeam.name} 投手情報</h3>
+                        ${renderPitcherInfo(liveData.boxscore.teams.away.players, awayTeam.id)}
+                    </div>
+                    <div class="pitcher-card">
+                        <h3>${homeTeam.name} 投手情報</h3>
+                        ${renderPitcherInfo(liveData.boxscore.teams.home.players, homeTeam.id)}
+                    </div>
+                </div>
+
+                <h2>打席詳細</h2>
+                <div id="at-bats">
+                    ${renderAtBats(plays)}
+                </div>
+            `;
+
+            gameContent.innerHTML = html;
+        }
+
+        // 得点経過をレンダリング
+        function renderLinescore(linescore) {
+            const innings = linescore.innings || [];
+            const awayTeam = linescore.teams?.away || {};
+            const homeTeam = linescore.teams?.home || {};
+
+            let inningsHeader = '<tr><th>イニング</th>';
+            let awayRow = `<tr><td>${linescore.teams?.away?.team?.abbreviation || 'AWAY'}</td>`;
+            let homeRow = `<tr><td>${linescore.teams?.home?.team?.abbreviation || 'HOME'}</td>`;
+
+            // 各イニングのスコアを表示
+            innings.forEach(inning => {
+                inningsHeader += `<th>${inning.num}</th>`;
+                awayRow += `<td>${inning.away?.runs !== undefined ? inning.away.runs : ''}</td>`;
+                homeRow += `<td>${inning.home?.runs !== undefined ? inning.home.runs : ''}</td>`;
+            });
+
+            // R, H, Eの列を追加
+            inningsHeader += '<th>R</th><th>H</th><th>E</th></tr>';
+            awayRow += `<td>${awayTeam.runs || 0}</td><td>${awayTeam.hits || 0}</td><td>${awayTeam.errors || 0}</td></tr>`;
+            homeRow += `<td>${homeTeam.runs || 0}</td><td>${homeTeam.hits || 0}</td><td>${homeTeam.errors || 0}</td></tr>`;
+
+            return `
+                <table>
+                    <thead>${inningsHeader}</thead>
+                    <tbody>${awayRow}${homeRow}</tbody>
+                </table>
+            `;
+        }
+
+        // 投手情報をレンダリング
+        function renderPitcherInfo(players, teamId) {
+            let pitcherHtml = '';
+            
+            // 投手のデータを抽出
+            for (const playerId in players) {
+                const player = players[playerId];
+                if (player.position.code === '1') { // 投手
+                    const pitchingStats = player.stats?.pitching || {};
+                    pitcherHtml += `
+                        <p><strong>${player.person.fullName}</strong></p>
+                        <p>投球回: ${pitchingStats.inningsPitched || '0'}, 失点: ${pitchingStats.runs || '0'}, 被安打: ${pitchingStats.hits || '0'}, 三振: ${pitchingStats.strikeOuts || '0'}, 四球: ${pitchingStats.baseOnBalls || '0'}</p>
+                        <br>
+                    `;
+                }
+            }
+            
+            return pitcherHtml || '<p>投手データがありません</p>';
+        }
+
+        // 打席情報をレンダリング
+        function renderAtBats(plays) {
+            // 最新の打席から表示するために逆順にする
+            return plays.slice().reverse().map(play => {
+                const playEvents = play.playEvents || [];
+                const result = play.result?.event || '';
+                const batter = play.matchup?.batter?.fullName || '';
+                const count = play.count || { balls: 0, strikes: 0, outs: 0 };
+                
+                // ピッチの詳細を変換
+                const pitches = playEvents.map(event => {
+                    if (event.type === 'pitch') {
+                        const details = event.details || {};
+                        const call = details.call || {};
+                        let className = '';
+                        
+                        if (call.code === 'B') className = 'ball';
+                        else if (call.code === 'C' || call.code === 'S') className = 'strike';
+                        else if (call.code === 'F') className = 'foul';
+                        else if (call.code === 'X' || call.code === 'D') className = 'in-play';
+                        
+                        return `<span class="pitch ${className}">${call.description || details.description || '不明'}</span>`;
+                    }
+                    return '';
+                }).filter(pitch => pitch !== ''); // 空の要素を除外
+
+                // 結果のクラスを決定
+                let resultClass = '';
+                if (result.includes('Out') || result.includes('K')) resultClass = 'out';
+                else if (result.includes('Single') || result.includes('Double') || result.includes('Triple') || result.includes('Home Run')) resultClass = 'hit';
+
+                return `
+                    <div class="at-bat">
+                        <div class="at-bat-header">
+                            <div class="batter-name">${batter}</div>
+                            <div class="count">${count.balls}ボール - ${count.strikes}ストライク - ${count.outs}アウト</div>
+                        </div>
+                        <div class="pitches">
+                            ${pitches.join('')}
+                        </div>
+                        <div class="result ${resultClass}">
+                            結果: ${result}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ページ読み込み時にゲームデータを取得
+        document.addEventListener('DOMContentLoaded', fetchAndDisplayGame);
+    </script>
+</body>
+</html>
