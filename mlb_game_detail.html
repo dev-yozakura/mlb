@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,13 @@
             --reds-red: #C6011F;
             --phillies-blue: #003087;
             --reds-blue: #000000;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333;
-            --white: #ffffff;
-            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+            --dark-bg: #121212;
+            --dark-card: #1e1e1e;
+            --dark-text: #e0e0e0;
+            --dark-secondary: #9e9e9e;
+            --dark-border: #424242;
+            --dark-hover: #2d2d2d;
+            --shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         * {
@@ -24,8 +28,8 @@
         }
 
         body {
-            background-color: #f0f2f5;
-            color: #333;
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
             line-height: 1.6;
         }
 
@@ -40,7 +44,7 @@
             margin-bottom: 30px;
             padding: 20px;
             background: linear-gradient(135deg, var(--phillies-red), var(--reds-red));
-            color: var(--white);
+            color: var(--dark-text);
             border-radius: 10px;
             box-shadow: var(--shadow);
         }
@@ -48,6 +52,76 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+        }
+
+        .date-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .date-selector input {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid var(--dark-border);
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: var(--dark-card);
+            color: var(--dark-text);
+        }
+
+        .date-selector button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: var(--phillies-red);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .date-selector button:hover {
+            background-color: #c0101e;
+        }
+
+        .games-list {
+            margin-bottom: 30px;
+        }
+
+        .game-item {
+            background: var(--dark-card);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 1px solid var(--dark-border);
+        }
+
+        .game-item:hover {
+            background-color: var(--dark-hover);
+        }
+
+        .game-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .game-item-teams {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .game-item-status {
+            font-weight: bold;
+            color: var(--dark-secondary);
+        }
+
+        .game-item-score {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
         .game-info {
@@ -64,9 +138,10 @@
             align-items: center;
             width: 45%;
             padding: 20px;
-            background: var(--white);
+            background: var(--dark-card);
             border-radius: 10px;
             box-shadow: var(--shadow);
+            border: 1px solid var(--dark-border);
         }
 
         .team.away {
@@ -91,7 +166,7 @@
         .vs {
             font-size: 1.5em;
             font-weight: bold;
-            color: #777;
+            color: var(--dark-secondary);
         }
 
         .game-status {
@@ -100,8 +175,9 @@
             font-weight: bold;
             margin: 20px 0;
             padding: 10px;
-            background-color: var(--light-gray);
+            background-color: var(--dark-card);
             border-radius: 5px;
+            border: 1px solid var(--dark-border);
         }
 
         .linescore {
@@ -113,33 +189,36 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background: var(--white);
+            background: var(--dark-card);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            border: 1px solid var(--dark-border);
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px 15px;
             text-align: center;
-            border: 1px solid #ddd;
+            border: 1px solid var(--dark-border);
+            color: var(--dark-text);
         }
 
         th {
-            background-color: #f8f9fa;
+            background-color: #2d2d2d;
             font-weight: bold;
         }
 
         tr:nth-child(even) {
-            background-color: #f8f9fa;
+            background-color: #252525;
         }
 
         tr:hover {
-            background-color: #e9ecef;
+            background-color: var(--dark-hover);
         }
 
         .inning-header {
-            background-color: #e9ecef;
+            background-color: #2d2d2d;
             font-weight: bold;
         }
 
@@ -153,24 +232,26 @@
         .pitcher-card {
             width: 45%;
             padding: 20px;
-            background: var(--white);
+            background: var(--dark-card);
             border-radius: 10px;
             box-shadow: var(--shadow);
             margin-bottom: 20px;
+            border: 1px solid var(--dark-border);
         }
 
         .pitcher-card h3 {
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--dark-border);
         }
 
         .at-bat {
-            background: var(--white);
+            background: var(--dark-card);
             padding: 20px;
             border-radius: 10px;
             box-shadow: var(--shadow);
             margin-bottom: 20px;
+            border: 1px solid var(--dark-border);
         }
 
         .at-bat-header {
@@ -179,7 +260,7 @@
             align-items: center;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--dark-border);
         }
 
         .batter-name {
@@ -209,19 +290,29 @@
         }
 
         .ball {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
+            /* Green */
         }
 
         .strike {
-            background-color: #FFC107; /* yellow */
+            background-color: #FFC107;
+            /* yellow */
+            color: #000000;
         }
 
         .foul {
-            background-color: #FF9800; /* Orange */
+            background-color: #FF9800;
+            /* Orange */
         }
 
-        .in-play {
-            background-color: #2196F3; /* Blue */
+        .out {
+            background-color: #c0101e;
+            /* Red */
+        }
+
+        .hit {
+            background-color: #2196F3;
+            /* Blue */
         }
 
         .result {
@@ -231,15 +322,9 @@
             font-weight: bold;
         }
 
-        .out {
-            background-color: #ffcdd2;
-            color: #c62828;
-        }
 
-        .hit {
-            background-color: #c8e6c9;
-            color: #2e7d32;
-        }
+
+
 
         .loading {
             text-align: center;
@@ -248,8 +333,8 @@
         }
 
         .error {
-            background-color: #ffebee;
-            color: #c62828;
+            background-color: #c62828;
+            color: #ffcdd2;
             padding: 15px;
             border-radius: 5px;
             text-align: center;
@@ -257,41 +342,120 @@
         }
 
         @media (max-width: 768px) {
-            .team, .pitcher-card {
+
+            .team,
+            .pitcher-card {
                 width: 100%;
                 margin-bottom: 20px;
             }
-            
+
             .game-info {
                 flex-direction: column;
             }
-            
+
             .vs {
                 margin: 15px 0;
+            }
+
+            .date-selector input {
+                display: block;
+                margin: 0 auto 10px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>MLB ゲーム詳細</h1>
-            <p>Philadelphia Phillies vs Cincinnati Reds</p>
         </header>
 
-        <div id="game-content">
-            <div class="loading">データを読み込んでいます...</div>
+        <div class="date-selector">
+            <input type="date" id="date-input" value="2024-04-11">
+            <button onclick="fetchGames()">ゲームを取得</button>
+        </div>
+
+        <div id="main-content">
+            <div class="loading">日付を選択して「ゲームを取得」ボタンをクリックしてください</div>
         </div>
     </div>
 
     <script>
-        // ゲームデータを取得して表示する関数
-        async function fetchAndDisplayGame() {
-            const gameContent = document.getElementById('game-content');
-            const gamePk = 776779; // ゲームID
+        // 日付選択時にゲームリストを取得
+        async function fetchGames() {
+            const dateInput = document.getElementById('date-input');
+            const selectedDate = dateInput.value;
+            const mainContent = document.getElementById('main-content');
+
+            // 日付をMM/DD/YYYY形式に変換
+            const dateParts = selectedDate.split('-');
+            const formattedDate = `${dateParts[1]}/${dateParts[2]}/${dateParts[0]}`;
+
+            const url = `https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&date=${formattedDate}`;
+
+            try {
+                mainContent.innerHTML = '<div class="loading">データを読み込んでいます...</div>';
+
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                renderGamesList(data.dates[0].games);
+            } catch (error) {
+                mainContent.innerHTML = `
+                    <div class="error">
+                        データの読み込みに失敗しました: ${error.message}
+                    </div>
+                `;
+                console.error("Error fetching games ", error);
+            }
+        }
+
+        // ゲームリストを表示
+        function renderGamesList(games) {
+            const mainContent = document.getElementById('main-content');
+
+            if (!games || games.length === 0) {
+                mainContent.innerHTML = '<div class="error">指定された日付にゲームが見つかりませんでした</div>';
+                return;
+            }
+
+            let html = '<div class="games-list"><h2>ゲーム一覧</h2>';
+
+            games.forEach(game => {
+                const awayTeam = game.teams.away.team;
+                const homeTeam = game.teams.home.team;
+                const awayScore = game.teams.away.score || 0;
+                const homeScore = game.teams.home.score || 0;
+                const status = game.status.detailedState;
+
+                html += `
+                    <div class="game-item" onclick="fetchGameDetail(${game.gamePk})">
+                        <div class="game-item-header">
+                            <div class="game-item-teams">${awayTeam.name} vs ${homeTeam.name}</div>
+                            <div class="game-item-status">${status}</div>
+                        </div>
+                        <div class="game-item-score">
+                            ${awayScore} - ${homeScore}
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            mainContent.innerHTML = html;
+        }
+
+        // 特定のゲームの詳細を取得
+        async function fetchGameDetail(gamePk) {
+            const mainContent = document.getElementById('main-content');
             const url = `https://statsapi.mlb.com/api/v1.1/game/${gamePk}/feed/live`;
 
             try {
+                mainContent.innerHTML = '<div class="loading">ゲーム詳細を読み込んでいます...</div>';
+
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -299,7 +463,7 @@
                 const data = await response.json();
                 renderGame(data);
             } catch (error) {
-                gameContent.innerHTML = `
+                mainContent.innerHTML = `
                     <div class="error">
                         データの読み込みに失敗しました: ${error.message}
                     </div>
@@ -310,7 +474,7 @@
 
         // ゲームデータをHTMLにレンダリングする関数
         function renderGame(data) {
-            const gameContent = document.getElementById('game-content');
+            const mainContent = document.getElementById('main-content');
             const gameData = data.gameData;
             const liveData = data.liveData;
 
@@ -320,6 +484,7 @@
 
             // スコア情報
             const linescore = liveData.linescore;
+            
             const awayRuns = linescore.teams?.away?.runs ?? 0;
             const homeRuns = linescore.teams?.home?.runs ?? 0;
 
@@ -337,6 +502,8 @@
 
             // HTML構造を作成
             let html = `
+                <button onclick="fetchGames()" style="margin-bottom: 20px; padding: 10px 20px; background-color: #424242; color: white; border: none; border-radius: 5px; cursor: pointer;">戻る</button>
+                
                 <div class="game-info">
                     <div class="team away">
                         <div class="team-name">${awayTeam.name}</div>
@@ -357,7 +524,7 @@
 
                 <div class="linescore">
                     <h2>得点経過</h2>
-                    ${renderLinescore(linescore)}
+                    ${renderLinescore(linescore, liveData)}
                 </div>
 
                 <div class="pitcher-info">
@@ -377,18 +544,18 @@
                 </div>
             `;
 
-            gameContent.innerHTML = html;
+            mainContent.innerHTML = html;
         }
 
         // 得点経過をレンダリング
-        function renderLinescore(linescore) {
+        function renderLinescore(linescore, liveData) {
             const innings = linescore.innings || [];
             const awayTeam = linescore.teams?.away || {};
             const homeTeam = linescore.teams?.home || {};
 
             let inningsHeader = '<tr><th>イニング</th>';
-            let awayRow = `<tr><td>${linescore.teams?.away?.team?.abbreviation || 'AWAY'}</td>`;
-            let homeRow = `<tr><td>${linescore.teams?.home?.team?.abbreviation || 'HOME'}</td>`;
+            let awayRow = `<tr><td>${liveData.boxscore.teams.away.team || 'AWAY'}</td>`;
+            let homeRow = `<tr><td>${liveData.boxscore.teams.home.team || 'HOME'}</td>`;
 
             // 各イニングのスコアを表示
             innings.forEach(inning => {
@@ -413,11 +580,11 @@
         // 投手情報をレンダリング
         function renderPitcherInfo(players, teamId) {
             let pitcherHtml = '';
-            
+
             // 投手のデータを抽出
             for (const playerId in players) {
                 const player = players[playerId];
-                if (player.position.code === '1') { // 投手
+                if (player.position.code === '1' && player.stats.pitching.inningsPitched) { // 投手
                     const pitchingStats = player.stats?.pitching || {};
                     pitcherHtml += `
                         <p><strong>${player.person.fullName}</strong></p>
@@ -426,7 +593,7 @@
                     `;
                 }
             }
-            
+
             return pitcherHtml || '<p>投手データがありません</p>';
         }
 
@@ -437,20 +604,23 @@
                 const playEvents = play.playEvents || [];
                 const result = play.result?.event || '';
                 const batter = play.matchup?.batter?.fullName || '';
+                const pitcher = play.matchup?.pitcher?.fullName || '';
                 const count = play.count || { balls: 0, strikes: 0, outs: 0 };
-                
+                const inning = play.about?.inning || '';
+                const halfInning = play.about?.halfInning || '';
                 // ピッチの詳細を変換
                 const pitches = playEvents.map(event => {
                     if (event.type === 'pitch') {
                         const details = event.details || {};
                         const call = details.call || {};
                         let className = '';
-                        
-                        if (call.code === 'B') className = 'ball';
-                        else if (call.code === 'C' || call.code === 'S') className = 'strike';
-                        else if (call.code === 'F') className = 'foul';
-                        else if (call.code === 'X' || call.code === 'D') className = 'in-play';
-                        
+
+                        if (call.code === 'B' || call.code === '*B' || call.code === 'H' || call.code === 'P') className = 'ball';
+                        else if (call.code === 'C' || call.code === 'S' || call.code === 'W') className = 'strike';
+                        else if (call.code === 'F' || call.code === 'L' || call.code === 'T') className = 'foul';
+                        else if (call.code === 'X') className = 'out';
+                        else if (call.code === 'E' || call.code === 'D') className = 'hit';
+
                         return `<span class="pitch ${className}">${call.description || details.description || '不明'}</span>`;
                     }
                     return '';
@@ -458,28 +628,35 @@
 
                 // 結果のクラスを決定
                 let resultClass = '';
-                if (result.includes('Out') || result.includes('K')) resultClass = 'out';
-                else if (result.includes('Single') || result.includes('Double') || result.includes('Triple') || result.includes('Home Run')) resultClass = 'hit';
+                if (result.includes('Flyout') || result.includes('Triple Play') || result.includes('Double Play') || result.includes('Sac Bunt') || result.includes('Forceout') || result.includes('Grounded Into DP') || result.includes('Grounded Into TP') || result.includes('Groundout') || result.includes('Strikeout') || result.includes('Lineout') || result.includes('Pop Out') || result.includes('Sac Fly') || result.includes('Caught Stealing 2B') || result.includes('Caught Stealing 3B') || result.includes('Caught Stealing Home')) resultClass = 'out';
+                else if (result.includes('Single') || result.includes('Double') || result.includes('Triple') || result.includes('Home Run') || result.includes('Field Error')) resultClass = 'hit';
+                else if (result.includes('Walk') || result.includes('Hit By Pitch')) resultClass = 'ball';
 
                 return `
                     <div class="at-bat">
                         <div class="at-bat-header">
-                            <div class="batter-name">${batter}</div>
-                            <div class="count">${count.balls}ボール - ${count.strikes}ストライク - ${count.outs}アウト</div>
+                            <div class="batter-name">${batter} VS ${pitcher}</div>
+                            <div class="count">${inning} ${halfInning} | ${count.balls} Ball(s) - ${count.strikes} Strike(s) - ${count.outs} Out(s)</div>
                         </div>
                         <div class="pitches">
                             ${pitches.join('')}
                         </div>
                         <div class="result ${resultClass}">
-                            結果: ${result}
+                            Result: ${result}
                         </div>
                     </div>
                 `;
             }).join('');
         }
 
-        // ページ読み込み時にゲームデータを取得
-        document.addEventListener('DOMContentLoaded', fetchAndDisplayGame);
+        // ページ読み込み時に初期表示
+        document.addEventListener('DOMContentLoaded', function () {
+            // 日付入力フィールドに今日の日付を設定
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0];
+            document.getElementById('date-input').value = formattedDate;
+        });
     </script>
 </body>
+
 </html>
