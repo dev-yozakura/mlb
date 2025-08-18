@@ -322,10 +322,6 @@
             font-weight: bold;
         }
 
-
-
-
-
         .loading {
             text-align: center;
             padding: 50px;
@@ -397,11 +393,31 @@
             /* 内容を縦に並べる */
         }
 
-        /* カード内のテーブルを最大化 */
+        /* 横スクロール可能なテーブルコンテナ */
+        .table-container {
+            overflow-x: auto;
+            width: 100%;
+            margin-bottom: 2px;
+            /* テーブル間の間隔 */
+        }
+
+        /* テーブルの最小幅を設定して、列が詰まらないようにする */
         .pitcher-card table {
+            min-width: 600px;
+            /* 必要に応じて調整 */
             width: 100%;
             flex-grow: 1;
-            /* カード内でテーブルがスペースを占めるように */
+        }
+
+        /* テーブルセルの最小幅を設定（オプション） */
+        .pitcher-card th,
+        .pitcher-card td {
+            white-space: nowrap;
+            /* 長いテキストの折り返しを防ぐ */
+            padding: 0px 0px;
+            /* パディングを調整してスペースを節約 */
+            font-size: 0.9em;
+            /* フォントサイズを少し小さく */
         }
 
         /* ... 既存のスタイル ... */
@@ -432,92 +448,125 @@
         }
 
         /* 帯グラフ用のスタイルを追加 */
-.pitcher-bar-container {
-    width: 100%;
-    background-color: #333;
-    border-radius: 10px;
-    margin: 10px 0;
-    overflow: hidden;
-    height: 30px;
-    position: relative;
-}
+        .pitcher-bar-container {
+            width: 100%;
+            background-color: #333;
+            border-radius: 10px;
+            margin: 10px 0;
+            overflow: hidden;
+            height: 30px;
+            position: relative;
+        }
 
-.pitcher-bar-segment {
-    height: 100%;
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-    transition: width 0.3s ease;
-}
+        .pitcher-bar-segment {
+            height: 100%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            transition: width 0.3s ease;
+        }
 
-.pitcher-bar-label {
-    position: absolute;
-    bottom: -25px;
-    font-size: 12px;
-    color: #ccc;
-    white-space: nowrap;
-}
+        .pitcher-bar-label {
+            position: absolute;
+            bottom: -25px;
+            font-size: 12px;
+            color: #ccc;
+            white-space: nowrap;
+        }
 
-.pitcher-chart-container {
-    margin: 20px 0;
-    padding: 15px;
-    background: #2d2d2d;
-    border-radius: 10px;
-    border: 1px solid var(--dark-border);
-}
+        .pitcher-chart-container {
+            margin: 20px 0;
+            padding: 15px;
+            background: #2d2d2d;
+            border-radius: 10px;
+            border: 1px solid var(--dark-border);
+        }
 
-/* ゲーム一覧の詳細時刻表示用スタイル */
-.game-item-time {
-    text-align: right;
-    font-size: 0.9em;
-    color: var(--dark-secondary);
-    margin-top: 5px;
-    font-weight: bold;
-}
+        /* ゲーム一覧の詳細時刻表示用スタイル */
+        .game-item-time {
+            text-align: right;
+            font-size: 0.9em;
+            color: var(--dark-secondary);
+            margin-top: 5px;
+            font-weight: bold;
+        }
 
-.game-item-datetime {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 8px;
-    font-size: 0.85em;
-}
+        .game-item-datetime {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 0.85em;
+        }
 
-.game-item-time-main {
-    font-weight: bold;
-    color: #4CAF50;
-}
+        .game-item-time-main {
+            font-weight: bold;
+            color: #4CAF50;
+        }
 
-.game-item-status-detail {
-    color: var(--dark-secondary);
-    background: #2d2d2d;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.8em;
-}
+        .game-item-status-detail {
+            color: var(--dark-secondary);
+            background: #2d2d2d;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        /* 自動更新インジケーター */
+        .auto-refresh-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: var(--phillies-red);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            z-index: 1000;
+            display: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .auto-refresh-indicator.active {
+            display: flex;
+        }
+
+        .refresh-timer {
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-       
-
         <div class="date-selector">
             <input type="date" id="date-input" value="2024-04-11">
             <button onclick="fetchGames()">ゲームを取得</button>
         </div>
-
+        <!-- 自動更新インジケーター -->
+        <div id="auto-refresh-indicator" class="auto-refresh-indicator">
+            自動更新まで: <span id="refresh-timer" class="refresh-timer">5</span>s
+        </div>
         <div id="main-content">
             <div class="loading">日付を選択して「ゲームを取得」ボタンをクリックしてください</div>
         </div>
     </div>
-
     <script>
+        // グローバル変数
+        let autoRefreshInterval = null;
+        let refreshTimerInterval = null; // タイマー表示用
+        let currentGamePk = null;
+        let refreshCountdown = 5; // カウントダウンタイマー
+
         // 日付選択時にゲームリストを取得
         async function fetchGames() {
             const dateInput = document.getElementById('date-input');
@@ -549,89 +598,89 @@
             }
         }
 
-// より詳細な時刻表示を含むゲームリスト表示関数
-function renderGamesList(games) {
-    const mainContent = document.getElementById('main-content');
+        // より詳細な時刻表示を含むゲームリスト表示関数
+        function renderGamesList(games) {
+            const mainContent = document.getElementById('main-content');
 
-    if (!games || games.length === 0) {
-        mainContent.innerHTML = '<div class="error">指定された日付にゲームが見つかりませんでした</div>';
-        return;
-    }
+            if (!games || games.length === 0) {
+                mainContent.innerHTML = '<div class="error">指定された日付にゲームが見つかりませんでした</div>';
+                return;
+            }
 
-    let html = '<div class="games-list"><h2>ゲーム一覧</h2>';
+            let html = '<div class="games-list"><h2>ゲーム一覧</h2>';
 
-    games.forEach(game => {
-        const awayTeam = game.teams.away.team;
-        const homeTeam = game.teams.home.team;
-        const awayScore = game.teams.away.score || 0;
-        const homeScore = game.teams.home.score || 0;
-        const status = game.status.detailedState;
-        const statusCode = game.status.statusCode;
-        
-        // 試合開始時刻を取得・フォーマット
-        let gameTimeInfo = '';
-        if (game.gameDate) {
-            const gameDate = new Date(game.gameDate);
-            // 日本時間に変換
-            const jstDate = new Date(gameDate.getTime());
-            
-            // 時刻部分のみ抽出
-            const timeString = jstDate.toLocaleTimeString('ja-JP', { 
-                hour: '2-digit', 
-                minute: '2-digit',
-                timeZone: 'Asia/Tokyo'
-            });
-            
-            // 日付情報（今日以外の場合）
-            const today = new Date();
-            const isToday = gameDate.toDateString() === today.toDateString();
-            const dateString = isToday ? '' : gameDate.toLocaleDateString('ja-JP', {
-                month: 'short',
-                day: 'numeric'
-            });
-            
-            gameTimeInfo = `
+            games.forEach(game => {
+                const awayTeam = game.teams.away.team;
+                const homeTeam = game.teams.home.team;
+                const awayScore = game.teams.away.score || 0;
+                const homeScore = game.teams.home.score || 0;
+                const status = game.status.detailedState;
+                const statusCode = game.status.statusCode;
+
+                // 試合開始時刻を取得・フォーマット
+                let gameTimeInfo = '';
+                if (game.gameDate) {
+                    const gameDate = new Date(game.gameDate);
+                    // 日本時間に変換
+                    const jstDate = new Date(gameDate.getTime());
+
+                    // 時刻部分のみ抽出
+                    const timeString = jstDate.toLocaleTimeString('ja-JP', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        timeZone: 'Asia/Tokyo'
+                    });
+
+                    // 日付情報（今日以外の場合）
+                    const today = new Date();
+                    const isToday = gameDate.toDateString() === today.toDateString();
+                    const dateString = isToday ? '' : gameDate.toLocaleDateString('ja-JP', {
+                        month: 'short',
+                        day: 'numeric'
+                    });
+
+                    gameTimeInfo = `
                 <div class="game-item-datetime">
                     <span class="game-item-time-main">${timeString}</span>
                     ${dateString ? `<span class="game-item-date">${dateString}</span>` : ''}
                     <span class="game-item-status-detail">${status}</span>
                 </div>
             `;
-        }
+                }
 
-        // ゲーム状態に応じた表示
-        const isFinal = statusCode === 'F' || statusCode === 'FR';
-        const isInProgress = statusCode === 'I' || statusCode === 'IR';
-        const isScheduled = statusCode === 'S' || statusCode === 'PW' || statusCode === 'PW';
+                // ゲーム状態に応じた表示
+                const isFinal = statusCode === 'F' || statusCode === 'FR';
+                const isInProgress = statusCode === 'I' || statusCode === 'IR';
+                const isScheduled = statusCode === 'S' || statusCode === 'PW' || statusCode === 'PW';
 
-        // 勝利チームの得点をオレンジで表示
-        if (awayScore > homeScore && (isFinal || isInProgress)) {
-            html += `
-                <div class="game-item" onclick="fetchGameDetail(${game.gamePk})">
-                    <div class="game-item-header">
-                        <div class="game-item-teams">${awayTeam.name} vs ${homeTeam.name}</div>
-                    </div>
-                    <div class="game-item-score">
-                        <span style="color: orange;">${awayScore}</span> - ${homeScore}
-                    </div>
-                    ${gameTimeInfo}
-                </div>
-            `;
-        } else if ((isFinal || isInProgress)) {
-            html += `
+                // 勝利チームの得点をオレンジで表示
+                if (awayScore > homeScore && (isFinal || isInProgress)) {
+                    html += `
                 <div class="game-item" onclick="fetchGameDetail(${game.gamePk})">
                     <div class="game-item-header">
                         <div class="game-item-teams">${homeTeam.name} vs ${awayTeam.name}</div>
                     </div>
                     <div class="game-item-score">
-                        ${awayScore} - <span style="color: orange;">${homeScore}</span>
+                        ${homeScore} - <span style="color: orange;">${awayScore}</span>
                     </div>
                     ${gameTimeInfo}
                 </div>
             `;
-        } else {
-            // 未開始または延期ゲーム
-            html += `
+                } else if ((isFinal || isInProgress)) {
+                    html += `
+                <div class="game-item" onclick="fetchGameDetail(${game.gamePk})">
+                    <div class="game-item-header">
+                        <div class="game-item-teams">${homeTeam.name} vs ${awayTeam.name}</div>
+                    </div>
+                    <div class="game-item-score">
+                        <span style="color: orange;">${homeScore}</span> - ${awayScore}
+                    </div>
+                    ${gameTimeInfo}
+                </div>
+            `;
+                } else {
+                    // 未開始または延期ゲーム
+                    html += `
                 <div class="game-item" onclick="fetchGameDetail(${game.gamePk})">
                     <div class="game-item-header">
                         <div class="game-item-teams">${homeTeam.name} vs ${awayTeam.name}</div>
@@ -642,25 +691,50 @@ function renderGamesList(games) {
                     ${gameTimeInfo}
                 </div>
             `;
-        }
-    });
+                }
+            });
 
-    html += '</div>';
-    mainContent.innerHTML = html;
-} // 特定のゲームの詳細を取得
-        async function fetchGameDetail(gamePk) {
+            html += '</div>';
+            mainContent.innerHTML = html;
+        }
+
+        // 特定のゲームの詳細を取得 (自動更新フラグを追加)
+        async function fetchGameDetail(gamePk, isAutoRefresh = false) {
+            currentGamePk = gamePk; // 現在のゲームPKを保存
             const mainContent = document.getElementById('main-content');
             const url = `https://statsapi.mlb.com/api/v1.1/game/${gamePk}/feed/live`;
 
             try {
-                mainContent.innerHTML = '<div class="loading">ゲーム詳細を読み込んでいます...</div>';
+                // 自動更新でない場合のみローディング表示とスクロール
+                if (!isAutoRefresh) {
+                    mainContent.innerHTML = '<div class="loading">ゲーム詳細を読み込んでいます...</div>';
+                    window.scrollTo(0, 0); // 手動更新時はトップにスクロール
+                }
 
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
+
+                // 現在のスクロール位置を保存
+                const currentScrollY = window.scrollY;
+
                 renderGame(data);
+
+                // 自動更新の場合はスクロール位置を維持
+                if (isAutoRefresh) {
+                    window.scrollTo(0, currentScrollY);
+                }
+
+                // ゲーム状態が進行中の場合、自動更新を開始
+                if (isGameInProgress(data.gameData.status.statusCode)) {
+                    if (!isAutoRefresh) { // 自動更新開始時以外にのみタイマー開始
+                        startAutoRefresh();
+                    }
+                } else {
+                    stopAutoRefresh(); // 試合終了時は自動更新を停止
+                }
             } catch (error) {
                 mainContent.innerHTML = `
                     <div class="error">
@@ -670,45 +744,87 @@ function renderGamesList(games) {
                 console.error("Error fetching game ", error);
             }
         }
+        // ゲーム状態チェック関数
+        function isGameInProgress(statusCode) {
+            return statusCode === 'I' || statusCode === 'IR';
+        }
 
+        // 自動更新開始関数 (タイマー表示機能を追加)
+        function startAutoRefresh() {
+            const indicator = document.getElementById('auto-refresh-indicator');
+            indicator.classList.add('active');
+            refreshCountdown = 5; // カウントダウンをリセット
+            document.getElementById('refresh-timer').textContent = refreshCountdown;
 
-        // ゲームデータをHTMLにレンダリングする関数
+            // 既にタイマーが動いていればクリア
+            if (autoRefreshInterval) {
+                clearInterval(autoRefreshInterval);
+            }
+            if (refreshTimerInterval) {
+                clearInterval(refreshTimerInterval);
+            }
+
+            // カウントダウンタイマーを開始
+            refreshTimerInterval = setInterval(() => {
+                refreshCountdown--;
+                document.getElementById('refresh-timer').textContent = refreshCountdown;
+                if (refreshCountdown <= 0) {
+                    refreshCountdown = 5; // 次の更新までをリセット
+                }
+            }, 1000);
+
+            // 5秒ごとに更新
+            autoRefreshInterval = setInterval(() => {
+                if (currentGamePk) {
+                    fetchGameDetail(currentGamePk, true); // 自動更新フラグを渡す
+                }
+            }, 5000);
+        }
+
+        // 自動更新停止関数
+        function stopAutoRefresh() {
+            const indicator = document.getElementById('auto-refresh-indicator');
+            indicator.classList.remove('active');
+
+            if (autoRefreshInterval) {
+                clearInterval(autoRefreshInterval);
+                autoRefreshInterval = null;
+            }
+            if (refreshTimerInterval) {
+                clearInterval(refreshTimerInterval);
+                refreshTimerInterval = null;
+            }
+        }
+
+ // ゲームデータをHTMLにレンダリングする関数 (修正版 - グローバル変数設定)
         function renderGame(data) {
             const mainContent = document.getElementById('main-content');
             const gameData = data.gameData;
             const liveData = data.liveData;
-
             // チーム情報
             const awayTeam = gameData.teams.away;
             const homeTeam = gameData.teams.home;
-
             // スコア情報
             const linescore = liveData.linescore;
             const awayRuns = linescore.teams?.away?.runs ?? 0;
             const homeRuns = linescore.teams?.home?.runs ?? 0;
-
             // ゲーム状況
             const currentInning = linescore.currentInningOrdinal || '';
             const inningState = linescore.inningState === 'Top' ? '表' : linescore.inningState === 'Bottom' ? '裏' : '';
             const gameStatus = gameData.status.detailedState;
-
             // 先発投手情報
             const awayProbablePitcher = gameData.probablePitchers?.away || {};
             const homeProbablePitcher = gameData.probablePitchers?.home || {};
-
             // 勝敗投手情報
             const decisions = liveData.decisions || {};
             const winner = decisions.winner || {};
             const loser = decisions.loser || {};
             const save = decisions.save || {};
-
             // 打席データ
             const plays = liveData.plays.allPlays || [];
-
             // チーム別プレイヤー情報 (IDは "ID669257" の形式)
             const awayPlayerIds = Object.keys(liveData.boxscore.teams.away.players || {});
             const homePlayerIds = Object.keys(liveData.boxscore.teams.home.players || {});
-
             // 投手の所属チームを判定するヘルパー関数 (簡略版)
             // playerId は数値 (例: 669257) で渡す
             function getPlayerTeamId(playerId) {
@@ -721,13 +837,11 @@ function renderGamesList(games) {
                 }
                 return null; // 所属チーム不明
             }
-
             // チーム情報カードを生成するヘルパー関数
             function renderTeamCard(team, teamType, probablePitcher, runs) {
                 const isAway = teamType === 'away';
                 const teamColor = isAway ? 'var(--phillies-blue)' : 'var(--reds-blue)';
                 const teamBorderClass = isAway ? 'away' : 'home';
-
                 // 所属チームの決定
                 let decisionInfo = '';
                 if (winner.id && getPlayerTeamId(winner.id) === teamType) {
@@ -739,7 +853,6 @@ function renderGamesList(games) {
                 if (save.id && getPlayerTeamId(save.id) === teamType) {
                     decisionInfo += `<div style="color: #2196F3;margin-top: 5px;">セーブ:</span> ${save.fullName} ${save.note || ''}</div>`;
                 }
-
                 return `
             <div class="team ${teamBorderClass}">
                 <div class="team-name">${team.name}</div>
@@ -749,26 +862,21 @@ function renderGamesList(games) {
             </div>
         `;
             }
-
             // HTML構造を作成
             let html = `
         <button onclick="fetchGames()" style="margin-bottom: 20px; padding: 10px 20px; background-color: #424242; color: white; border: none; border-radius: 5px; cursor: pointer;">戻る</button>
-        
         <div class="game-info">
             ${renderTeamCard(awayTeam, 'away', awayProbablePitcher, awayRuns)}
             <div class="vs">VS</div>
             ${renderTeamCard(homeTeam, 'home', homeProbablePitcher, homeRuns)}
         </div>
-
         <div class="game-status">
             ${gameStatus} ${currentInning} ${inningState}
         </div>
-
         <div class="linescore">
             <h2>得点経過</h2>
             ${renderLinescore(linescore, data)}
         </div>
-
         <div class="pitcher-info">
             <div class="pitcher-card">
                 <h3>${awayTeam.name} 投手情報</h3>
@@ -779,7 +887,6 @@ function renderGamesList(games) {
                 ${renderPitcherInfo(liveData.boxscore.teams.home.players, homeTeam.id, plays, decisions)}
             </div>
         </div>
-
         <div class="batter-info">
             <div class="pitcher-card"> <!-- pitcher-card のスタイルを流用 -->
                 <h3>${awayTeam.name} 打者情報</h3>
@@ -790,33 +897,90 @@ function renderGamesList(games) {
                 ${renderBatterInfo(liveData.boxscore.teams.home.players)}
             </div>
         </div>
-
         <h2>打席詳細</h2>
         <div id="at-bats">
             ${renderAtBats(plays)}
         </div>
     `;
-
+            
+            // 最後にグローバル変数にデータを保存
+            window.currentGameData = data;
+            
             mainContent.innerHTML = html;
         }
-
-
-        // 得点経過をレンダリング
+        // 得点経過をレンダリング (9回まで表示、現在のイニングはオレンジの-、延長も対応)
         function renderLinescore(linescore, data) {
             const innings = linescore.innings || [];
             const awayTeam = linescore.teams?.away || {};
             const homeTeam = linescore.teams?.home || {};
+            // チーム名を取得
+            const awayTeamName = data.gameData?.teams?.away?.abbreviation || 'AWAY';
+            const homeTeamName = data.gameData?.teams?.home?.abbreviation || 'HOME';
+
+            // 現在のイニング情報
+            const currentInning = linescore.currentInning || 0;
+            const currentInningOrdinal = linescore.currentInningOrdinal || '';
+            const inningState = linescore.inningState || ''; // 'Top', 'Bottom', 'Middle', 'End'
+            const gameStatus = data.gameData?.status?.statusCode || '';
+            const isFinal = gameStatus === 'F' || gameStatus === 'FR'; // 終了状態か判定
 
             let inningsHeader = '<tr><th>イニング</th>';
-            let awayRow = `<tr><td>${data.liveData.boxscore.teams.away.team || 'AWAY'}</td>`;
-            let homeRow = `<tr><td>${data.liveData.boxscore.teams.home.team || 'HOME'}</td>`;
+            let awayRow = `<tr><td>${awayTeamName}</td>`; // チーム名を表示
+            let homeRow = `<tr><td>${homeTeamName}</td>`; // チーム名を表示
 
-            // 各イニングのスコアを表示(9回裏なしならX)
-            innings.forEach(inning => {
-                inningsHeader += `<th>${inning.num}</th>`;
-                awayRow += `<td>${inning.away?.runs !== undefined ? inning.away.runs : 'X'}</td>`;
-                homeRow += `<td>${inning.home?.runs !== undefined ? inning.home.runs : 'X'}</td>`;
-            });
+            // 表示するイニング数を決定 (9回以上は延長イニングも表示)
+            const displayInnings = Math.max(9, innings.length, currentInning);
+
+            // 1回から displayInnings 回までループ
+            for (let i = 1; i <= displayInnings; i++) {
+                inningsHeader += `<th>${i}</th>`;
+
+                // 既存のイニングデータから該当する回を探す
+                const inningData = innings.find(inning => inning.num === i);
+
+                if (inningData) {
+                    // データがある場合
+                    awayRow += `<td>${inningData.away?.runs !== undefined ? inningData.away.runs : ''}</td>`;
+                    // ホームチームは最終回の表が終わっていれば表示しない (ゲーム終了 or 最終回裏)
+                    // ただし、最終回でない限りは常に表示
+                    if (i === displayInnings && inningState === 'Top' && !isFinal) {
+                        homeRow += `<td></td>`; // 最終回表進行中は裏のデータがない
+                    } else {
+                        homeRow += `<td>${inningData.home?.runs !== undefined ? inningData.home.runs : ''}</td>`;
+                    }
+                } else {
+                    // データがない場合 (まだそのイニングに達していない、または延長)
+                    if (i < currentInning) {
+                        // 過去のイニング (データがない = 0点)
+                        awayRow += `<td>0</td>`;
+                        homeRow += `<td>0</td>`;
+                    } else if (i === currentInning) {
+                        // 現在のイニング
+                        if (inningState === 'Top' || inningState === 'Bottom') {
+                            // 進行中
+                            awayRow += `<td>${inningData?.away?.runs !== undefined ? inningData.away.runs : '0'}</td>`;
+                            if (inningState === 'Top') {
+                                // 現在のイニングの表進行中 (アウェイの得点は表示、ホームは-)
+                                homeRow += `<td style="color: orange;">-</td>`;
+                            } else if (inningState === 'Bottom') {
+                                // 現在のイニングの裏進行中 (アウェイの得点は表示、ホームは現在の得点 or -)
+                                homeRow += `<td>${inningData?.home?.runs !== undefined ? inningData.home.runs : (inningState === 'Bottom' ? '0' : '')}</td>`;
+                                // 現在のチーム(ホーム)の現在のイニングにオレンジのハイフンを追加
+                                // (直前に追加したセルを置換)
+                                homeRow = homeRow.replace(/(<td>[^<]*<\/td>)(?=<\/tr>)/, `<td style="color: orange;">-</td>`);
+                            }
+                        } else {
+                            // イニングの切り替わり中など (Middle, End)
+                            awayRow += `<td>${inningData?.away?.runs !== undefined ? inningData.away.runs : '0'}</td>`;
+                            homeRow += `<td>${inningData?.home?.runs !== undefined ? inningData.home.runs : '0'}</td>`;
+                        }
+                    } else {
+                        // 未来のイニング (まだ開始していない)
+                        awayRow += `<td></td>`;
+                        homeRow += `<td></td>`;
+                    }
+                }
+            }
 
             // R, H, Eの列を追加
             inningsHeader += '<th>R</th><th>H</th><th>E</th></tr>';
@@ -830,217 +994,231 @@ function renderGamesList(games) {
                 </table>
             `;
         }
+        // 投手情報をレンダリング (テーブル + 帯グラフ形式 - 投球数/投球回切り替え対応、複数投手対応)
+        function renderPitcherInfo(players, teamId, allPlays, decisions) {
+            let pitcherRows = '';
+            const pitcherStats = {};
+            const actualPitchersOrder = []; // 登板順を記録する配列
+            const pitcherPitchesMap = {}; // 投手ID -> 投球数 のマップ
+            const pitcherInningsMap = {}; // 投手ID -> 投球回数 (小数) のマップ
 
+            // 1. プレイヤーデータから投手情報を取得し、投球数と投球回も収集
+            const playerIds = Object.keys(players);
+            for (const playerId of playerIds) {
+                const player = players[playerId];
+                // 投手 (position.code === '1') かつ 投球回がある or 投球関連statsがある
+                if (player.position.code === '1' && (player.stats?.pitching?.inningsPitched || player.stats?.pitching)) {
+                    const pitchingStats = player.stats.pitching || {};
+                    let era = '0.00';
+                    if (pitchingStats.era !== undefined) {
+                        era = pitchingStats.era.toFixed(2);
+                    } else if (pitchingStats.inningsPitched > 0 && pitchingStats.earnedRuns !== undefined) {
+                        era = ((pitchingStats.earnedRuns * 9) / pitchingStats.inningsPitched).toFixed(2);
+                    }
+                    const numberOfPitches = pitchingStats.numberOfPitches || 0;
+                    const inningsPitched = pitchingStats.inningsPitched || 0;
+                    const strikes = pitchingStats.strikes || 0;
 
-// 投手情報をレンダリング (テーブル + 帯グラフ形式)
-function renderPitcherInfo(players, teamId, allPlays, decisions) {
-    let pitcherRows = '';
-    let pitcherChartData = []; // 帯グラフ用データ
-    const pitcherStats = {};
-    const actualPitchersOrder = [];
+                    pitcherStats[player.person.id] = {
+                        fullName: player.person.fullName,
+                        stats: {
+                            inningsPitched: inningsPitched,
+                            runs: pitchingStats.runs || 0,
+                            earnedRuns: pitchingStats.earnedRuns || 0,
+                            hits: pitchingStats.hits || 0,
+                            strikeOuts: pitchingStats.strikeOuts || 0,
+                            baseOnBalls: pitchingStats.baseOnBalls || 0,
+                            numberOfPitches: numberOfPitches,
+                            strikes: strikes,
+                            outs: pitchingStats.outs || 0,
+                            wins: pitchingStats.wins || 0,
+                            losses: pitchingStats.losses || 0,
+                            saves: pitchingStats.saves || 0,
+                            holds: pitchingStats.holds || 0,
+                            era: era,
+                        }
+                    };
 
-    // 1. プレイヤーデータから投手情報を取得
-    const playerIds = Object.keys(players);
-    for (const playerId of playerIds) {
-        const player = players[playerId];
-        if (player.position.code === '1' && (player.stats?.pitching?.inningsPitched || player.stats?.pitching)) {
-            const pitchingStats = player.stats.pitching || {};
-            
-            let era = '0.00';
-            if (pitchingStats.era !== undefined) {
-                era = pitchingStats.era.toFixed(2);
-            } else if (pitchingStats.inningsPitched > 0 && pitchingStats.earnedRuns !== undefined) {
-                era = ((pitchingStats.earnedRuns * 9) / pitchingStats.inningsPitched).toFixed(2);
-            }
-            
-            const numberOfPitches = pitchingStats.numberOfPitches || 0;
-            
-            pitcherStats[player.person.id] = {
-                fullName: player.person.fullName,
-                stats: {
-                    inningsPitched: pitchingStats.inningsPitched || 0,
-                    runs: pitchingStats.runs || 0,
-                    earnedRuns: pitchingStats.earnedRuns || 0,
-                    hits: pitchingStats.hits || 0,
-                    strikeOuts: pitchingStats.strikeOuts || 0,
-                    baseOnBalls: pitchingStats.baseOnBalls || 0,
-                    numberOfPitches: numberOfPitches,
-                    strikes: pitchingStats.strikes || 0,
-                    outs: pitchingStats.outs || 0,
-                    wins: pitchingStats.wins || 0,
-                    losses: pitchingStats.losses || 0,
-                    saves: pitchingStats.saves || 0,
-                    era: era
+                    // 投球数と投球回が0より大きい場合、帯グラフ用データを準備
+                    if (numberOfPitches > 0) {
+                         pitcherPitchesMap[player.person.id] = numberOfPitches;
+                    }
+                    if (inningsPitched > 0) {
+                         pitcherInningsMap[player.person.id] = inningsPitched; // 小数 (例: 1.1 for 1 1/3)
+                    }
                 }
-            };
-            
-            // 帯グラフ用データを収集（投球数が0より大きい場合のみ）
-            if (numberOfPitches > 0) {
-                pitcherChartData.push({
-                    id: player.person.id,
-                    name: player.person.fullName,
-                    pitches: numberOfPitches
+            }
+
+            // 2. プレイデータを走査して、実際に投球した投手の登板順を特定
+            allPlays.forEach(play => {
+                const pitcherId = play.matchup?.pitcher?.id;
+                // pitcherId が有効で、このチームの投手であり、まだリストに追加されていない場合
+                if (pitcherId && pitcherStats[pitcherId] && !actualPitchersOrder.includes(pitcherId)) {
+                    actualPitchersOrder.push(pitcherId);
+                }
+            });
+
+            // 3. 決定事項から勝利/敗戦/セーブ投手のIDを取得 (表示用)
+            const winnerId = decisions?.winner?.id ? String(decisions.winner.id) : null;
+            const loserId = decisions?.loser?.id ? String(decisions.loser.id) : null;
+            const saveId = decisions?.save?.id ? String(decisions.save.id) : null;
+
+            // 4. 帯グラフを生成 (登板順に並び替え、切り替え対応)
+            let pitcherBarChart = '';
+            const hasPitches = Object.keys(pitcherPitchesMap).length > 0;
+            const hasInnings = Object.keys(pitcherInningsMap).length > 0;
+
+            // 投手が1人以上いる場合のみチャートを表示
+            if (actualPitchersOrder.length > 0) {
+                 // 色の配列を定義
+                 const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#AED6F1', '#D7BDE2'];
+                 
+                 // グラフを生成する内部関数
+                 function generateGraph(dataArray, totalValue, unit, chartType) {
+                    if (dataArray.length === 0) return '<p>データがありません</p>';
+                    let barSegments = '';
+                    let barLabels = '';
+                    let cumulativePercentage = 0;
+                    dataArray.forEach((item, index) => {
+                        const percentage = (item.value / totalValue) * 100;
+                        const color = colors[index % colors.length];
+                        barSegments += `
+                        <div class="pitcher-bar-segment"
+                            style="width: ${percentage}%; background-color: ${color};"
+                            title="${item.name}: ${item.value}${unit} (${percentage.toFixed(1)}%)">
+                            ${percentage > 8 ? `${Math.round(percentage)}%` : ''}
+                        </div>
+                    `;
+                        // ラベルを配置
+                        const labelPosition = cumulativePercentage + (percentage / 2);
+                        barLabels += `
+                        <div class="pitcher-bar-label"
+                            style="left: ${labelPosition}%; transform: translateX(-50%); color: ${color};">
+                            ${item.name.split(' ').pop()}<br>${item.value}${unit}
+                        </div>
+                    `;
+                        cumulativePercentage += percentage;
+                    });
+                    return `
+                        <div style="position: relative; margin-bottom: 30px;">
+                            <div class="pitcher-bar-container">
+                                ${barSegments}
+                            </div>
+                            <div style="position: relative; height: 40px; margin-top: 5px;">
+                                ${barLabels}
+                            </div>
+                        </div>
+                        <div style="font-size: 14px; color: #ccc; margin-top: 10px;">
+                            合計${chartType === 'pitches' ? '投球数' : '投球回'}: ${totalValue}${unit}
+                        </div>
+                    `;
+                 }
+
+                 // 登板順に応じて初期チャートデータを構築 (投球数ベース)
+                 let initialChartData = [];
+                 actualPitchersOrder.forEach(pId => {
+                     if (pitcherPitchesMap[pId]) { // 投球数がある投手のみ
+                         initialChartData.push({
+                             id: pId,
+                             name: pitcherStats[pId].fullName,
+                             value: pitcherPitchesMap[pId],
+                             type: 'pitches'
+                         });
+                     }
+                 });
+                 
+                 // 初期チャートデータがある場合のみボタンとチャートを表示
+                 if (initialChartData.length > 0) {
+                     const totalInitialValue = initialChartData.reduce((sum, item) => sum + item.value, 0);
+                     const initialGraph = generateGraph(initialChartData, totalInitialValue, '球', 'pitches');
+
+                     pitcherBarChart = `
+                 <div class="pitcher-chart-container">
+                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                         <h4 style="margin: 0;">投球数/投球回分布</h4>
+                         <div>
+                             <button class="toggle-chart-btn active" data-type="pitches" data-team="${teamId}" style="padding: 5px 10px; margin: 0 2px; background-color: #424242; color: white; border: 1px solid #555; border-radius: 3px; cursor: pointer;">投球数</button>
+                             <button class="toggle-chart-btn" data-type="innings" data-team="${teamId}" style="padding: 5px 10px; margin: 0 2px; background-color: #2d2d2d; color: #ccc; border: 1px solid #444; border-radius: 3px; cursor: pointer;">投球回</button>
+                         </div>
+                     </div>
+                     <div class="pitcher-chart-content" id="pitcher-chart-content-${teamId}">
+                         ${initialGraph}
+                     </div>
+                 </div>
+             `;
+                 } else {
+                     // 投球数データがないが、投手は登板している場合
+                     pitcherBarChart = `
+                 <div class="pitcher-chart-container">
+                     <h4 style="margin: 0 0 10px 0;">投球数/投球回分布</h4>
+                     <p>データがありません</p>
+                 </div>
+             `;
+                 }
+            }
+            // 投手が全くいない場合はチャートを表示しない
+
+            // 5. テーブルデータを生成 (登板順に並び替え)
+            if (actualPitchersOrder.length > 0) {
+                actualPitchersOrder.forEach(pId => {
+                    const p = pitcherStats[pId];
+                    if (!p) return; // 安全チェック
+                    let nameStyle = "";
+                    if (String(pId) === winnerId) {
+                        nameStyle = "style='color: #4CAF50;'";
+                    } else if (String(pId) === loserId) {
+                        nameStyle = "style='color: #F44336;'";
+                    } else if (String(pId) === saveId) {
+                        nameStyle = "style='color: #2196F3;'";
+                    } else if (p.stats.holds === 1) {
+                        nameStyle = "style='color: #FFC107;'";
+                    }
+                    pitcherRows += `
+                <tr>
+                    <td><strong ${nameStyle}>${p.fullName}</strong></td>
+                    <td>${p.stats.inningsPitched}</td>
+                    <td>${p.stats.hits}</td>
+                    <td>${p.stats.runs}</td>
+                    <td>${p.stats.earnedRuns}</td>
+                    <td>${p.stats.era}</td>
+                    <td>${p.stats.strikeOuts}</td>
+                    <td>${p.stats.baseOnBalls}</td>
+                    <td>${p.stats.numberOfPitches}</td>
+                </tr>
+            `;
                 });
-            }
-        }
-    }
-
-    // 2. 実際に投球した投手の出場順を特定
-    allPlays.forEach(play => {
-        const playEvents = play.playEvents || [];
-        const pitcherId = play.matchup?.pitcher?.id;
-        if (pitcherId && !actualPitchersOrder.includes(pitcherId)) {
-            actualPitchersOrder.push(pitcherId);
-        }
-    });
-
-    // 3. 決定事項から勝利/敗戦/セーブ投手のIDを取得
-    const winnerId = decisions?.winner?.id ? String(decisions.winner.id) : null;
-    const loserId = decisions?.loser?.id ? String(decisions.loser.id) : null;
-    const saveId = decisions?.save?.id ? String(decisions.save.id) : null;
-
-    // 4. 帯グラフを生成
-    let pitcherBarChart = '';
-    if (pitcherChartData.length > 0) {
-        const totalPitches = pitcherChartData.reduce((sum, p) => sum + p.pitches, 0);
-        
-        // 投球数でソート（多い順）
-        pitcherChartData.sort((a, b) => b.pitches - a.pitches);
-        
-        // 色の配列を定義
-        const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F'];
-        
-        let barSegments = '';
-        let barLabels = '';
-        let cumulativePercentage = 0;
-        
-        pitcherChartData.forEach((pitcher, index) => {
-            const percentage = (pitcher.pitches / totalPitches) * 100;
-            const color = colors[index % colors.length];
-            
-            barSegments += `
-                <div class="pitcher-bar-segment" 
-                     style="width: ${percentage}%; background-color: ${color};"
-                     title="${pitcher.name}: ${pitcher.pitches}球 (${percentage.toFixed(1)}%)">
-                    ${percentage > 8 ? `${Math.round(percentage)}%` : ''}
-                </div>
-            `;
-            
-            // ラベルを配置
-            const labelPosition = cumulativePercentage + (percentage / 2);
-            barLabels += `
-                <div class="pitcher-bar-label" 
-                     style="left: ${labelPosition}%; transform: translateX(-50%); color: ${color};">
-                    ${pitcher.name.split(' ').pop()}<br>${pitcher.pitches}球
-                </div>
-            `;
-            
-            cumulativePercentage += percentage;
-        });
-        
-        pitcherBarChart = `
-            <div class="pitcher-chart-container">
-                <h4>投球数分布</h4>
-                <div style="position: relative; margin-bottom: 30px;">
-                    <div class="pitcher-bar-container">
-                        ${barSegments}
-                    </div>
-                    <div style="position: relative; height: 40px; margin-top: 5px;">
-                        ${barLabels}
-                    </div>
-                </div>
-                <div style="font-size: 14px; color: #ccc; margin-top: 10px;">
-                    合計投球数: ${totalPitches}球
-                </div>
-            </div>
-        `;
-    }
-
-    // 5. テーブルデータを生成
-    actualPitchersOrder.forEach(pId => {
-        const pIdStr = String(pId);
-        if (pitcherStats[pId]) {
-            const p = pitcherStats[pId];
-            let nameStyle = "";
-
-            if (pIdStr === winnerId) {
-                nameStyle = "style='color: #4CAF50;'";
-            } else if (pIdStr === loserId) {
-                nameStyle = "style='color: #F44336;'";
-            } else if (pIdStr === saveId) {
-                nameStyle = "style='color: #2196F3;'";
+            } else {
+                // 登板投手がいない場合
+                pitcherRows = '<tr><td colspan="8">登板投手がいません</td></tr>';
             }
 
-            pitcherRows += `
-                <tr>
-                    <td><strong ${nameStyle}>${p.fullName}</strong></td>
-                    <td>${p.stats.inningsPitched}</td>
-                    <td>${p.stats.hits}</td>
-                    <td>${p.stats.earnedRuns}</td>
-                    <td>${p.stats.era}</td>
-                    <td>${p.stats.strikeOuts}</td>
-                    <td>${p.stats.baseOnBalls}</td>
-                    <td>${p.stats.numberOfPitches}</td>
-                </tr>
+            // 6. 結果を返す
+            // テーブルを .table-container で囲む
+            return `
+                ${pitcherBarChart}
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>投手名</th>
+                                <th>投球回</th>
+                                <th>被安打</th>
+                                <th>失点</th>
+                                <th>自責点</th>
+                                <th>防御率</th>
+                                <th>奪三振</th>
+                                <th>四球</th>
+                                <th>投球数</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${pitcherRows}
+                        </tbody>
+                    </table>
+                </div>
             `;
         }
-    });
 
-    // 6. 実際に投球した投手がいない場合のフォールバック
-    if (pitcherRows === '') {
-        for (const pId in pitcherStats) {
-            const p = pitcherStats[pId];
-            let nameStyle = "";
-
-            if (pId === winnerId) {
-                nameStyle = "style='color: #4CAF50;'";
-            } else if (pId === loserId) {
-                nameStyle = "style='color: #c0101e;'";
-            } else if (pId === saveId) {
-                nameStyle = "style='color: #2196F3;'";
-            }
-
-            pitcherRows += `
-                <tr>
-                    <td><strong ${nameStyle}>${p.fullName}</strong></td>
-                    <td>${p.stats.inningsPitched}</td>
-                    <td>${p.stats.hits}</td>
-                    <td>${p.stats.earnedRuns}</td>
-                    <td>${p.stats.era}</td>
-                    <td>${p.stats.strikeOuts}</td>
-                    <td>${p.stats.baseOnBalls}</td>
-                    <td>${p.stats.numberOfPitches}</td>
-                </tr>
-            `;
-        }
-    }
-
-    // 7. 結果を返す
-    if (pitcherRows === '') {
-        return '<p>投手データがありません</p>';
-    }
-
-    return `
-        ${pitcherBarChart}
-        <table>
-            <thead>
-                <tr>
-                    <th>投手名</th>
-                    <th>投球回</th>
-                    <th>被安打</th>
-                    <th>自責点</th>
-                    <th>防御率</th>
-                    <th>三振</th>
-                    <th>四球</th>
-                    <th>投球数</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${pitcherRows}
-            </tbody>
-        </table>
-    `;
-}
         // 打席情報をレンダリング
         function renderAtBats(plays) {
             // 最新の打席から表示するために逆順にする
@@ -1052,6 +1230,7 @@ function renderPitcherInfo(players, teamId, allPlays, decisions) {
                 const count = play.count || { balls: 0, strikes: 0, outs: 0 };
                 const inning = play.about?.inning || '';
                 const halfInning = play.about?.halfInning || '';
+                const description = play.result?.description || '';
                 // ピッチの詳細を変換
                 const pitches = playEvents.map(event => {
                     if (event.type === 'pitch') {
@@ -1086,12 +1265,13 @@ function renderPitcherInfo(players, teamId, allPlays, decisions) {
                             ${pitches.join('')}
                         </div>
                         <div class="result ${resultClass}">
-                            Result: ${result}
+                            Result: ${result} - ${description}
                         </div>
                     </div>
                 `;
             }).join('');
         }
+
         // 打者情報をレンダリング
         function renderBatterInfo(players) {
             // プレイヤーIDの配列を取得
@@ -1100,7 +1280,7 @@ function renderPitcherInfo(players, teamId, allPlays, decisions) {
             // 打者データを抽出・フィルタリング (打席数が1以上)
             const batters = playerIds
                 .map(playerId => players[playerId])
-                .filter(player => player.stats?.batting?.atBats > 0); // 打席数が1以上の選手のみ
+                .filter(player => player.stats?.batting?.atBats > 0 || player.stats?.batting?.gamesPlayed > 0); // 打席数が1以上の選手のみ
 
             // 打者を打順 (battingOrder) でソート
             batters.sort((a, b) => (a.battingOrder || 999) - (b.battingOrder || 999));
@@ -1112,22 +1292,23 @@ function renderPitcherInfo(players, teamId, allPlays, decisions) {
 
             // テーブルヘッダー (守備位置列を追加)
             let batterTable = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>打順</th>
-                            <th>守備位置</th> <!-- 新しい列 -->
-                            <th>選手名</th>
-                            <th>打席</th>
-                            <th>安打</th>
-                            <th>打点</th>
-                            <th>得点</th>
-                            <th>三振</th>
-                            <th>四球</th>
-                            <th>本塁打</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>打順</th>
+                                <th>位置</th>
+                                <th>選手名</th>
+                                <th>打</th>
+                                <th>安</th>
+                                <th>点</th>
+                                <th>得</th>
+                                <th>振</th>
+                                <th>四</th>
+                                <th>本</th>
+                            </tr>
+                        </thead>
+                        <tbody>
             `;
 
             // 打者データをテーブル行に変換
@@ -1154,7 +1335,7 @@ function renderPitcherInfo(players, teamId, allPlays, decisions) {
                 return `
                     <tr>
                         <td>${displayOrder}</td>
-                        <td>${positionAbbrev}</td> <!-- 守備位置を表示 -->
+                        <td>${positionAbbrev}</td>
                         <td>${batter.person.fullName}</td>
                         <td>${atBats}</td>
                         <td>${hits}</td>
@@ -1168,17 +1349,216 @@ function renderPitcherInfo(players, teamId, allPlays, decisions) {
             }).join('');
 
             batterTable += `
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             `;
 
             return batterTable;
-        } // ページ読み込み時に初期表示
+        }
+
+ // 投球数/投球回グラフ切り替え関数 (イベントリスナー版 - 修正版)
+        function setupTogglePitcherChartListeners() {
+            document.addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('toggle-chart-btn')) {
+                    const chartType = e.target.dataset.type;
+                    const teamId = e.target.dataset.team;
+                    
+                    // ボタンのアクティブ状態を更新
+                    const buttons = document.querySelectorAll(`.toggle-chart-btn[data-team="${teamId}"]`);
+                    buttons.forEach(btn => {
+                        if (btn.dataset.type === chartType) {
+                            btn.classList.add('active');
+                            btn.style.backgroundColor = '#424242';
+                            btn.style.color = 'white';
+                        } else {
+                            btn.classList.remove('active');
+                            btn.style.backgroundColor = '#2d2d2d';
+                            btn.style.color = '#ccc';
+                        }
+                    });
+
+                    // 対象のチームのチャートコンテンツを取得
+                    const chartContentDiv = document.getElementById(`pitcher-chart-content-${teamId}`);
+                    if (!chartContentDiv) return;
+
+                    // グローバルなゲームデータから必要な情報を取得
+                    const gameData = window.currentGameData;
+                    if (!gameData) {
+                        chartContentDiv.innerHTML = '<p>ゲームデータが見つかりません</p>';
+                        return;
+                    }
+
+                    const awayTeamId = gameData.gameData.teams.away.id;
+                    const homeTeamId = gameData.gameData.teams.home.id;
+                    const plays = gameData.liveData.plays.allPlays || [];
+                    let players = {};
+                    let pitcherStats = {};
+                    let actualPitchersOrder = [];
+                    let pitcherPitchesMap = {};
+                    let pitcherInningsMap = {};
+
+                    // チームに応じてプレイヤーデータを取得
+                    if (Number(teamId) === awayTeamId) {
+                        players = gameData.liveData.boxscore.teams.away.players || {};
+                    } else if (Number(teamId) === homeTeamId) {
+                        players = gameData.liveData.boxscore.teams.home.players || {};
+                    } else {
+                        chartContentDiv.innerHTML = '<p>チーム情報が一致しません</p>';
+                        return;
+                    }
+
+                    // 投手情報を再構築
+                    const playerIds = Object.keys(players);
+                    for (const playerId of playerIds) {
+                        const player = players[playerId];
+                        if (player.position.code === '1' && (player.stats?.pitching?.inningsPitched || player.stats?.pitching)) {
+                            const pitchingStats = player.stats.pitching || {};
+                            let era = '0.00';
+                            if (pitchingStats.era !== undefined) {
+                                era = pitchingStats.era.toFixed(2);
+                            } else if (pitchingStats.inningsPitched > 0 && pitchingStats.earnedRuns !== undefined) {
+                                era = ((pitchingStats.earnedRuns * 9) / pitchingStats.inningsPitched).toFixed(2);
+                            }
+                            const numberOfPitches = pitchingStats.numberOfPitches || 0;
+                            const inningsPitched = pitchingStats.inningsPitched || 0;
+
+                            pitcherStats[player.person.id] = {
+                                fullName: player.person.fullName,
+                                stats: {
+                                    inningsPitched: inningsPitched,
+                                    runs: pitchingStats.runs || 0,
+                                    earnedRuns: pitchingStats.earnedRuns || 0,
+                                    hits: pitchingStats.hits || 0,
+                                    strikeOuts: pitchingStats.strikeOuts || 0,
+                                    baseOnBalls: pitchingStats.baseOnBalls || 0,
+                                    numberOfPitches: numberOfPitches,
+                                    strikes: pitchingStats.strikes || 0,
+                                    outs: pitchingStats.outs || 0,
+                                    wins: pitchingStats.wins || 0,
+                                    losses: pitchingStats.losses || 0,
+                                    saves: pitchingStats.saves || 0,
+                                    era: era
+                                }
+                            };
+
+                            if (numberOfPitches > 0) {
+                                pitcherPitchesMap[player.person.id] = numberOfPitches;
+                            }
+                            if (inningsPitched > 0) {
+                                pitcherInningsMap[player.person.id] = inningsPitched;
+                            }
+                        }
+                    }
+
+                    // 登板順を再構築
+                    plays.forEach(play => {
+                        const pitcherId = play.matchup?.pitcher?.id;
+                        if (pitcherId && pitcherStats[pitcherId] && !actualPitchersOrder.includes(pitcherId)) {
+                            actualPitchersOrder.push(pitcherId);
+                        }
+                    });
+
+                    // 色の配列を定義
+                    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#AED6F1', '#D7BDE2'];
+                    
+                    // グラフ生成関数
+                    function generateGraph(dataArray, totalValue, unit) {
+                        if (dataArray.length === 0) return '<p>データがありません</p>';
+                        let barSegments = '';
+                        let barLabels = '';
+                        let cumulativePercentage = 0;
+                        dataArray.forEach((item, index) => {
+                            const percentage = (item.value / totalValue) * 100;
+                            const color = colors[index % colors.length];
+                            barSegments += `
+                            <div class="pitcher-bar-segment"
+                                style="width: ${percentage}%; background-color: ${color};"
+                                title="${item.name}: ${item.value}${unit} (${percentage.toFixed(1)}%)">
+                                ${percentage > 8 ? `${Math.round(percentage)}%` : ''}
+                            </div>
+                        `;
+                            const labelPosition = cumulativePercentage + (percentage / 2);
+                            barLabels += `
+                            <div class="pitcher-bar-label"
+                                style="left: ${labelPosition}%; transform: translateX(-50%); color: ${color};">
+                                ${item.name.split(' ').pop()}<br>${item.value}${unit}
+                            </div>
+                        `;
+                            cumulativePercentage += percentage;
+                        });
+                        return `
+                            <div style="position: relative; margin-bottom: 30px;">
+                                <div class="pitcher-bar-container">
+                                    ${barSegments}
+                                </div>
+                                <div style="position: relative; height: 40px; margin-top: 5px;">
+                                    ${barLabels}
+                                </div>
+                            </div>
+                            <div style="font-size: 14px; color: #ccc; margin-top: 10px;">
+                                合計${chartType === 'pitches' ? '投球数' : '投球回'}: ${totalValue}${unit}
+                            </div>
+                        `;
+                    }
+
+                    // チャートデータを構築
+                    let chartData = [];
+                    if (chartType === 'pitches') {
+                        actualPitchersOrder.forEach(pId => {
+                            if (pitcherPitchesMap[pId]) {
+                                chartData.push({
+                                    id: pId,
+                                    name: pitcherStats[pId]?.fullName || `投手${pId}`,
+                                    value: pitcherPitchesMap[pId]
+                                });
+                            }
+                        });
+                    } else { // innings
+                        actualPitchersOrder.forEach(pId => {
+                            if (pitcherInningsMap[pId]) {
+                                // 投球回数を適切な形式で表示 (例: 1.1 -> 1 1/3)
+                                let displayValue = pitcherInningsMap[pId];
+                                // string型からfloat型に変換
+                                displayValue = parseFloat(displayValue);
+                                // 小数点以下の処理 (1.1 -> 1 1/3)
+                                chartData.push({
+                                    id: pId,
+                                    name: pitcherStats[pId]?.fullName || `投手${pId}`,
+                                    value: displayValue // 実際にはフォーマットが必要
+                                });
+                                
+                            }
+                        });
+                    }
+
+                    const totalValue = chartData.reduce((sum, item) => sum + item.value, 0);
+                 
+                  
+                    const unit = chartType === 'pitches' ? '球' : '回';
+
+                    if (chartData.length > 0) {
+                        const newGraphHtml = generateGraph(chartData, totalValue, unit);
+                        chartContentDiv.innerHTML = newGraphHtml;
+                    } else {
+                        chartContentDiv.innerHTML = '<p>データがありません</p>';
+                    }
+                }
+            });
+        }
+        // ページ読み込み時に初期表示
         document.addEventListener('DOMContentLoaded', function () {
             // 日付入力フィールドに今日の日付を設定
             const today = new Date();
             const formattedDate = today.toISOString().split('T')[0];
             document.getElementById('date-input').value = formattedDate;
+            // グラフ切り替え用のイベントリスナーを設定
+            setupTogglePitcherChartListeners();
+        });
+
+        // ページアンロード時に自動更新をクリア
+        window.addEventListener('beforeunload', () => {
+            stopAutoRefresh();
         });
     </script>
 </body>

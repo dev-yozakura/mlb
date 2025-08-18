@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB ストリーム プレーヤー</title>
+    <style>
+        /* ===== ダークモード / YouTube ライクなスタイル ===== */
+        :root {
+            --bg-primary: #0f0f0f; /* ページ背景 */
+            --bg-secondary: #272727; /* コントロールパネル背景 */
+            --bg-tertiary: #181818; /* プレーヤー背景 */
+            --text-primary: #ffffff;
+            --text-secondary: #aaaaaa;
+            --accent-color: #ff4444; /* アクセントカラー（赤） */
+            --button-hover: #333333;
+            --border-color: #303030;
+            --success-color: #4CAF50;
+            --warning-color: #FFC107;
+            --error-color: #F44336;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* --- ヘッダー --- */
+        .header {
+            display: flex;
+            flex-wrap: wrap; /* モバイル対応 */
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-right: 10px;
+            flex-shrink: 0; /* ロゴが縮まないように */
+        }
+
+        .date-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .date-selector label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .date-input {
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .btn-refresh {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-refresh:hover {
+            background-color: var(--button-hover);
+        }
+
+        .status-message {
+            margin-left: auto;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .status-message.loading {
+            background-color: var(--button-hover);
+            color: var(--text-secondary);
+        }
+        .status-message.error {
+            background-color: rgba(244, 67, 54, 0.2);
+            color: var(--error-color);
+            border: 1px solid var(--error-color);
+        }
+        .status-message.success {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+
+
+        .search-bar {
+            flex-grow: 1;
+            padding: 8px 12px;
+            border-radius: 2px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            min-width: 150px; /* 最小幅を設定 */
+        }
+
+        .user-actions {
+            margin-left: 20px;
+            color: var(--text-secondary);
+            flex-shrink: 0; /* 縮まないように */
+        }
+
+        /* --- メインコンテンツ --- */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @media (min-width: 992px) {
+            .main-content {
+                flex-direction: row;
+            }
+        }
+
+        /* --- プレーヤーコンテナ --- */
+        .player-section {
+            flex: 1;
+            min-width: 0; /* flexbox の子要素で overflow を防ぐ */
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            height: 0;
+            background-color: var(--bg-tertiary); /* ロード中やエラー時の背景 */
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            margin-top: 12px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .video-info {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- コントロールパネル --- */
+        .controls-section {
+            width: 100%;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            max-height: 70vh; /* 高さ制限 */
+            overflow-y: auto; /* 縦スクロール */
+        }
+
+        @media (min-width: 992px) {
+            .controls-section {
+                width: 350px;
+                margin-top: 0;
+                align-self: flex-start; /* 上揃え */
+                height: fit-content; /* 高さを内容に合わせる */
+                max-height: none; /* デスクトップでは高さ制限解除 */
+                overflow-y: visible; /* スクロール解除 */
+            }
+        }
+
+        .control-title {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stream-list {
+            list-style: none;
+        }
+
+        .stream-item {
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .stream-item:hover {
+            background-color: var(--button-hover);
+        }
+
+        .stream-item.active {
+            background-color: rgba(255, 68, 68, 0.1); /* 薄い赤背景 */
+            border: 1px solid var(--accent-color);
+        }
+
+        .stream-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .stream-item-title {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .stream-item-status {
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: var(--button-hover);
+        }
+        .stream-item-status.live {
+            background-color: rgba(255, 68, 68, 0.2);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+        .stream-item-status.final {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+
+        .stream-item-teams {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .stream-item-team-away, .stream-item-team-home {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* デフォルトは右揃え */
+        }
+        .stream-item-team-home {
+             align-items: flex-start; /* ホームチームは左揃え */
+        }
+
+        .stream-item-score {
+            font-weight: bold;
+        }
+
+        .stream-item-venue {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .no-games {
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+
+        /* --- ボトムナビゲーション (モバイル) --- */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+            display: none; /* デフォルトは非表示 */
+        }
+
+        @media (max-width: 991px) {
+            .bottom-nav {
+                display: flex;
+            }
+            /* モバイルではコントロールセクションを非表示にしない例 */
+            /* .controls-section {
+                display: none;
+            } */
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .nav-item.active {
+            color: var(--accent-color);
+        }
+
+        /* --- ボタン --- */
+        .btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin: 5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--button-hover);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc3333; /* 少し暗い赤 */
+            border-color: #cc3333;
+        }
+
+        /* --- フッター --- */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        /* ストリームリンクのスタイル */
+        .stream-item-streams {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .stream-link {
+            display: inline-block;
+            margin: 3px 5px 3px 0;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .stream-link:hover {
+            background-color: var(--button-hover);
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+        }
+
+        /* 選択中のストリームリンクにスタイルを適用するには、
+           JavaScriptで対応するリンクにクラスを追加するロジックが必要になります。
+           例: renderStreamList 内で現在選択中のリンクに 'active-stream' クラスを付与 */
+        .stream-link.active-stream {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="logo">MLB TV</div>
+        <div class="date-selector">
+            <label for="game-date">Date:</label>
+            <input type="date" id="game-date" class="date-input">
+            <button id="refresh-btn" class="btn-refresh">Refresh</button>
+        </div>
+        <div id="status-message" class="status-message loading">Loading initial data...</div>
+        <!-- <input type="text" class="search-bar" placeholder="Search for games..."> -->
+        <!-- <div class="user-actions">Sign in</div> -->
+    </header>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <!-- プレーヤーセクション -->
+        <section class="player-section">
+            <div class="video-wrapper">
+                <!-- 初期表示は空、またはプレースホルダー -->
+                <iframe id="stream-frame"
+                        src="about:blank" <!-- 初期は空 -->
+                        allowfullscreen
+                        allowtransparency
+                        referrerpolicy="unsafe-url"
+                        title="MLB Stream">
+                </iframe>
+            </div>
+            <h2 class="video-title" id="stream-title">Select a game</h2>
+            <div class="video-info" id="stream-info">No game selected</div>
+
+             <div style="margin-top: 15px;">
+                <button class="btn btn-primary">Subscribe</button>
+                <button class="btn">Like</button>
+                <button class="btn">Share</button>
+            </div>
+        </section>
+
+        <!-- コントロール / サイドバーセクション -->
+        <aside class="controls-section">
+            <div class="control-title">
+                <span>Games</span>
+                <span id="game-count">0</span>
+            </div>
+            <ul class="stream-list" id="stream-list">
+                <!-- JavaScript で動的にリストアイテムを生成 -->
+                <li class="no-games">Loading games...</li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- ボトムナビゲーション (モバイル) -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">Home</a>
+        <a href="#" class="nav-item">Trending</a>
+        <a href="#" class="nav-item">Subscriptions</a>
+        <a href="#" class="nav-item">Library</a>
+    </nav>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p>&copy; 2025 MLB. All rights reserved. Officially licensed content.</p>
+    </footer>
+</div>
+
+<script>
+    
+    // --- 設定 ---
+    const MLB_API_BASE = 'https://statsapi.mlb.com/api/v1';
+    const EMBED_BASE_URL = 'https://embedsports.me/mlb'; // 例に従う
+
+    // --- DOM要素の取得 ---
+    const gameDateInput = document.getElementById('game-date');
+    const refreshBtn = document.getElementById('refresh-btn');
+    const statusMessageElement = document.getElementById('status-message');
+    const streamFrame = document.getElementById('stream-frame');
+    const titleElement = document.getElementById('stream-title');
+    const infoElement = document.getElementById('stream-info');
+    const streamListElement = document.getElementById('stream-list');
+    const gameCountElement = document.getElementById('game-count');
+
+        // --- 状態管理 ---
+    let currentGames = [];
+    let currentSelectedGamePk = null;
+    let currentSelectedStreamIndex = 0; // 新しく追加: 選択中のストリームインデックス
+
+    // --- ユーティリティ関数 ---
+    function formatDateForInput(dateObj) {
+        const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+        const day = String(dateObj.getDate()).padStart(2, '0');
+        const year = dateObj.getFullYear();
+        return `${year}-${month}-${day}`;
+    }
+
+    function formatDateForApi(dateObj) {
+        // APIは MM/DD/YYYY 形式
+        const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+        const day = String(dateObj.getDate()).padStart(2, '0');
+        const year = dateObj.getFullYear();
+        return `${month}/${day}/${year}`;
+    }
+
+        function formatTeamNameForUrl(teamName) {
+        // 例: "St. Louis Cardinals" -> "st-louis-cardinals"
+        // まず "St." を "st-" に置換
+        let formattedName = teamName.replace(/St\./g, 'st');
+        // その後、他のスペースをハイフンに置換し、小文字に変換
+        formattedName = formattedName.toLowerCase().replace(/\s+/g, '-');
+        return formattedName;
+    }
+
+    function generateEmbedUrl(homeTeamName, awayTeamName) {
+        const homeSlug = formatTeamNameForUrl(homeTeamName);
+        const awaySlug = formatTeamNameForUrl(awayTeamName);
+        // 例に従って URL を構築
+        return `${EMBED_BASE_URL}/${homeSlug}-vs-${awaySlug}-stream-1`;
+    }
+
+    function getGameStatusClass(detailedState) {
+        if (detailedState.toLowerCase().includes('live') || detailedState.toLowerCase().includes('in progress')) {
+            return 'live';
+        } else if (detailedState.toLowerCase().includes('final')) {
+            return 'final';
+        }
+        return ''; // その他 (Scheduled など)
+    }
+
+    function updateStatus(message, type = 'loading') {
+        statusMessageElement.textContent = message;
+        statusMessageElement.className = 'status-message ' + type;
+    }
+
+    // --- API呼び出しとデータ処理 ---
+    async function fetchGames(dateStr) { // dateStr は MM/DD/YYYY
+        const url = `${MLB_API_BASE}/schedule/games/?sportId=1&date=${dateStr}`;
+        updateStatus(`Fetching games for ${dateStr}...`, 'loading');
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+            const data = await response.json();
+            console.log("Fetched data:", data); // デバッグ用
+            return data;
+        } catch (error) {
+            console.error("Error fetching games:", error);
+            updateStatus(`Error: ${error.message}`, 'error');
+            return null;
+        }
+    }
+
+        function processGamesData(data) {
+        if (!data || !data.dates || data.dates.length === 0 || !data.dates[0].games) {
+            updateStatus('No games data found.', 'error');
+            return [];
+        }
+
+        const games = data.dates[0].games;
+        const processedGames = games.map(game => {
+            const homeTeam = game.teams.home.team;
+            const awayTeam = game.teams.away.team;
+            const status = game.status;
+
+            const homeSlug = formatTeamNameForUrl(homeTeam.name);
+            const awaySlug = formatTeamNameForUrl(awayTeam.name);
+            const baseSlug = `${homeSlug}-vs-${awaySlug}`; // 例: "st-louis-cardinals-vs-arizona-diamondbacks"
+
+            // 複数のストリームURLを生成
+            const embedUrls = [];
+            for (let i = 1; i <= 4; i++) {
+                embedUrls.push(`${EMBED_BASE_URL}/${baseSlug}-stream-${i}`);
+            }
+            // またはオブジェクト形式: { stream1: url1, stream2: url2, ... }
+
+            return {
+                gamePk: game.gamePk,
+                title: `${homeTeam.name} vs ${awayTeam.name}`,
+                homeTeam: {
+                    name: homeTeam.name,
+                    score: game.teams.home.score !== undefined ? game.teams.home.score : '-'
+                },
+                awayTeam: {
+                    name: awayTeam.name,
+                    score: game.teams.away.score !== undefined ? game.teams.away.score : '-'
+                },
+                venue: game.venue ? game.venue.name : 'Unknown Venue',
+                status: status.detailedState,
+                statusCode: status.statusCode,
+                embedUrls: embedUrls, // 複数のURLを格納
+                baseSlug: baseSlug // デバッグや表示用にベーススラッグも保持
+            };
+        });
+
+        return processedGames;
+    }
+
+    // --- UIレンダリング ---
+        function renderStreamList(games) {
+        streamListElement.innerHTML = ''; // 一旦クリア
+
+        if (games.length === 0) {
+            streamListElement.innerHTML = '<li class="no-games">No games scheduled for this date.</li>';
+            gameCountElement.textContent = '0';
+            return;
+        }
+
+        gameCountElement.textContent = games.length;
+
+        games.forEach(game => {
+            const li = document.createElement('li');
+            li.className = 'stream-item';
+            if (game.gamePk === currentSelectedGamePk) {
+                li.classList.add('active');
+            }
+            li.dataset.gamePk = game.gamePk;
+
+            const statusClass = getGameStatusClass(game.status);
+
+                        // ストリーム選択ボタン群を生成 (アクティブ表示対応版)
+            let streamButtonsHtml = '';
+            game.embedUrls.forEach((url, index) => {
+                const streamNumber = index + 1;
+                const isActiveStream = (game.gamePk === currentSelectedGamePk && index === currentSelectedStreamIndex);
+                const activeClass = isActiveStream ? 'active-stream' : '';
+                streamButtonsHtml += `<a href="#" class="stream-link ${activeClass}" data-stream-index="${index}">Stream ${streamNumber}</a> `;
+            });
+
+            li.innerHTML = `
+                <div class="stream-item-header">
+                    <div class="stream-item-title">${game.title}</div>
+                    <div class="stream-item-status ${statusClass}">${game.status}</div>
+                </div>
+                <div class="stream-item-teams">
+                    <div class="stream-item-team-away">
+                        <span>${game.awayTeam.name}</span>
+                        <span class="stream-item-score">${game.awayTeam.score}</span>
+                    </div>
+                    <div class="stream-item-team-home">
+                        <span>${game.homeTeam.name}</span>
+                        <span class="stream-item-score">${game.homeTeam.score}</span>
+                    </div>
+                </div>
+                <div class="stream-item-venue">${game.venue}</div>
+                <div class="stream-item-streams">
+                    ${streamButtonsHtml}
+                </div>
+            `;
+
+            li.addEventListener('click', (event) => {
+                // ストリームリンクがクリックされた場合は、そのリンクのイベントを処理
+                if (event.target.classList.contains('stream-link')) {
+                    event.preventDefault(); // リンクのデフォルト動作（ページ遷移）を防ぐ
+                    const streamIndex = parseInt(event.target.dataset.streamIndex, 10);
+                    selectStream(game.gamePk, streamIndex);
+                } else {
+                    // リストアイテム自体がクリックされた場合は、デフォルトストリーム（0番目）を選択
+                    selectGame(game.gamePk);
+                }
+            });
+
+            streamListElement.appendChild(li);
+        });
+    }
+
+       // --- プレーヤー情報更新ロジック ---
+    function updatePlayerInfo(selectedGame, streamIndex = 0) { // デフォルトは 0 (stream-1)
+        if (selectedGame && selectedGame.embedUrls[streamIndex]) {
+            titleElement.textContent = `${selectedGame.title} (Stream ${streamIndex + 1})`; // タイトルにストリーム番号を追加
+            infoElement.textContent = `${selectedGame.status} • ${selectedGame.venue}`;
+            // iframeのsrcを変更
+            streamFrame.src = selectedGame.embedUrls[streamIndex];
+        } else if (selectedGame) {
+            // ゲーム情報はあるがストリームURLが無効
+            titleElement.textContent = `${selectedGame.title} (Stream Unavailable)`;
+            infoElement.textContent = `Stream ${streamIndex + 1} not available • ${selectedGame.venue}`;
+            streamFrame.src = 'about:blank';
+        } else {
+            titleElement.textContent = 'Select a game';
+            infoElement.textContent = 'No game selected';
+            streamFrame.src = 'about:blank';
+        }
+    }
+
+    // --- ゲーム選択ロジック ---
+        // --- ゲーム選択ロジック（デフォルトストリーム） ---
+    function selectGame(gamePk) {
+        const selectedGame = currentGames.find(g => g.gamePk === gamePk);
+        if (selectedGame) {
+            // selectStream を呼び出すが、デフォルトは stream-1 (index 0)
+            selectStream(gamePk, 0);
+        }
+    }
+    // --- 特定ストリーム選択ロジック ---
+    // streamIndex: 0 (stream-1), 1 (stream-2), ..., 3 (stream-4)
+    function selectStream(gamePk, streamIndex) {
+        if (gamePk === currentSelectedGamePk && streamIndex === currentSelectedStreamIndex) return;
+
+        const selectedGame = currentGames.find(g => g.gamePk === gamePk);
+        if (selectedGame && selectedGame.embedUrls[streamIndex]) {
+            currentSelectedGamePk = gamePk;
+            currentSelectedStreamIndex = streamIndex; // 新しい状態変数
+
+            renderStreamList(currentGames); // アクティブ状態とストリーム選択状態を更新
+            updatePlayerInfo(selectedGame, streamIndex); // プレーヤー情報を更新（ストリーム番号も渡す）
+            updateStatus(`Playing: ${selectedGame.title} (Stream ${streamIndex + 1})`, 'success');
+        } else if (selectedGame) {
+             // ゲームは見つかったが、ストリームURLが無効
+             updateStatus(`Stream ${streamIndex + 1} not available for this game.`, 'error');
+        }
+    }
+
+    // --- 初期化とイベント ---
+    function initializeDate() {
+        const today = new Date();
+        gameDateInput.value = formatDateForInput(today);
+    }
+
+    async function loadGamesForSelectedDate() {
+        const selectedDate = new Date(gameDateInput.value);
+        const apiFormattedDate = formatDateForApi(selectedDate);
+
+               const data = await fetchGames(apiFormattedDate);
+        let games = processGamesData(data); // 一旦別の変数に格納
+
+        if (games && games.length > 0) {
+            // --- ゲームリストのソートロジックを追加 ---
+            // 1. 'In Progress' または 'Live' のゲームを最上部に
+            // 2. その他のゲームは元の順序（APIからの順序）を維持
+            // (安定ソートを実現するために、元のインデックスも考慮)
+            games.sort((a, b) => {
+                const isALive = a.status.toLowerCase().includes('progress') || a.status.toLowerCase().includes('live');
+                const isBLive = b.status.toLowerCase().includes('progress') || b.status.toLowerCase().includes('live');
+
+                if (isALive && !isBLive) {
+                    return -1; // a を b より前へ
+                }
+                if (!isALive && isBLive) {
+                    return 1;  // b を a より前へ
+                }
+                return 0; // 順序を変更しない (安定ソート)
+            });
+            // --- ここまで ---
+
+            currentGames = games; // ソート済みの配列を状態に保存
+
+            renderStreamList(currentGames);
+            // デフォルトで最初のゲームを選択
+            if (currentSelectedGamePk === null) {
+                 selectGame(currentGames[0].gamePk);
+            } else {
+                // 日付変更後も選択状態を維持しようとするが、同じgamePkがなければリセット
+                const isSelectedGameStillAvailable = currentGames.some(g => g.gamePk === currentSelectedGamePk);
+                if (!isSelectedGameStillAvailable) {
+                     selectGame(currentGames[0].gamePk);
+                } else {
+                    // UIは更新、iframeは選択されたゲームに合わせる
+                    renderStreamList(currentGames);
+                    const selectedGame = currentGames.find(g => g.gamePk === currentSelectedGamePk);
+                    updatePlayerInfo(selectedGame);
+                }
+            }
+            updateStatus(`Loaded ${currentGames.length} games for ${apiFormattedDate}`, 'success');
+        } else {
+            renderStreamList([]); // 空リストを表示
+            updatePlayerInfo(null);
+            currentSelectedGamePk = null;
+            // updateStatusは processGamesData または fetchGames 内で設定済み
+        }
+    }
+
+    // --- イベントリスナー ---
+    gameDateInput.addEventListener('change', loadGamesForSelectedDate);
+    refreshBtn.addEventListener('click', loadGamesForSelectedDate);
+
+    // --- アプリ開始 ---
+    initializeDate();
+    loadGamesForSelectedDate(); // 初期日付でゲームをロード
+
+</script>
+
+</body>
+</html>
