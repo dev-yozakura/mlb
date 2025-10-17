@@ -1,0 +1,6030 @@
+{
+  "Mason Miller": {
+    "max_speed": 104.2,
+    "avg_fastball_speed": 101.07658676329895
+  },
+  "Aroldis Chapman": {
+    "max_speed": 103.8,
+    "avg_fastball_speed": 98.86819854067173
+  },
+  "Ryan Helsley": {
+    "max_speed": 103.8,
+    "avg_fastball_speed": 99.03001781638501
+  },
+  "Ben Joyce": {
+    "max_speed": 103.6,
+    "avg_fastball_speed": 97.88788439955107
+  },
+  "Justin Martinez": {
+    "max_speed": 103.5,
+    "avg_fastball_speed": 99.94595267305795
+  },
+  "Edgardo Henriquez": {
+    "max_speed": 103.3,
+    "avg_fastball_speed": 98.98579538522408
+  },
+  "Seth Halvorsen": {
+    "max_speed": 103.3,
+    "avg_fastball_speed": 99.88312606327914
+  },
+  "Jhoan Duran": {
+    "max_speed": 103.3,
+    "avg_fastball_speed": 100.44074262449263
+  },
+  "Jacob Misiorowski": {
+    "max_speed": 102.6,
+    "avg_fastball_speed": 99.32169947570245
+  },
+  "Tarik Skubal": {
+    "max_speed": 102.6,
+    "avg_fastball_speed": 97.47246371549994
+  },
+  "Daniel Palencia": {
+    "max_speed": 102.5,
+    "avg_fastball_speed": 99.62614206775503
+  },
+  "José Alvarado": {
+    "max_speed": 102.4,
+    "avg_fastball_speed": 97.48016678074335
+  },
+  "Hunter Greene": {
+    "max_speed": 102.2,
+    "avg_fastball_speed": 99.4089352009049
+  },
+  "Grant Taylor": {
+    "max_speed": 102.2,
+    "avg_fastball_speed": 97.89370907328374
+  },
+  "Mason Montgomery": {
+    "max_speed": 102.2,
+    "avg_fastball_speed": 98.58568835121343
+  },
+  "Joel Peguero": {
+    "max_speed": 102.1,
+    "avg_fastball_speed": 99.65002665393642
+  },
+  "Luis Mey": {
+    "max_speed": 102.1,
+    "avg_fastball_speed": 98.90135832656864
+  },
+  "Emmanuel Clase": {
+    "max_speed": 102.0,
+    "avg_fastball_speed": 98.78841883564414
+  },
+  "Jarlin Susana": {
+    "max_speed": 102.0,
+    "avg_fastball_speed": 99.51176470588236
+  },
+  "Trevor Megill": {
+    "max_speed": 101.9,
+    "avg_fastball_speed": 98.93983265671974
+  },
+  "Victor Vodnik": {
+    "max_speed": 101.8,
+    "avg_fastball_speed": 98.13773938552403
+  },
+  "Shohei Ohtani": {
+    "max_speed": 101.7,
+    "avg_fastball_speed": 97.49066679968135
+  },
+  "Jordan Hicks": {
+    "max_speed": 101.7,
+    "avg_fastball_speed": 97.66116632634153
+  },
+  "Robert Suarez": {
+    "max_speed": 101.6,
+    "avg_fastball_speed": 98.37116615794771
+  },
+  "Zach Maxwell": {
+    "max_speed": 101.6,
+    "avg_fastball_speed": 98.01292087542087
+  },
+  "Ryne Stanek": {
+    "max_speed": 101.6,
+    "avg_fastball_speed": 98.38885262483089
+  },
+  "Chase Burns": {
+    "max_speed": 101.6,
+    "avg_fastball_speed": 99.00096553823519
+  },
+  "Joe Boyle": {
+    "max_speed": 101.6,
+    "avg_fastball_speed": 98.59750859782619
+  },
+  "Eury Pérez": {
+    "max_speed": 101.5,
+    "avg_fastball_speed": 97.89112539946231
+  },
+  "Andrés Muñoz": {
+    "max_speed": 101.3,
+    "avg_fastball_speed": 98.2043449933554
+  },
+  "Steven Cruz": {
+    "max_speed": 101.3,
+    "avg_fastball_speed": 96.59176289708627
+  },
+  "Drey Jameson": {
+    "max_speed": 101.3,
+    "avg_fastball_speed": 97.81141155141155
+  },
+  "Elvis Alvarado": {
+    "max_speed": 101.3,
+    "avg_fastball_speed": 98.54398129495864
+  },
+  "Abner Uribe": {
+    "max_speed": 101.2,
+    "avg_fastball_speed": 98.79600834764365
+  },
+  "Camilo Doval": {
+    "max_speed": 101.2,
+    "avg_fastball_speed": 97.87528326831898
+  },
+  "Rodolfo Martinez": {
+    "max_speed": 101.1,
+    "avg_fastball_speed": 97.0512037037037
+  },
+  "Randy Rodríguez": {
+    "max_speed": 101.1,
+    "avg_fastball_speed": 97.4762429370436
+  },
+  "Michael Kopech": {
+    "max_speed": 101.0,
+    "avg_fastball_speed": 96.55247981185481
+  },
+  "Juan Morillo": {
+    "max_speed": 101.0,
+    "avg_fastball_speed": 99.02732354338578
+  },
+  "Bradgley Rodriguez": {
+    "max_speed": 100.9,
+    "avg_fastball_speed": 96.15070085885594
+  },
+  "Jorge Alcala": {
+    "max_speed": 100.9,
+    "avg_fastball_speed": 97.31592276246842
+  },
+  "Bubba Chandler": {
+    "max_speed": 100.9,
+    "avg_fastball_speed": 98.42422253143681
+  },
+  "Payton Tolle": {
+    "max_speed": 100.8,
+    "avg_fastball_speed": 95.64616064914892
+  },
+  "Kyle Nicolas": {
+    "max_speed": 100.8,
+    "avg_fastball_speed": 97.61892264711506
+  },
+  "Louis Varland": {
+    "max_speed": 100.8,
+    "avg_fastball_speed": 97.85559713795192
+  },
+  "Emiliano Teodo": {
+    "max_speed": 100.8,
+    "avg_fastball_speed": 98.53049999999999
+  },
+  "Jose A. Ferrer": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 97.5462837498693
+  },
+  "Adrian Morejon": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 97.40148606051221
+  },
+  "Julian Fernández": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 96.9930876068376
+  },
+  "Luis García": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 96.7946897480826
+  },
+  "José Soriano": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 97.23787592213145
+  },
+  "Colin Holderman": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 95.17083501930206
+  },
+  "Jake Faherty": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 97.09444444444445
+  },
+  "Gregory Soto": {
+    "max_speed": 100.7,
+    "avg_fastball_speed": 96.89709273000392
+  },
+  "Paul Skenes": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 98.0840613694311
+  },
+  "Shane Baz": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 95.5313198326968
+  },
+  "Will Klein": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 96.50536101869382
+  },
+  "Aaron Bummer": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 91.38472359035454
+  },
+  "Jack Leiter": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 97.20854169096499
+  },
+  "Carlos Vargas": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 97.02913862480422
+  },
+  "Cam Schlittler": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 95.76408840428853
+  },
+  "Carlos Hernández": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 97.45920521350621
+  },
+  "Nate Pearson": {
+    "max_speed": 100.6,
+    "avg_fastball_speed": 97.63390806898904
+  },
+  "Bryan Abreu": {
+    "max_speed": 100.5,
+    "avg_fastball_speed": 97.1128183869054
+  },
+  "Roki Sasaki": {
+    "max_speed": 100.5,
+    "avg_fastball_speed": 96.70748984678978
+  },
+  "Michel Otañez": {
+    "max_speed": 100.5,
+    "avg_fastball_speed": 97.02595466985716
+  },
+  "Edwin Díaz": {
+    "max_speed": 100.5,
+    "avg_fastball_speed": 97.16828513447831
+  },
+  "Riley O'Brien": {
+    "max_speed": 100.5,
+    "avg_fastball_speed": 97.98631933266364
+  },
+  "Marc Church": {
+    "max_speed": 100.5,
+    "avg_fastball_speed": 96.94398656898656
+  },
+  "Graham Ashcraft": {
+    "max_speed": 100.5,
+    "avg_fastball_speed": 96.97935537997105
+  },
+  "Eduarniel Núñez": {
+    "max_speed": 100.4,
+    "avg_fastball_speed": 97.53886277752497
+  },
+  "Porter Hodge": {
+    "max_speed": 100.4,
+    "avg_fastball_speed": 95.93956363696321
+  },
+  "Michael Petersen": {
+    "max_speed": 100.4,
+    "avg_fastball_speed": 94.00418942699947
+  },
+  "David Morgan": {
+    "max_speed": 100.4,
+    "avg_fastball_speed": 97.54200748388493
+  },
+  "Dylan Cease": {
+    "max_speed": 100.4,
+    "avg_fastball_speed": 96.9468597382185
+  },
+  "Jeremiah Estrada": {
+    "max_speed": 100.4,
+    "avg_fastball_speed": 97.77529329748842
+  },
+  "Sandy Alcantara": {
+    "max_speed": 100.4,
+    "avg_fastball_speed": 97.45084495803987
+  },
+  "Daysbel Hernández": {
+    "max_speed": 100.3,
+    "avg_fastball_speed": 97.46441298353064
+  },
+  "Junior Fernández": {
+    "max_speed": 100.3,
+    "avg_fastball_speed": 98.41
+  },
+  "Jacob deGrom": {
+    "max_speed": 100.3,
+    "avg_fastball_speed": 97.38205977701251
+  },
+  "Zach Fruit": {
+    "max_speed": 100.3,
+    "avg_fastball_speed": 94.89032258064516
+  },
+  "Yacksel Ríos": {
+    "max_speed": 100.3,
+    "avg_fastball_speed": 97.29328703703705
+  },
+  "Dugan Darnell": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 94.15855896628624
+  },
+  "Spencer Schwellenbach": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 95.98143016534016
+  },
+  "Connor Phillips": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 98.04372865560366
+  },
+  "Ryan Zeferjahn": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 94.75496975416164
+  },
+  "John McMillon": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 96.1386047979798
+  },
+  "Chase Dollander": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 96.39477029373153
+  },
+  "Garrett Crochet": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 94.40347318067856
+  },
+  "Pete Fairbanks": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 96.86415075522768
+  },
+  "Brock Burke": {
+    "max_speed": 100.2,
+    "avg_fastball_speed": 95.67450674992438
+  },
+  "Levi Wells": {
+    "max_speed": 100.1,
+    "avg_fastball_speed": 97.116
+  },
+  "Seranthony Domínguez": {
+    "max_speed": 100.1,
+    "avg_fastball_speed": 97.66540203484419
+  },
+  "Cade Cavalli": {
+    "max_speed": 100.1,
+    "avg_fastball_speed": 96.5262558178219
+  },
+  "Edgar Isea": {
+    "max_speed": 100.0,
+    "avg_fastball_speed": 97.12777777777778
+  },
+  "Walbert Urena": {
+    "max_speed": 100.0,
+    "avg_fastball_speed": 94.89583333333333
+  },
+  "Brad Keller": {
+    "max_speed": 100.0,
+    "avg_fastball_speed": 96.94890412550308
+  },
+  "Gavin Williams": {
+    "max_speed": 100.0,
+    "avg_fastball_speed": 95.5040102605318
+  },
+  "Félix Bautista": {
+    "max_speed": 100.0,
+    "avg_fastball_speed": 97.14014159683278
+  },
+  "Lucas Erceg": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 97.43820502233865
+  },
+  "Shintaro Fujinami": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 94.07225869514473
+  },
+  "Luis Severino": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 95.1543473505367
+  },
+  "Gregory Santos": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 97.51611111111112
+  },
+  "Huascar Brazobán": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 95.17693873242146
+  },
+  "Hunter Bigge": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 97.22029960235842
+  },
+  "Reed Garrett": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 94.62619254547356
+  },
+  "Cole Ragans": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 94.93045331444581
+  },
+  "Guillo Zuñiga": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 97.48947302697303
+  },
+  "Orion Kerkering": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 96.9156843443622
+  },
+  "Luis Morales": {
+    "max_speed": 99.9,
+    "avg_fastball_speed": 97.18297779892288
+  },
+  "Sean Burke": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 94.41899238121583
+  },
+  "Jack Kochanowicz": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 95.48821223129984
+  },
+  "Taylor Clarke": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 94.78621866363392
+  },
+  "Hunter Brown": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 95.95542243065742
+  },
+  "Edward Cabrera": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 96.92367023535408
+  },
+  "Shane Smith": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 95.75290065318532
+  },
+  "Jordan Romano": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 95.55920370799835
+  },
+  "Manuel Rodríguez": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 97.13756007304882
+  },
+  "Bobby Miller": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 97.48143147502903
+  },
+  "Seth Johnson": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 96.74327406389908
+  },
+  "Jackson Jobe": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 96.41469104022156
+  },
+  "Brandyn Garcia": {
+    "max_speed": 99.8,
+    "avg_fastball_speed": 96.57012867034926
+  },
+  "Wilking Rodríguez": {
+    "max_speed": 99.7,
+    "avg_fastball_speed": 97.47453463203463
+  },
+  "Antonio Senzatela": {
+    "max_speed": 99.7,
+    "avg_fastball_speed": 94.94700223169737
+  },
+  "Aaron Ashby": {
+    "max_speed": 99.7,
+    "avg_fastball_speed": 97.33472945972147
+  },
+  "Erik Miller": {
+    "max_speed": 99.7,
+    "avg_fastball_speed": 97.09892187767187
+  },
+  "Jesús Luzardo": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 96.36659783054367
+  },
+  "Justin Wrobleski": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 94.83515236046784
+  },
+  "Cam Booser": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 93.17032263433555
+  },
+  "Ryan Weathers": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 96.79744047910211
+  },
+  "AJ Smith-Shawver": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 95.55842868333386
+  },
+  "Tyler Glasnow": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 95.94797915384358
+  },
+  "Yosver Zulueta": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 95.9713598901099
+  },
+  "Cade Smith": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 96.36057977150904
+  },
+  "Tony Santillan": {
+    "max_speed": 99.6,
+    "avg_fastball_speed": 96.04500466986273
+  },
+  "Sam Bachman": {
+    "max_speed": 99.5,
+    "avg_fastball_speed": 97.14221779483142
+  },
+  "Andrew Bechtold": {
+    "max_speed": 99.5,
+    "avg_fastball_speed": 91.75804093567251
+  },
+  "Juan Mejia": {
+    "max_speed": 99.5,
+    "avg_fastball_speed": 96.57829833627679
+  },
+  "Jared Koenig": {
+    "max_speed": 99.5,
+    "avg_fastball_speed": 94.70696728090303
+  },
+  "Orlando Ribalta": {
+    "max_speed": 99.5,
+    "avg_fastball_speed": 96.40586966027436
+  },
+  "Matt Svanson": {
+    "max_speed": 99.5,
+    "avg_fastball_speed": 95.59074219057514
+  },
+  "Josh Ekness": {
+    "max_speed": 99.5,
+    "avg_fastball_speed": 96.73735222672065
+  },
+  "Rolddy Muñoz": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 97.26244444444444
+  },
+  "José Fermin": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 96.74699449371823
+  },
+  "Dan Altavilla": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 96.11485120589288
+  },
+  "Chris Sale": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 94.65427557815602
+  },
+  "Angel Chivilli": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 97.12940364790819
+  },
+  "Troy Melton": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 95.69675648637941
+  },
+  "Carlos Estévez": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 95.59368062402376
+  },
+  "Jackson Kowar": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 97.44199486461251
+  },
+  "Carson Seymour": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 95.82072089988955
+  },
+  "Calvin Faucher": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 93.5969389399914
+  },
+  "Carmen Mlodzinski": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 96.09666011998884
+  },
+  "Ryan Walker": {
+    "max_speed": 99.4,
+    "avg_fastball_speed": 95.84689174806839
+  },
+  "Jonathan Loáisiga": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 96.74170285672459
+  },
+  "Yimi García": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 95.82284780832195
+  },
+  "Jaden Hill": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 96.80713852299414
+  },
+  "Alex Speas": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 95.05766233766234
+  },
+  "Braxton Ashcraft": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 96.76952387393602
+  },
+  "Samuel Vasquez": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 96.85
+  },
+  "David Bednar": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 96.92943982329399
+  },
+  "Alex Carrillo": {
+    "max_speed": 99.3,
+    "avg_fastball_speed": 97.83333333333333
+  },
+  "Blade Tidwell": {
+    "max_speed": 99.2,
+    "avg_fastball_speed": 95.45256628312931
+  },
+  "Ben Casparius": {
+    "max_speed": 99.2,
+    "avg_fastball_speed": 94.5981621451315
+  },
+  "Cole Paplham": {
+    "max_speed": 99.2,
+    "avg_fastball_speed": 96.31333333333333
+  },
+  "Clayton Beeter": {
+    "max_speed": 99.2,
+    "avg_fastball_speed": 96.7288332733019
+  },
+  "Dedniel Núñez": {
+    "max_speed": 99.2,
+    "avg_fastball_speed": 96.37797667610168
+  },
+  "Cam Sanders": {
+    "max_speed": 99.2,
+    "avg_fastball_speed": 95.71502777777778
+  },
+  "Tyler Owens": {
+    "max_speed": 99.2,
+    "avg_fastball_speed": 95.65003524436091
+  },
+  "Ty Adcock": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 95.50634920634921
+  },
+  "Ryne Nelson": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 94.51599943273513
+  },
+  "Jeff Hoffman": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 96.3593493377332
+  },
+  "Taj Bradley": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 94.06217959738179
+  },
+  "Kumar Rocker": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 94.53474947554716
+  },
+  "Codi Heuer": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 95.64748556998558
+  },
+  "Luis L. Ortiz": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 94.71868766018605
+  },
+  "Bryan Baker": {
+    "max_speed": 99.1,
+    "avg_fastball_speed": 96.74700508015576
+  },
+  "Sam Knowlton": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 97.7090909090909
+  },
+  "Mick Abel": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 96.26411985930736
+  },
+  "Gordon Graceffo": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 95.75294023473087
+  },
+  "Will Vest": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 96.41194241283014
+  },
+  "Michael Kelly": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 95.37186754302608
+  },
+  "Max Fried": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 94.04325947029415
+  },
+  "Tanner Scott": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 96.41147636582419
+  },
+  "Brandon Sproat": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 96.12710798460797
+  },
+  "Bryan Mata": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 98.025
+  },
+  "Richard Fitts": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 95.85906066028213
+  },
+  "Brayan Bello": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 93.67556545860813
+  },
+  "Luis Guerrero": {
+    "max_speed": 99.0,
+    "avg_fastball_speed": 96.62660097372282
+  },
+  "Jared Jones": {
+    "max_speed": 98.9,
+    "avg_fastball_speed": 96.43018162393162
+  },
+  "Yariel Rodríguez": {
+    "max_speed": 98.9,
+    "avg_fastball_speed": 95.59964260101354
+  },
+  "Chase Petty": {
+    "max_speed": 98.9,
+    "avg_fastball_speed": 95.84379426129426
+  },
+  "Forrest Whitley": {
+    "max_speed": 98.9,
+    "avg_fastball_speed": 93.65537493429773
+  },
+  "Conor Grammes": {
+    "max_speed": 98.9,
+    "avg_fastball_speed": 94.18261574074074
+  },
+  "Freddy Peralta": {
+    "max_speed": 98.9,
+    "avg_fastball_speed": 94.75660887945011
+  },
+  "Bradley Blalock": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 94.22647674800652
+  },
+  "Garrett Cleavinger": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 96.27606380920668
+  },
+  "Zack Wheeler": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.1784928355402
+  },
+  "Luis Gil": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.44232704682355
+  },
+  "Germán Márquez": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 94.77050774250446
+  },
+  "George Kirby": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 96.14687037148941
+  },
+  "Eric Reyzelman": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.53007936507936
+  },
+  "George Soriano": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.250252265801
+  },
+  "Justin Slaten": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 94.69379678100206
+  },
+  "Jack Perkins": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.52718400259253
+  },
+  "Brock Stewart": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.91722008195153
+  },
+  "Ben Brown": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.82874757918351
+  },
+  "Ronny Henriquez": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 96.52474549803317
+  },
+  "Emerson Hancock": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 94.98696814268479
+  },
+  "Albert Abreu": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 96.16383928571429
+  },
+  "Kevin Gausman": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 94.39938772276773
+  },
+  "Yilber Díaz": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.33619047619048
+  },
+  "Zebby Matthews": {
+    "max_speed": 98.8,
+    "avg_fastball_speed": 95.18333751552277
+  },
+  "Bryan Woo": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 95.43160872067037
+  },
+  "Angel Zerpa": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 96.39596083948642
+  },
+  "Matt Brash": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 96.33952360139861
+  },
+  "Sean Reynolds": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 96.00683279182118
+  },
+  "Dustin May": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 94.33302129032337
+  },
+  "Blake Treinen": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 94.56039617265326
+  },
+  "Edwin Nuñez": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 98.05
+  },
+  "Chris Roycroft": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 93.95316037518103
+  },
+  "Yordin Chalas": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 96.85454545454546
+  },
+  "Max Kranick": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 95.59479078228027
+  },
+  "Reid Detmers": {
+    "max_speed": 98.7,
+    "avg_fastball_speed": 96.03261320444788
+  },
+  "Hayden Birdsong": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 95.73694704163921
+  },
+  "Julian Merryweather": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 96.24823628985395
+  },
+  "Drew Rasmussen": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 93.84705957757609
+  },
+  "Jordan Leasure": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 96.2687530820196
+  },
+  "Rico Garcia": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 95.47231850303227
+  },
+  "Listher Sosa": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 95.17867063492064
+  },
+  "Kaleb Ort": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 95.19918957273592
+  },
+  "Anthony Bender": {
+    "max_speed": 98.6,
+    "avg_fastball_speed": 96.47282831686134
+  },
+  "Logan Gilbert": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.42894626706283
+  },
+  "Christian Montes De Oca": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.82618131868132
+  },
+  "Yerry De los Santos": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.11280492114125
+  },
+  "Anthony Banda": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.8834714721009
+  },
+  "Tyler Bryant": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.11583333333334
+  },
+  "Mike Burrows": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.58207590836301
+  },
+  "Jonathan Hernández": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 96.86527777777778
+  },
+  "Robert Stephenson": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 88.92282018041377
+  },
+  "Hunter Dobbins": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.68270542982768
+  },
+  "Emilio Pagán": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 93.57608712721269
+  },
+  "Tyler Baum": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 91.50454545454545
+  },
+  "Kyle Finnegan": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 96.33840422930678
+  },
+  "Jonathan Bowlan": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.74271519472362
+  },
+  "Johan Oviedo": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.3949172727866
+  },
+  "Beau Brieske": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.63899315174787
+  },
+  "Cade Horton": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.69155045364
+  },
+  "Christian Roa": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.36580189146366
+  },
+  "Braydon Fisher": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.31097402597403
+  },
+  "Cionel Pérez": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.78813744541533
+  },
+  "Luinder Avila": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 95.8770863678805
+  },
+  "Daniel Harper": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 93.82970085470085
+  },
+  "Roddery Muñoz": {
+    "max_speed": 98.5,
+    "avg_fastball_speed": 94.35966151572939
+  },
+  "Justin Garza": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 92.71496978715729
+  },
+  "Cristopher Sánchez": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 95.48894513755829
+  },
+  "Hurston Waldrep": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 94.67544055723928
+  },
+  "Mitch Keller": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 93.68811109890054
+  },
+  "Zack Kelly": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 93.87945525930189
+  },
+  "Noah Schultz": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 94.00563973063974
+  },
+  "A.J. Puk": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 95.96326815776816
+  },
+  "Jonah Tong": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 95.13934686719432
+  },
+  "Helcris Olivárez": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 97.72941176470589
+  },
+  "Spencer Strider": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 95.51338868436747
+  },
+  "Hunter Harvey": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 96.20243059850202
+  },
+  "Zach Pop": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 94.40687494691299
+  },
+  "Nolan McLean": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 94.39040461893599
+  },
+  "Lenny Torres Jr.": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 96.14914285714286
+  },
+  "Blake Snell": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 95.20072652486326
+  },
+  "Will Childers": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 92.61527777777778
+  },
+  "Griffin Jax": {
+    "max_speed": 98.4,
+    "avg_fastball_speed": 96.4465946102959
+  },
+  "Slade Cecconi": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 93.9017845454551
+  },
+  "Roansy Contreras": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.39019926152278
+  },
+  "Tylor Megill": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.09104333941343
+  },
+  "Didier Fuentes": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.93415121483378
+  },
+  "Grant Wolfram": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.7315517713336
+  },
+  "Eduard Bazardo": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.15673017884893
+  },
+  "Hayden Merda": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 97.475
+  },
+  "Eddy Yean": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.98095238095239
+  },
+  "Emmet Sheehan": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.72181043213989
+  },
+  "Brenan Hanifee": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.29856615241941
+  },
+  "José Ureña": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 96.18248470354236
+  },
+  "Kodai Senga": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 92.30803799768877
+  },
+  "Diego Castillo": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.9228721859114
+  },
+  "Justin Verlander": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 93.9584276071633
+  },
+  "Yohan Ramírez": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 96.08157270016747
+  },
+  "Keaton Winn": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 95.49287316849816
+  },
+  "Jackson Rutledge": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 94.0963879206192
+  },
+  "Casey Mize": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 94.8305090200076
+  },
+  "Francis Pena": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 92.43167892156862
+  },
+  "Shane McClanahan": {
+    "max_speed": 98.3,
+    "avg_fastball_speed": 96.23529411764706
+  },
+  "Skylar Hales": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 96.2
+  },
+  "Hagen Smith": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 95.64674145299144
+  },
+  "Yoshinobu Yamamoto": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 94.46315576675799
+  },
+  "Tobias Myers": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 91.95290858316542
+  },
+  "Framber Valdez": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 94.21430757464277
+  },
+  "AJ Blubaugh": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 94.12510255291248
+  },
+  "Cole Winn": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 94.58513442644912
+  },
+  "Brad Lord": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 94.91557487293248
+  },
+  "Tink Hence": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 96.38657894736842
+  },
+  "Sam McWilliams": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 95.23518518518519
+  },
+  "Jesus Tinoco": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 95.06094053724053
+  },
+  "Carlos Rodón": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 93.74507497783188
+  },
+  "Eiberson Castellano": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 96.12391721132899
+  },
+  "Tekoah Roby": {
+    "max_speed": 98.2,
+    "avg_fastball_speed": 96.36468531468533
+  },
+  "Patrick Copen": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 96.37272727272726
+  },
+  "Hobie Harris": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 92.91818181818182
+  },
+  "Caleb Freeman": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 95.91069444444445
+  },
+  "Gerald Ogando": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 95.76031746031747
+  },
+  "Randy Vásquez": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 92.11036060843351
+  },
+  "Yusei Kikuchi": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 94.70605057865971
+  },
+  "Ryan Pepiot": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 94.71665010741687
+  },
+  "Josh Hader": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 95.24368250228157
+  },
+  "Brock Moore": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 96.925
+  },
+  "Andre Pallante": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 94.38028400697195
+  },
+  "Reynaldo López": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 93.94081632653062
+  },
+  "Andrew Walters": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 96.59404206904208
+  },
+  "Nick Mears": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 95.51323671656162
+  },
+  "Tristan Beck": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 94.59827259265148
+  },
+  "Corbin Burnes": {
+    "max_speed": 98.1,
+    "avg_fastball_speed": 94.26804584556906
+  },
+  "Ian Hamilton": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 94.93548388266035
+  },
+  "Jack Neely": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 96.2982142857143
+  },
+  "MacKenzie Gore": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 94.84084515277034
+  },
+  "Garrett Whitlock": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 95.8586052082606
+  },
+  "Raisel Iglesias": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 94.70050444725798
+  },
+  "Chayce McDermott": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 92.48987623310194
+  },
+  "Dylan Coleman": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 92.55416666666667
+  },
+  "Michael Mercado": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 93.63265163720992
+  },
+  "Logan Boyer": {
+    "max_speed": 98.0,
+    "avg_fastball_speed": 91.72142857142856
+  },
+  "Konnor Pilkington": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 94.2992389432463
+  },
+  "Ryan Jensen": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 96.52125000000001
+  },
+  "Jacob Latz": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 94.33054200346979
+  },
+  "Tyler Ferguson": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 93.795014781954
+  },
+  "Gavin Hollowell": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 94.6435780273648
+  },
+  "Génesis Cabrera": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 93.78550533465179
+  },
+  "José Rodríguez": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 95.80502645502645
+  },
+  "Juan Burgos": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 93.90697072535308
+  },
+  "José Buttó": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 95.12793913205934
+  },
+  "Noah Murdock": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 93.26067729140962
+  },
+  "Frankie Montas": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 94.56385246791751
+  },
+  "Chase Shugart": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 92.76760665158004
+  },
+  "Logan Gillaspie": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 94.63493452380952
+  },
+  "Tanner Rainey": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 94.32241095162148
+  },
+  "Tyler Davis": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 93.12083333333334
+  },
+  "Cole Henry": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 94.06111363047056
+  },
+  "Enyel De Los Santos": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 96.15163532425608
+  },
+  "Kyle Leahy": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 95.2708063974889
+  },
+  "Cooper Adams": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 92.56666666666666
+  },
+  "Cole Wilcox": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 96.40978260869565
+  },
+  "Zach Agnos": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 93.86736113118465
+  },
+  "Cristofer Melendez": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 95.70625
+  },
+  "Javy Guerra": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 96.97777777777779
+  },
+  "Lyon Richardson": {
+    "max_speed": 97.9,
+    "avg_fastball_speed": 95.41102176112287
+  },
+  "Corbin Martin": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 95.72523277891699
+  },
+  "Daniel Robert": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 93.97446884256095
+  },
+  "Kyle Bradish": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 94.6950159174808
+  },
+  "Clay Holmes": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 93.25162407390033
+  },
+  "Kyle Harrison": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 94.14415789511001
+  },
+  "Ryan Fernandez": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 94.61098917748919
+  },
+  "Braden Nett": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 94.33425324675324
+  },
+  "Connor Brogdon": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 93.050731851829
+  },
+  "Jayden Murray": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 95.54886721611722
+  },
+  "Shelby Miller": {
+    "max_speed": 97.8,
+    "avg_fastball_speed": 95.13572275037961
+  },
+  "Max Meyer": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 94.96783684497397
+  },
+  "Luis Castillo": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 94.75917724694217
+  },
+  "Victor Mederos": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 94.79602098083406
+  },
+  "Andrew Kittredge": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 95.09525092732467
+  },
+  "Joe Ryan": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 93.54033842844626
+  },
+  "Chris Paddack": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 93.23341261920243
+  },
+  "Bryce Miller": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 94.75882178050163
+  },
+  "Anthony Veneziano": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 94.12151027077498
+  },
+  "Wikelman González": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 95.23728129713425
+  },
+  "Jason Foley": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 95.39339826839827
+  },
+  "Hunter Stratton": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 95.3976502831095
+  },
+  "Kevin Ginkel": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 94.86257326007326
+  },
+  "Wandy Peralta": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 95.21641471480451
+  },
+  "Jordan Weems": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 95.72297077922077
+  },
+  "Tim Herrin": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 94.19711123136123
+  },
+  "Jeff Brigham": {
+    "max_speed": 97.7,
+    "avg_fastball_speed": 92.62179232804232
+  },
+  "Wilkin Ramos": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 92.79972222222221
+  },
+  "Michael Lorenzen": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 92.77914168676246
+  },
+  "Justin Lawrence": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 95.29690398721648
+  },
+  "Osvaldo Bido": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 94.0365300973718
+  },
+  "Grant Anderson": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 93.26212627390208
+  },
+  "Jonathan Pintaro": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 92.76666666666667
+  },
+  "Luis Curvelo": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 95.77935007317245
+  },
+  "Brent Headrick": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 93.83169998313092
+  },
+  "Freddy Tarnok": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 94.98163492063492
+  },
+  "Gerrit Cole": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 94.59127481713689
+  },
+  "Nathan Eovaldi": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 92.50109554166795
+  },
+  "Fraser Ellard": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 94.45662408589004
+  },
+  "Gabriel Hughes": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 94.56768733427772
+  },
+  "Isaac Mattson": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 93.84961342840522
+  },
+  "José Quijada": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 93.23346930846931
+  },
+  "Kade Strowd": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 93.57908404643307
+  },
+  "Troy Taylor": {
+    "max_speed": 97.6,
+    "avg_fastball_speed": 96.4457560331825
+  },
+  "Matthew Liberatore": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 93.32818010682496
+  },
+  "Jorge López": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 94.53217806637808
+  },
+  "Tanner Houck": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 94.4423524389025
+  },
+  "Frankie Scalzo Jr.": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 92.300625
+  },
+  "Bailey Horn": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 93.76655296252483
+  },
+  "Jake Brentz": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 95.71538461538461
+  },
+  "Luke Weaver": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 94.47186812976939
+  },
+  "Lucas Sims": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 94.73978905597328
+  },
+  "Anthony Molina": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 95.45748970820425
+  },
+  "Tyler Phillips": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 95.14925765820331
+  },
+  "Mike Vasil": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 93.70736796543952
+  },
+  "Geoff Hartlieb": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 94.49447991822991
+  },
+  "Gabe Speier": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 94.79871512494361
+  },
+  "Luke Little": {
+    "max_speed": 97.5,
+    "avg_fastball_speed": 93.45633971291866
+  },
+  "Andrew Moore": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 96.425
+  },
+  "Koyo Aoyagi": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 88.84464514066497
+  },
+  "Alexis Díaz": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 93.6172664234776
+  },
+  "Spencer Bivens": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 93.42877805221646
+  },
+  "Pablo López": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 94.55362616677483
+  },
+  "Mason Barnett": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 94.3355860849282
+  },
+  "Ryan Hendrix": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 96.00208333333333
+  },
+  "Ricky DeVito": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 95.4375
+  },
+  "George Klassen": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 96.38888888888889
+  },
+  "Ryan Gusto": {
+    "max_speed": 97.4,
+    "avg_fastball_speed": 93.12374829361116
+  },
+  "Jackson Ferris": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 95.25925039872408
+  },
+  "J.T. Ginn": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.32423921536117
+  },
+  "Charlie Morton": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.18869468948478
+  },
+  "Livan Reinoso": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 94.0909090909091
+  },
+  "Caden Dana": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 94.72976829245212
+  },
+  "Jaydenn Estanista": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.48507936507936
+  },
+  "Jack Hostetler": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.92
+  },
+  "Andre Granillo": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 94.75783905787196
+  },
+  "Michael Soroka": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.8667539070376
+  },
+  "Yennier Cano": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 94.82881232516529
+  },
+  "Lou Trivino": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.77666989911633
+  },
+  "McCade Brown": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 94.30003204644755
+  },
+  "Matt Manning": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 94.08958183990443
+  },
+  "Rafael Montero": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 95.0352002408039
+  },
+  "José Ruiz": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 95.36489641498852
+  },
+  "Eduardo Salazar": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 94.58130132317952
+  },
+  "Gunnar Hoglund": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.93044619756172
+  },
+  "Tanner Bibee": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 91.65371461019885
+  },
+  "Cruz Noriega": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 93.38527777777779
+  },
+  "Chad Patrick": {
+    "max_speed": 97.3,
+    "avg_fastball_speed": 91.36855543324357
+  },
+  "Tyler Kinley": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 95.17226137566138
+  },
+  "Magnus Ellerts": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.23089947089947
+  },
+  "Raúl Alcantara": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 95.36666666666667
+  },
+  "Jose Corniell": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.971875
+  },
+  "Anthony DeSclafani": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.04002905233168
+  },
+  "Adrian Houser": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.59015221129106
+  },
+  "John Curtiss": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 93.01809995857181
+  },
+  "Easton Lucas": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 93.57405547150113
+  },
+  "Allan Hernandez": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 93.05767195767196
+  },
+  "Jake Bird": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.21199154616377
+  },
+  "Valentin Linarez": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 95.5829365079365
+  },
+  "Jonathan Cannon": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 92.0820305071036
+  },
+  "Robert Stock": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 91.64976923076922
+  },
+  "Cameron Foster": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 91.10398148148148
+  },
+  "Douglas Orellana": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 91.63605263157895
+  },
+  "Shane Drohan": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 93.44999999999999
+  },
+  "Justin Wilson": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 93.60329161461883
+  },
+  "Colin Selby": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 95.62880191777919
+  },
+  "Keider Montero": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.0838084258037
+  },
+  "Robert Garcia": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.30686710789652
+  },
+  "Dennis Santana": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 93.85086244866244
+  },
+  "Jean Reyes": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.70476190476191
+  },
+  "Isaiah Campbell": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 95.0895
+  },
+  "Logan Evans": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 90.95736920607813
+  },
+  "Yoendrys Gómez": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 93.45440868864172
+  },
+  "Nick Anderson": {
+    "max_speed": 97.2,
+    "avg_fastball_speed": 94.49158077302813
+  },
+  "Tanner Kohlhepp": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 95.19090909090909
+  },
+  "Hunter Barco": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.56558441558441
+  },
+  "Levi Stoudt": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.7236111111111
+  },
+  "Najer Victor": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 96.63333333333333
+  },
+  "Jordan Wicks": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 93.74225793650794
+  },
+  "Michael Arias": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 96.08951923076924
+  },
+  "Pierce Johnson": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.86259676970204
+  },
+  "Winston Santos": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 95.0875
+  },
+  "Joe Ross": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.17689842064193
+  },
+  "Wilmy Sanchez": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.7125
+  },
+  "Bennett Sousa": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 95.05841517857142
+  },
+  "Quinn Priester": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 93.40956953797661
+  },
+  "Hayden Wesneski": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 92.50327522692213
+  },
+  "Dauri Moreta": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.63693719679014
+  },
+  "Trent Thornton": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 92.593075849589
+  },
+  "Reese Olson": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.58131774067974
+  },
+  "Lake Bachar": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.79371642523712
+  },
+  "Davis Martin": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 91.87430719769972
+  },
+  "Brett de Geus": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 93.24246848739496
+  },
+  "Elvin Rodríguez": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 93.38510437950465
+  },
+  "Cal Quantrill": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 91.75154437350888
+  },
+  "Patrick Murphy": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.51506493506494
+  },
+  "Casey Legumina": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 94.22673384026088
+  },
+  "Will Warren": {
+    "max_speed": 97.1,
+    "avg_fastball_speed": 93.28565877742177
+  },
+  "Grant Holmes": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 93.81369282745963
+  },
+  "Jayvien Sandridge": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 95.7
+  },
+  "Paul Gervase": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 92.97411618589743
+  },
+  "Cristian Mena": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 95.1530303030303
+  },
+  "Anderson Paulino": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 95.73333333333335
+  },
+  "Jefry Yan": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 95.20875000000001
+  },
+  "Hans Crouse": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.86333333333334
+  },
+  "Miguel Castro": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.93758309591642
+  },
+  "Hunter Gaddis": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.68388888888889
+  },
+  "Ryan Johnson": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 92.22445707995708
+  },
+  "Cole Sands": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 92.55611623161036
+  },
+  "Jhosmer Alvarez": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 93.67041666666667
+  },
+  "Jesse Scholtens": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 95.30440476190475
+  },
+  "Jesse Hahn": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.85728481634231
+  },
+  "Chase Silseth": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.95008930340916
+  },
+  "Taisei Kudo": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 95.69047619047619
+  },
+  "Jacob Bosiokovic": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.93303571428571
+  },
+  "Max Lazar": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 93.47134931019272
+  },
+  "Chad Green": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.983496380756
+  },
+  "Ryan Bergert": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 93.56329727635212
+  },
+  "Luis De León": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 96.03529411764706
+  },
+  "Ryan Loutos": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 95.22365342729533
+  },
+  "Zach Bryant": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 92.60132214594456
+  },
+  "Andry Lara": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 94.14442852770125
+  },
+  "Ryan Feltner": {
+    "max_speed": 97.0,
+    "avg_fastball_speed": 93.90855760673796
+  },
+  "Mason Thompson": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.83167806399949
+  },
+  "Erik Rivera": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 95.04761904761905
+  },
+  "Ben Peoples": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 95.43375
+  },
+  "Joel Hurtado": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 95.53928571428571
+  },
+  "Jalen Beeks": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 92.93969783115321
+  },
+  "Kenley Jansen": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 92.65680785516454
+  },
+  "Matthew Boyd": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 93.13783963349073
+  },
+  "Michael Darrell-Hicks": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 92.16954585207397
+  },
+  "Dylan Lee": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.09927045969903
+  },
+  "Andrew Hoffmann": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.646564728164
+  },
+  "Jesse Bergin": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 95.46111538461538
+  },
+  "Adam Mazur": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.55992154789952
+  },
+  "Yaramil Hiraldo": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.8486893738977
+  },
+  "Greg Weissert": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 93.9897997406693
+  },
+  "Chris Murphy": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 93.85340174318435
+  },
+  "Trey Yesavage": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.66066552149401
+  },
+  "Ronan Kopp": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.52597402597402
+  },
+  "Walker Buehler": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 92.98421840695416
+  },
+  "Nick Frasso": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.01838235294117
+  },
+  "Misael Tamarez": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 93.85393518518518
+  },
+  "José Leclerc": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 92.5895509430238
+  },
+  "Daniel Lynch IV": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 93.9131953305895
+  },
+  "Dietrich Enns": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 91.73592882551284
+  },
+  "Chris Martin": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 92.96106446222677
+  },
+  "Wilkel Hernandez": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 94.45238095238095
+  },
+  "Hogan Harris": {
+    "max_speed": 96.9,
+    "avg_fastball_speed": 93.06761912075625
+  },
+  "Joe La Sorsa": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 91.90636627125598
+  },
+  "Josh Winckowski": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 93.08804686658765
+  },
+  "Noah Davis": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 92.36786214273056
+  },
+  "Travis Adams": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 93.4896951419797
+  },
+  "Tony Gonsolin": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 93.4834148304099
+  },
+  "Griff McGarry": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 95.78333333333335
+  },
+  "Steven Matz": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 94.55609132365429
+  },
+  "Yu Darvish": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 93.04755447282427
+  },
+  "Jake Higginbotham": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 94.01960910005027
+  },
+  "Steven Zobac": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 94.48823529411766
+  },
+  "Tommy Kahnle": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 93.47206088992974
+  },
+  "Zac Gallen": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 92.90525637022021
+  },
+  "Justin Topa": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 93.05205692582271
+  },
+  "Gus Varland": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 95.09674603174604
+  },
+  "Ryan Cusick": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 95.6421052631579
+  },
+  "Triston McKenzie": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 94.1540180711262
+  },
+  "David Festa": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 94.24023569868967
+  },
+  "Caleb Kilian": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 92.16551724137932
+  },
+  "Devin Williams": {
+    "max_speed": 96.8,
+    "avg_fastball_speed": 94.05314666043833
+  },
+  "Shawn Dubin": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 93.98642497415439
+  },
+  "Hagen Danner": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 95.31746031746032
+  },
+  "Baron Stuart": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 93.82941176470588
+  },
+  "Luis Velasquez": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 95.54444444444444
+  },
+  "Brandon Young": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 92.59305449382691
+  },
+  "Carlos Duran": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 95.61642857142857
+  },
+  "Robby Snelling": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 94.9574074074074
+  },
+  "Elvis Peguero": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 94.9707630646865
+  },
+  "Joey Wentz": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 92.19533968249603
+  },
+  "Jagger Haynes": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 95.0923076923077
+  },
+  "Tyler Zuber": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 93.71105493994098
+  },
+  "Zack Leban": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 91.9483870967742
+  },
+  "Miles Mikolas": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 92.5696998856233
+  },
+  "Nick Pivetta": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 93.21671043960345
+  },
+  "Evan Phillips": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 95.02537037037037
+  },
+  "Liam Hendriks": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 94.69869697067065
+  },
+  "Dylan Smith": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 94.55602164502164
+  },
+  "Grant Holman": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 94.62784348135524
+  },
+  "Cole Waites": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 94.18657894736842
+  },
+  "Clarke Schmidt": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 92.55943193802159
+  },
+  "Matt Sauer": {
+    "max_speed": 96.7,
+    "avg_fastball_speed": 92.74505578718397
+  },
+  "Eric Adler": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 95.30333333333333
+  },
+  "Janson Junk": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 93.80788146833332
+  },
+  "Connelly Early": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 93.70365381744692
+  },
+  "Dauris Valdez": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 94.43400735294117
+  },
+  "Zach Brzykcy": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 94.56578124956049
+  },
+  "Kelvin Ramirez": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 95.23333333333333
+  },
+  "Steven Wilson": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 93.63461414907843
+  },
+  "Luke Jackson": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 94.18921433587208
+  },
+  "Jake Bloss": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 94.65434343434345
+  },
+  "Jason Adam": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 94.373414329202
+  },
+  "Albert Suárez": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 91.42272254637382
+  },
+  "Nick Lodolo": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 93.75538200200602
+  },
+  "Felipe De La Cruz": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 95.24705882352941
+  },
+  "Jesús Liranzo": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 92.24285714285715
+  },
+  "Jose Cabrera": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 92.53999999999999
+  },
+  "Mike Clevinger": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 92.46079747175901
+  },
+  "Kendall Graveman": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 94.39731765310712
+  },
+  "Joel Payamps": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 94.6654673933876
+  },
+  "Sean Newcomb": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 92.54794121760901
+  },
+  "Griffin Canning": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 93.40204252302365
+  },
+  "Michael Wacha": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 91.79174914212196
+  },
+  "Kevin Gowdy": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 91.87370543672013
+  },
+  "Gunner Mayer": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 96.6
+  },
+  "Joey Cantillo": {
+    "max_speed": 96.6,
+    "avg_fastball_speed": 91.79866509309859
+  },
+  "Scott Blewett": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 93.5735692594664
+  },
+  "Josh Simpson": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 94.09929973201402
+  },
+  "Austin Adams": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 94.01666666666667
+  },
+  "RJ Petit": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 93.55714285714285
+  },
+  "Erik Sabrowski": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 93.94627220261262
+  },
+  "Roman Angelo": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 91.16654135338345
+  },
+  "Robbie Ray": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 93.48772626081399
+  },
+  "JoJo Romero": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 93.59614429937346
+  },
+  "Andrew Morris": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 92.03572796934867
+  },
+  "Nick Nastrini": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 94.25307829759583
+  },
+  "Tim Mayza": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 93.29091314673957
+  },
+  "Simeon Woods Richardson": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 93.14402250242038
+  },
+  "Nate Webb": {
+    "max_speed": 96.5,
+    "avg_fastball_speed": 94.12222222222223
+  },
+  "Alex Lange": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 96.08
+  },
+  "Mitchell Parker": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 92.9190484123792
+  },
+  "Shawn Armstrong": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 92.86180354134571
+  },
+  "Anders Tolhurst": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 93.39107142857144
+  },
+  "Lucas Giolito": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 93.24740048388585
+  },
+  "Joe Barlow": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 94.79444444444444
+  },
+  "Christopher Troye": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 91.99128787878787
+  },
+  "Ian Gibaut": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 93.40114750025884
+  },
+  "Carson Ragsdale": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 93.65889639639639
+  },
+  "Luis Peralta": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 94.4084578794013
+  },
+  "Jacob Barnes": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 90.57939736875798
+  },
+  "John King": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 92.98808898270957
+  },
+  "Dylan Dodd": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 89.75289530245574
+  },
+  "Jack Flaherty": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 92.8805428377989
+  },
+  "Nick Burdi": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 94.09622294372295
+  },
+  "Bryce Jarvis": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 93.47369907229235
+  },
+  "Mason Englert": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 91.64293979434667
+  },
+  "Chance Huff": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 93.76
+  },
+  "DL Hall": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 93.71464478355173
+  },
+  "Bryce Collins": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 94.30555555555556
+  },
+  "Tyler Stuart": {
+    "max_speed": 96.4,
+    "avg_fastball_speed": 96.025
+  },
+  "Michael King": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 93.01908409445389
+  },
+  "Ryan Borucki": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.02567466953336
+  },
+  "Nicolas Cruz": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 95.11111111111111
+  },
+  "Ron Marinaccio": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 92.87531310301898
+  },
+  "Alex Amalfi": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 93.35714285714286
+  },
+  "Madison Jeffrey": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 92.02799999999999
+  },
+  "Trevor Rogers": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 92.94980924015297
+  },
+  "John Schreiber": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 92.23745998151797
+  },
+  "Garrett Burhenn": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.28181818181817
+  },
+  "Peter Strzelecki": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.15445346320347
+  },
+  "Ben Kudrna": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 92.39822580645162
+  },
+  "Miguel Díaz": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.62611111111111
+  },
+  "Welinton Herrera": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 95.8
+  },
+  "CD Pelham": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.5875
+  },
+  "Blake Holub": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 95.02256944444444
+  },
+  "Jon Gray": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.42598547294162
+  },
+  "Henry Baez": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.50625
+  },
+  "Quinn Mathews": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.16794871794872
+  },
+  "Peyton Pallette": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 95.14010761495233
+  },
+  "Joey Gerber": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 93.89077733860343
+  },
+  "Ryan Jennings": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 94.69404761904761
+  },
+  "Austin Cox": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 92.84152648224487
+  },
+  "Brandon Woodruff": {
+    "max_speed": 96.3,
+    "avg_fastball_speed": 92.23329651526514
+  },
+  "Alfred Morillo": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.47222222222223
+  },
+  "Evan Reifert": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 94.67727272727274
+  },
+  "Brandon Pfaadt": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 92.92252181551025
+  },
+  "Tyler Mahle": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 90.83361420404609
+  },
+  "José Berríos": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 92.217717419454
+  },
+  "Colin Rea": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.00532051557964
+  },
+  "Ryan Brasier": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.1195331593753
+  },
+  "Daniel Juarez": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.30946969696969
+  },
+  "Andrew Dalquist": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 94.76767676767678
+  },
+  "Samy Natera Jr.": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 95.4909090909091
+  },
+  "Justin Sterner": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 91.2873608475881
+  },
+  "Jack Little": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 94.17327767470624
+  },
+  "Justin Anderson": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.04210265924551
+  },
+  "Luarbert Arias": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.95599329682663
+  },
+  "Burch Smith": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.0
+  },
+  "Marco Raya": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 93.21000000000001
+  },
+  "Brady Choban": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 91.99526315789474
+  },
+  "Tommy Nance": {
+    "max_speed": 96.2,
+    "avg_fastball_speed": 94.44481792717087
+  },
+  "Hunter Strickland": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 93.36591189512242
+  },
+  "Tyler Matzek": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 94.46757936507936
+  },
+  "Seth Lugo": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 91.04810656987401
+  },
+  "Dylan File": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 91.34285714285714
+  },
+  "Paulshawn Pasqualotto": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 95.0375
+  },
+  "Tyson Hardin": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 91.23478260869565
+  },
+  "Jacob Wallace": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 90.82256410256412
+  },
+  "Max Scherzer": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 92.99286339320474
+  },
+  "Daniel Missaki": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 92.76363636363637
+  },
+  "Mitch Spence": {
+    "max_speed": 96.1,
+    "avg_fastball_speed": 91.53357898877096
+  },
+  "Zak Kent": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 92.77741378066379
+  },
+  "Reid Birlingmair": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 91.965
+  },
+  "Joshua Cornielly": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 90.95333333333333
+  },
+  "Ryan Pressly": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.32525348725349
+  },
+  "Sam Carlson": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 92.22827380952381
+  },
+  "Harrison Cohen": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 92.005
+  },
+  "Gerson Garabito": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 92.97664464008214
+  },
+  "Landen Roupp": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 92.5204726250313
+  },
+  "Alex Santos II": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.3
+  },
+  "Austin Smith": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 95.65
+  },
+  "Edwin Uceta": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 92.55555264134921
+  },
+  "Vince Velasquez": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.09558423913043
+  },
+  "Stephen Kolek": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.11032887743073
+  },
+  "Miguel Ullola": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.26258741258741
+  },
+  "Jared Southard": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.13214285714285
+  },
+  "Keegan Akin": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.59353414797212
+  },
+  "Sam Long": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.10172508933148
+  },
+  "Cody Poteet": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.3197463768116
+  },
+  "Mark Leiter Jr.": {
+    "max_speed": 96.0,
+    "avg_fastball_speed": 93.49710443436634
+  },
+  "Nick Brink": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 93.24
+  },
+  "Justin King": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 94.76111111111112
+  },
+  "Luke Murphy": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 95.76
+  },
+  "Eduardo Rodriguez": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 91.31202392985955
+  },
+  "Dean Kremer": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 91.16153192970664
+  },
+  "Ryan Sublette": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 94.25
+  },
+  "Rob Zastryzny": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 89.20706376535922
+  },
+  "Noah Cameron": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 90.84434755777667
+  },
+  "Austin Roberts": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 90.59252525252525
+  },
+  "Stephen Jones": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 94.28
+  },
+  "Brendon Little": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 93.35854704504045
+  },
+  "Nathan Wiles": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 90.21515151515152
+  },
+  "Austin Pope": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 93.92857142857143
+  },
+  "Carlos A. Francisco": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 93.86875
+  },
+  "José Castillo": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 92.97494903588162
+  },
+  "Zane Morehouse": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 93.59567307692308
+  },
+  "Joel Kuhnel": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 94.14798534798535
+  },
+  "Taisei Ota": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 94.96363636363635
+  },
+  "Jordany Ventura": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 93.54285714285713
+  },
+  "Michael McGreevy": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 91.81323734033884
+  },
+  "Robinson Piña": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 93.67238095238095
+  },
+  "Jake Irvin": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 91.73218283146942
+  },
+  "Jack Leftwich": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 94.48114478114479
+  },
+  "Justin Hagenman": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 89.55569593565046
+  },
+  "Tanner Gordon": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 92.26768758357152
+  },
+  "Tanner Burns": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 92.83556547619048
+  },
+  "Cody Bolton": {
+    "max_speed": 95.9,
+    "avg_fastball_speed": 91.55289122807018
+  },
+  "Kyle Hart": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 91.83593515152482
+  },
+  "Sauryn Lao": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 93.26036635706915
+  },
+  "Harold Chirino": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 93.61921558833322
+  },
+  "Jacob Webb": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 93.41872056514913
+  },
+  "A.J. Minter": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 91.59569300856307
+  },
+  "Angel Perdomo": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 92.71034362462933
+  },
+  "Carl Edwards Jr.": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 93.34964912280702
+  },
+  "Thomas Hatch": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 91.91047297807476
+  },
+  "Cesar Gomez": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 91.41875
+  },
+  "Gage Jump": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 94.76428571428572
+  },
+  "David Peterson": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 91.7194718178393
+  },
+  "JT Brubaker": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 93.19000674468244
+  },
+  "Kervin Castro": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 92.18623366013071
+  },
+  "Anthony Gose": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 94.31993939393939
+  },
+  "Fernando Cruz": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 93.50767388365603
+  },
+  "Charles King": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 94.75
+  },
+  "Caleb Ferguson": {
+    "max_speed": 95.8,
+    "avg_fastball_speed": 92.14060204106347
+  },
+  "Domingo Gonzalez": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 94.35538461538461
+  },
+  "Caleb Thielbar": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 92.83794290305654
+  },
+  "Amos Willingham": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 90.52962962962964
+  },
+  "Merrill Kelly": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 91.59546067920026
+  },
+  "Sawyer Gipson-Long": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 91.39126262565247
+  },
+  "Michael Gomez": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 90.17631072631072
+  },
+  "Joan Adon": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 94.12742647058823
+  },
+  "Brendan White": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 93.72733333333333
+  },
+  "Logan VanWey": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 92.2263352708422
+  },
+  "Trent Harris": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 94.515
+  },
+  "Paul Blackburn": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 91.18665185542051
+  },
+  "Tomoyuki Sugano": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 91.5841051342755
+  },
+  "Kody Funderburk": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 92.72118959576038
+  },
+  "Jose Espada": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 92.53644224196854
+  },
+  "Paxton Schultz": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 91.72612608537426
+  },
+  "Sam Weatherly": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 93.20625
+  },
+  "Marco Jimenez": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 93.8375
+  },
+  "Ryan Rolison": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 92.82254926771533
+  },
+  "Zack Littell": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 91.76359353867987
+  },
+  "José Suarez": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 93.2219240272414
+  },
+  "Austin Warren": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 92.83255122068847
+  },
+  "Jarret Whorff": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 91.46277777777777
+  },
+  "Adisyn Coffey": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 92.58111111111111
+  },
+  "Robert Wegielnik": {
+    "max_speed": 95.7,
+    "avg_fastball_speed": 93.82000000000001
+  },
+  "Joseph Yabbour": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 93.93214285714285
+  },
+  "Trevor Martin": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 92.12666666666667
+  },
+  "Evan Justice": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 94.06232277526395
+  },
+  "Josh Grosz": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 95.13333333333333
+  },
+  "Sean Hjelle": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 92.65642069468991
+  },
+  "Steven Okert": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 91.94524431086931
+  },
+  "Beck Way": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 93.785
+  },
+  "Hayden Durke": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 95.44999999999999
+  },
+  "Dane Acker": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 94.35
+  },
+  "Kevin Herget": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 90.64223111410277
+  },
+  "Ben Bowden": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 93.01423845385384
+  },
+  "Nic Enright": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 93.25132289521179
+  },
+  "Jake Eder": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 93.1426867703004
+  },
+  "Ronel Blanco": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 92.99627074606676
+  },
+  "Bowden Francis": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 92.49369620462501
+  },
+  "Logan Henderson": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 92.33521179277415
+  },
+  "Cristian Javier": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 92.71246652056765
+  },
+  "Carlos Belen": {
+    "max_speed": 95.6,
+    "avg_fastball_speed": 93.61666666666667
+  },
+  "Jonathan Todd": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 92.85454545454546
+  },
+  "Jake Woodford": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 92.56599021396589
+  },
+  "Nick Mikolajchak": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 92.57596153846154
+  },
+  "Erick Fedde": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 91.87463489255187
+  },
+  "Sean Reid-Foley": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 94.72857142857143
+  },
+  "Brooks Kriske": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 91.78927079501834
+  },
+  "Juan Nuñez": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 93.46166443850268
+  },
+  "Parker Messick": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 92.44195575938134
+  },
+  "Cayne Ueckert": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 94.89999999999999
+  },
+  "Jhony Brito": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 95.02000000000001
+  },
+  "Lazaro Estrada": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 93.92923232323233
+  },
+  "Logan Webb": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 92.29854924372806
+  },
+  "Austin Schulfer": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 94.04015873015874
+  },
+  "Matt Gage": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 92.65558836996337
+  },
+  "Robby Ahlstrom": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 93.39895833333333
+  },
+  "Jack Dreyer": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 92.72931661975372
+  },
+  "Craig Kimbrel": {
+    "max_speed": 95.5,
+    "avg_fastball_speed": 93.34723966509681
+  },
+  "Ian Anderson": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 93.71465452219564
+  },
+  "Garrett Acton": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 94.23529411764706
+  },
+  "Bryce Elder": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 91.75407053074338
+  },
+  "Chris Clark": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 93.13333333333333
+  },
+  "Trevor Kuncl": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 93.19999999999999
+  },
+  "Chris Bassitt": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 90.72668749039549
+  },
+  "Tyler Bradt": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 94.6
+  },
+  "Chris Ellis": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 91.91818181818182
+  },
+  "Nolan Hoffman": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 92.6430303030303
+  },
+  "Alan Rangel": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 93.03817713353898
+  },
+  "Tanner Dodson": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 92.42484848484848
+  },
+  "Spencer Arrighetti": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 91.209428518679
+  },
+  "Carlos Rodriguez": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 92.27143682729383
+  },
+  "Alex Pham": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 90.48108108108109
+  },
+  "Eric Orze": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 93.97545991926182
+  },
+  "TJ Shook": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 92.54801282051281
+  },
+  "Luis Frías": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 91.76428571428572
+  },
+  "Landon Knack": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 93.25085411198296
+  },
+  "Brandon Johnson": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 94.07857142857142
+  },
+  "Joe Rock": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 93.74088235294117
+  },
+  "Brendan Cellucci": {
+    "max_speed": 95.4,
+    "avg_fastball_speed": 90.84650349650349
+  },
+  "Karl Kauffmann": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.24444444444445
+  },
+  "Nick Richmond": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 94.9
+  },
+  "Stefan Raeth": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 90.46153409090908
+  },
+  "Kris Bubic": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 92.29093832251002
+  },
+  "Grayson Rodriguez": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.23333333333333
+  },
+  "Thomas Harrington": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 91.39517086364225
+  },
+  "Dale Stanavich": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.49945728291316
+  },
+  "Matt Pushard": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 94.12156593406593
+  },
+  "Jack Sellinger": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 94.03333333333335
+  },
+  "Troy Watson": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.28888888888889
+  },
+  "Scott Barlow": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 92.49987652043497
+  },
+  "Tanner Banks": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 92.4570452107952
+  },
+  "Nigel Belgrave": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.0
+  },
+  "Leonardo Pestana": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 91.65234006734006
+  },
+  "Carson Hobbs": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 91.88421052631578
+  },
+  "Kai-Wei Teng": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.26402965260546
+  },
+  "Jack Jasiak": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 92.14444444444445
+  },
+  "Grant Hartwig": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.7164935064935
+  },
+  "Andrew Abbott": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 92.42780613411661
+  },
+  "Harrison Kreiling": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.0
+  },
+  "Bryan Hudson": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 90.260862673155
+  },
+  "Danny Young": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 92.6468466995967
+  },
+  "Max Rajcic": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.82214285714286
+  },
+  "Caleb Boushley": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 91.61126078495168
+  },
+  "Zach Franklin": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.76785714285714
+  },
+  "Chris Flexen": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 90.967881734163
+  },
+  "Carson Whisenhunt": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 92.68603027764568
+  },
+  "Erick Rodriguez": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 90.35454545454544
+  },
+  "Eric Cerantola": {
+    "max_speed": 95.3,
+    "avg_fastball_speed": 93.86269841269842
+  },
+  "Mason Black": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.70025510204081
+  },
+  "JP Sears": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 91.95594883118758
+  },
+  "Johnathan Lavallee": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 91.98666666666666
+  },
+  "Collin Snider": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 90.5512099597026
+  },
+  "Drew Pomeranz": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.74360347495694
+  },
+  "Craig Yoho": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.57951482092787
+  },
+  "Tyson Neighbors": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 93.00833333333333
+  },
+  "Bailey Falter": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.09198837184408
+  },
+  "Alex Vesia": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.55574433535735
+  },
+  "Luis Moreno": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 90.45595238095238
+  },
+  "Curtis Taylor": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.1875
+  },
+  "Alfredo Zarraga": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 94.02307692307691
+  },
+  "Easton McGee": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.0076271090376
+  },
+  "Jordan Geber": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 92.85719696969696
+  },
+  "Bryse Wilson": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 90.64120704798411
+  },
+  "Zack Weiss": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 91.73888888888888
+  },
+  "Hayden Snelsire": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 91.75
+  },
+  "Manuel Castro": {
+    "max_speed": 95.2,
+    "avg_fastball_speed": 91.92916666666666
+  },
+  "Henry Gomez": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 94.01111111111112
+  },
+  "Brady Basso": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 91.62066190418005
+  },
+  "Michael Prosecky": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 93.41111111111111
+  },
+  "Chen Zhong-Ao Zhuang": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 92.56666666666666
+  },
+  "Enny Romero": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 93.95
+  },
+  "Nick Martinez": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 91.42750239378438
+  },
+  "Kyle Freeland": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 90.3405132615994
+  },
+  "José Geraldo": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 91.81515151515151
+  },
+  "Joey Lucchesi": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 92.34613573443278
+  },
+  "Bryan Shaw": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 92.76599579544737
+  },
+  "Jimmy Herget": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 92.13282968257234
+  },
+  "Riley Martin": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 93.575
+  },
+  "Javier Assad": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 91.31059485983582
+  },
+  "Luis F. Castillo": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 92.25875401069518
+  },
+  "Ben Sears": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 91.89166666666667
+  },
+  "Hunter Cranton": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 92.7
+  },
+  "Michael Fulmer": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 90.61148071059033
+  },
+  "Taijuan Walker": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 89.84906073328565
+  },
+  "John Brebbia": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 92.51794905312552
+  },
+  "Endrys Briceno": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 94.20833333333333
+  },
+  "Anderson Pilar": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 93.22261904761905
+  },
+  "Carlos Tavera": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 91.18823529411765
+  },
+  "Dylan Ray": {
+    "max_speed": 95.1,
+    "avg_fastball_speed": 93.30833333333334
+  },
+  "Brady Singer": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 91.18338744394879
+  },
+  "Dax Fulton": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 93.66499999999999
+  },
+  "Cade Gibson": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 91.79106998653457
+  },
+  "Hiroto Saiki": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 91.21833333333333
+  },
+  "Dillon Tate": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 91.68910986616868
+  },
+  "Ty Madden": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 92.10384615384615
+  },
+  "Sonny Gray": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 90.89730528275976
+  },
+  "Jean Cabrera": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 93.56013986013986
+  },
+  "Tommy Mace": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 92.725
+  },
+  "Jared Shuster": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 92.37851782379619
+  },
+  "Jairo Iriarte": {
+    "max_speed": 95.0,
+    "avg_fastball_speed": 93.86350762527233
+  },
+  "Bryan King": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 91.85082819807887
+  },
+  "Josh Walker": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 93.14508306100218
+  },
+  "Chris Rodriguez": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 93.89732142857143
+  },
+  "Gerardo Gutierrez": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 93.42916666666667
+  },
+  "Dom Hamel": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 91.4
+  },
+  "Erik Swanson": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 92.8963888888889
+  },
+  "Trevor McDonald": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 93.16121943371944
+  },
+  "Tyler Wells": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 92.20400920542636
+  },
+  "Will Schomberg": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 93.06130952380953
+  },
+  "Carlos Guzman": {
+    "max_speed": 94.9,
+    "avg_fastball_speed": 91.59285714285716
+  },
+  "Chris Campos": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 91.15454545454546
+  },
+  "Raul Brito": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 93.16944444444444
+  },
+  "Cody Laweryson": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 91.70843589743589
+  },
+  "Thaddeus Ward": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 91.07694444444445
+  },
+  "Jose E. Hernandez": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.53054096638655
+  },
+  "Zach McCambley": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.78928571428571
+  },
+  "Brady Feigl": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 93.86666666666667
+  },
+  "Austin Davis": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 90.04707456059347
+  },
+  "Tyson Guerrero": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 93.375
+  },
+  "Antonio Jimenez": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 94.05833333333334
+  },
+  "Taylor Rogers": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.52909826828945
+  },
+  "Connor Seabold": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.52184946766788
+  },
+  "Juan Mendez": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.05
+  },
+  "Justin Yeager": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.07142857142857
+  },
+  "Huascar Ynoa": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.96770833333333
+  },
+  "Christian Herberholz": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 91.23478260869565
+  },
+  "Kirby Yates": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.75538966637652
+  },
+  "Omar Cruz": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 92.584786498506
+  },
+  "Justin Dunn": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 93.4011111111111
+  },
+  "K.C. Hunt": {
+    "max_speed": 94.8,
+    "avg_fastball_speed": 89.525
+  },
+  "Héctor Neris": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 92.30097082282796
+  },
+  "Marquis Grissom Jr.": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 92.7575
+  },
+  "Eduardo Herrera": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 93.9
+  },
+  "Kyle Brnovich": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 92.06818181818181
+  },
+  "Sam Moll": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.68138046819082
+  },
+  "Zane Mills": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.5076923076923
+  },
+  "Andrew Magno": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 92.50833333333333
+  },
+  "Tyler Jay": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.53192307692308
+  },
+  "Lance McCullers Jr.": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.13402127123447
+  },
+  "Hayden Juenger": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.43550582750582
+  },
+  "Robert Gasser": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 92.8387037037037
+  },
+  "Zach Barnes": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 92.78444444444445
+  },
+  "Ben Simon": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.44761904761906
+  },
+  "Daiichi Ishii": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 93.55714285714285
+  },
+  "Charlie Beilenson": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.82444444444445
+  },
+  "Declan Cronin": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 92.14861111111111
+  },
+  "Sean Manaea": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 91.8245254058424
+  },
+  "Zach Jacobs": {
+    "max_speed": 94.7,
+    "avg_fastball_speed": 90.64666666666668
+  },
+  "Drew Sommers": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 93.17592948717949
+  },
+  "Mark McLaughlin": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 92.74
+  },
+  "Brandon Bielak": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 92.86271043771042
+  },
+  "Ryan Hawks": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 91.83
+  },
+  "Colin Poche": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 92.12257038730664
+  },
+  "Nick Sandlin": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 91.57576058201057
+  },
+  "Aaron Nola": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 90.54869751635137
+  },
+  "Nolan Kingham": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 93.34285714285714
+  },
+  "Jordan Balazovic": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 93.4659534909535
+  },
+  "Lucas Wepf": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 93.00625
+  },
+  "Joey Krehbiel": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 90.94411764705882
+  },
+  "Blas Castaño": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 91.45055210489993
+  },
+  "William Kempner": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 93.04249999999999
+  },
+  "Colten Brewer": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 93.03924107142858
+  },
+  "Scott McGough": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 92.78205579673593
+  },
+  "Carter Spivey": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 92.04333333333332
+  },
+  "Matt Strahm": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 91.33320819247959
+  },
+  "Carson Spiers": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 90.91093890491193
+  },
+  "Spencer Turnbull": {
+    "max_speed": 94.6,
+    "avg_fastball_speed": 90.99395061728394
+  },
+  "Jared Karros": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 93.56785714285715
+  },
+  "Tim Naughton": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 89.9205357142857
+  },
+  "Eric Lauer": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 90.3729607082907
+  },
+  "Ryan Burr": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 93.775
+  },
+  "Shaun Anderson": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 92.5201984126984
+  },
+  "Andrew Bash": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 92.90703703703703
+  },
+  "Brant Hurter": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 92.25229649811149
+  },
+  "Matt Festa": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 91.80602160133859
+  },
+  "Jameson Taillon": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 90.6768348949492
+  },
+  "James Hicks": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 92.36315789473684
+  },
+  "Alex Faedo": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 93.08461538461539
+  },
+  "Garrett McDaniels": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 92.59395146520147
+  },
+  "Carson Fulmer": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 92.43496646422987
+  },
+  "Doug Nikhazy": {
+    "max_speed": 94.5,
+    "avg_fastball_speed": 91.05727183131252
+  },
+  "Drake Fellows": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 93.6875
+  },
+  "Cole Sulser": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 90.95958842627961
+  },
+  "Zane Russell": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.69583333333333
+  },
+  "Kaleb Bowman": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 91.69166666666666
+  },
+  "Jacob Waguespack": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 90.34126984126983
+  },
+  "Raymond Burgos": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.35722222222222
+  },
+  "James Karinchak": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.95338141025641
+  },
+  "Tayler Scott": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.00288883782078
+  },
+  "JT Chargois": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.58291666666668
+  },
+  "Miguel Cienfuegos": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 93.10000000000001
+  },
+  "Eric Pardinho": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.525
+  },
+  "Ryder Ryan": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 93.43602693602692
+  },
+  "Luis Contreras": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 91.64291109056492
+  },
+  "Matt Keating": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 91.52000000000001
+  },
+  "Shane Bieber": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 91.26773007421033
+  },
+  "Ian Bedell": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 91.44499178981938
+  },
+  "Cade Povich": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.09170469714756
+  },
+  "Michael Tonkin": {
+    "max_speed": 94.4,
+    "avg_fastball_speed": 92.23610779214111
+  },
+  "Mason Adams": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 91.3398695054945
+  },
+  "Antonio Knowles": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 91.35333333333332
+  },
+  "Chandler Champlain": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 92.7
+  },
+  "Justin Jarvis": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 91.29007936507936
+  },
+  "Ethan Roberts": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 91.57736904761904
+  },
+  "Preston Johnson": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 92.3125
+  },
+  "Wander Suero": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 91.98268340534594
+  },
+  "Bryan Hoeing": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 92.54529529993816
+  },
+  "José Urquidy": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 91.68014705882354
+  },
+  "Grant Gambrell": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 92.40833333333335
+  },
+  "Manny Bañuelos": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 92.21538461538461
+  },
+  "Brennan Bernardino": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 89.69487324805249
+  },
+  "Jakob Junis": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 90.87872877452673
+  },
+  "Aaron Davenport": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 89.6125
+  },
+  "J.C. Flowers": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 93.42916666666666
+  },
+  "Jovani Morán": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 89.94393939393939
+  },
+  "Matt Canterino": {
+    "max_speed": 94.3,
+    "avg_fastball_speed": 93.2909090909091
+  },
+  "Dylan Heid": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 93.175
+  },
+  "Jaden Woods": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 93.32222222222222
+  },
+  "Adam Ottavino": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 91.96307692307693
+  },
+  "Keyshawn Askew": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 91.74755639097745
+  },
+  "Kevin Stevens": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 92.74
+  },
+  "Parker Mushinski": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 91.22630952380953
+  },
+  "Kevin Kelly": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 90.81656293148257
+  },
+  "Anthony Maldonado": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 92.4558598544313
+  },
+  "Erick Leal": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 92.96111111111111
+  },
+  "Pierson Ohl": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 90.55368803243907
+  },
+  "Wade Miley": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 89.94470766129031
+  },
+  "Josh Winder": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 92.3
+  },
+  "Chris Devenski": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 90.22159158549783
+  },
+  "Chris Stratton": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 91.4566821819821
+  },
+  "Hunter Parsons": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 91.95
+  },
+  "Zach Eflin": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 90.36006139314668
+  },
+  "Aaron Civale": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 90.56952483529841
+  },
+  "Clay Helvey": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 93.23439153439153
+  },
+  "Logan Allen": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 89.52753090677481
+  },
+  "Ian Seymour": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 90.54560388779613
+  },
+  "Bradley Hanner": {
+    "max_speed": 94.2,
+    "avg_fastball_speed": 90.67666666666666
+  },
+  "Carlos Carrasco": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 90.98006666032845
+  },
+  "Austin Gordon": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 91.84
+  },
+  "Alan Busenitz": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 90.70785714285715
+  },
+  "J.P. France": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 88.43280632411067
+  },
+  "Yuki Matsui": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 92.02266498397961
+  },
+  "Jason Alexander": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 90.98993128632267
+  },
+  "Neftalí Feliz": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 92.43861111111111
+  },
+  "Sam Benschoter": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 91.36778846153847
+  },
+  "Jack Dallas": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 92.12242424242424
+  },
+  "Nick Hull": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 90.23333333333333
+  },
+  "Nick Robertson": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 93.39000000000001
+  },
+  "Sean Paul Liñan": {
+    "max_speed": 94.1,
+    "avg_fastball_speed": 92.1
+  },
+  "Carson Palmquist": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 88.97322371168295
+  },
+  "Jordan Mikel": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 93.31666666666666
+  },
+  "Sem Robberse": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 91.83866479925302
+  },
+  "Trey McLoughlin": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 91.47728174603174
+  },
+  "Evan Sisk": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 89.80767064872926
+  },
+  "Garrett Schoenle": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 92.4825641025641
+  },
+  "Colton Gordon": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 91.20640882658645
+  },
+  "Landon Tomkins": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 93.38
+  },
+  "Patrick Corbin": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 89.7342595646462
+  },
+  "Jacob Lopez": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 89.90771424381263
+  },
+  "Ryan Webb": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 92.08666666666667
+  },
+  "Carlos Espinosa": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 93.6
+  },
+  "Tyler Myrick": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 91.1625
+  },
+  "Bailey Dees": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 93.00952380952381
+  },
+  "Kade Morris": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 93.02142857142857
+  },
+  "Luis Gastelum": {
+    "max_speed": 94.0,
+    "avg_fastball_speed": 93.42500000000001
+  },
+  "Reiver Sanmartin": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 91.12740740740742
+  },
+  "Jack Sinclair": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 92.4090909090909
+  },
+  "Chase Costello": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 90.82
+  },
+  "Alexander Cornielle": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 90.10909090909091
+  },
+  "Moisés Chace": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 92.56
+  },
+  "Adonis Medina": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 92.16358585858586
+  },
+  "Seth Keener": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 92.83571428571429
+  },
+  "Jonathan Heasley": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 93.53333333333335
+  },
+  "Ross Carver": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 91.89333333333335
+  },
+  "Logan Rinehart": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 90.75615384615384
+  },
+  "Phil Maton": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 90.31930205402944
+  },
+  "Kyle Backhus": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 90.90562139614771
+  },
+  "Jose Adames": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 93.9
+  },
+  "Nicky Lopez": {
+    "max_speed": 93.9,
+    "avg_fastball_speed": 93.9
+  },
+  "Justin Steele": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 90.92282499327413
+  },
+  "Tyler Ivey": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 91.51842105263158
+  },
+  "Lucas Braun": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 91.15555555555555
+  },
+  "Jorge Benitez": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 93.69999999999999
+  },
+  "Peyton Alford": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 92.315
+  },
+  "Tristan Garnett": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 91.70625
+  },
+  "Shota Imanaga": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 90.70695629489857
+  },
+  "Alex Cornwell": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 90.884375
+  },
+  "Brandon Walter": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 89.94732282841021
+  },
+  "Jay Driver": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 92.1875
+  },
+  "Kyle Tyler": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 92.21
+  },
+  "Leonardo Taveras": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 91.53636363636363
+  },
+  "Sam Aldegheri": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 91.22719737138083
+  },
+  "Tyler Holton": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 90.21131746065666
+  },
+  "Kyle Amendt": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 92.51475256769375
+  },
+  "Joey Estes": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 91.65631654060225
+  },
+  "Owen White": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 90.72431505692376
+  },
+  "Michel Baez": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 92.39999999999999
+  },
+  "Jake Diekman": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 92.86315789473684
+  },
+  "Shinnosuke Ogasawara": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 91.20340301508008
+  },
+  "Noah Denoyer": {
+    "max_speed": 93.8,
+    "avg_fastball_speed": 90.89999999999999
+  },
+  "Tayler Saucedo": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 90.75022532971522
+  },
+  "Paul Fry": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 91.94
+  },
+  "Jeffrey Springs": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 90.26581119764408
+  },
+  "Carter Loewen": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 93.33333333333333
+  },
+  "Austin Kitchen": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 91.47589285714285
+  },
+  "Robinson Ortiz": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 92.02662337662338
+  },
+  "Kenta Maeda": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 90.54031646594147
+  },
+  "Hayden Harris": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 92.18739814107461
+  },
+  "Rodney Boone": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 92.6375
+  },
+  "Connor Overton": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 90.54541486291485
+  },
+  "Gabe Bierman": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 90.32708333333333
+  },
+  "Cade Austin": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 92.36166666666668
+  },
+  "Victor González": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 91.72375
+  },
+  "Zac Leigh": {
+    "max_speed": 93.7,
+    "avg_fastball_speed": 92.6
+  },
+  "Valente Bellozo": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 87.40555208824317
+  },
+  "Eli Morgan": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.81878306878308
+  },
+  "Riley Cooper": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.44999999999999
+  },
+  "David Robertson": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.6095505952381
+  },
+  "Ranger Suárez": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 89.36368758467233
+  },
+  "Jaime Melendez": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 88.8375
+  },
+  "Nicholas Padilla": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.71041666666667
+  },
+  "Tyler Alexander": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 89.90278939640753
+  },
+  "Wes Benjamin": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 89.66765220744168
+  },
+  "Alec Baker": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.47999999999999
+  },
+  "Trevor Richards": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.77882347020933
+  },
+  "Ryan Miller": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 92.76666666666667
+  },
+  "Andrew Alvarez": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.28301647535768
+  },
+  "Cooper Hjerpe": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 91.08212719298245
+  },
+  "John Stankiewicz": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 88.68910533910532
+  },
+  "Chandler Welch": {
+    "max_speed": 93.6,
+    "avg_fastball_speed": 92.45
+  },
+  "Nick Hernandez": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 91.4385725398484
+  },
+  "Anthony Simonelli": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 89.97545454545454
+  },
+  "Randy Dobnak": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 92.09210526315789
+  },
+  "Landon Sims": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 91.50088522588521
+  },
+  "Devin Sweet": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 92.30850000000001
+  },
+  "Stevie Emanuels": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 90.69166666666666
+  },
+  "Richard Lovelady": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 91.24237624354812
+  },
+  "Tommy Doyle": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 90.41868131868132
+  },
+  "Jason Blanchard": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 92.51666666666667
+  },
+  "Jack Dashwood": {
+    "max_speed": 93.5,
+    "avg_fastball_speed": 92.87261904761905
+  },
+  "Kyle Scott": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 92.93333333333334
+  },
+  "Nick Raquet": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 91.71666666666667
+  },
+  "Connor Gillispie": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 89.90879073845808
+  },
+  "Danny Watson": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 92.7
+  },
+  "Blake Walston": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 89.66376408090117
+  },
+  "Luke Craig": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 92.11136363636363
+  },
+  "Ryan Middendorf": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 92.21071428571429
+  },
+  "Robert Kwiatkowski": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 93.025
+  },
+  "Nick Dombkowski": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 88.935
+  },
+  "Thomas Schultz": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 89.85454545454546
+  },
+  "Ben Vespi": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 92.35
+  },
+  "Jonah Dipoto": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 91.0875
+  },
+  "Kai Wynyard": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 92.30000000000001
+  },
+  "Simon Miller": {
+    "max_speed": 93.4,
+    "avg_fastball_speed": 89.31
+  },
+  "Jake Rice": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 92.14583333333334
+  },
+  "Ben Lively": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 89.36287954035775
+  },
+  "Robert Cranz": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 92.89
+  },
+  "Brandon Waddell": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 91.04388671972434
+  },
+  "Aaron Brown": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 91.13148148148149
+  },
+  "Jimmy Burnette": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 90.75538461538461
+  },
+  "Scott Alexander": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 90.79444731497018
+  },
+  "Enoli Paredes": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 91.3
+  },
+  "Nestor Cortes": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 88.57196250006334
+  },
+  "Alonzo Richardson": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 91.48
+  },
+  "Hayden Seig": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 92.3
+  },
+  "Jonathan Brand": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 91.56666666666666
+  },
+  "Camden Minacci": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 93.3
+  },
+  "Joe Jacques": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 91.60185185185185
+  },
+  "Tyler Gilbert": {
+    "max_speed": 93.3,
+    "avg_fastball_speed": 89.45477516696953
+  },
+  "PJ Poulin": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 90.5126973026973
+  },
+  "Mitch Farris": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 90.67119679349632
+  },
+  "Luis Garcia": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 87.6730357142857
+  },
+  "Trey McGough": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 90.92916666666666
+  },
+  "Alec Barger": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 91.25
+  },
+  "Geoffrey Gilbert": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 91.93509615384615
+  },
+  "Xavier Meachem": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 91.93333333333334
+  },
+  "Brandon Eisert": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 89.58507434197307
+  },
+  "Connor Noland": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 91.86666666666667
+  },
+  "Richard Rodríguez": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 91.98461538461538
+  },
+  "Mason Erla": {
+    "max_speed": 93.2,
+    "avg_fastball_speed": 92.27067307692307
+  },
+  "Joander Suarez": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 89.60714285714286
+  },
+  "Chase Solesky": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 90.76157407407408
+  },
+  "J.B. Wendelken": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 90.80875
+  },
+  "Christian Suarez": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 92.9
+  },
+  "John Rooney": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 91.30416666666666
+  },
+  "Matt Bowman": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 90.26293669460829
+  },
+  "Ryan Thompson": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 89.71857306787206
+  },
+  "Anthony Misiewicz": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 87.78915204678363
+  },
+  "Nelson L. Alvarez": {
+    "max_speed": 93.1,
+    "avg_fastball_speed": 89.1123076923077
+  },
+  "Cole Ayers": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 91.88333333333333
+  },
+  "Jesus Pirela": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 91.41818181818182
+  },
+  "J.P. Feyereisen": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 91.17610389610391
+  },
+  "Gage Boehm": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 88.54642857142858
+  },
+  "Peyton Gray": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 91.925
+  },
+  "Kyle Gibson": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 90.52581819713305
+  },
+  "Denny Roman": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 92.225
+  },
+  "Grant Ford": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 91.62857142857142
+  },
+  "Shosei Togo": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 90.54807692307692
+  },
+  "Yuya Ishiguro": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 91.71666666666665
+  },
+  "Will Dion": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 91.14559407096174
+  },
+  "Bailey Ober": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 90.18698788620502
+  },
+  "Oddanier Mosqueda": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 90.95843137254903
+  },
+  "Jose Quintana": {
+    "max_speed": 93.0,
+    "avg_fastball_speed": 90.49835750980806
+  },
+  "Jack Young": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 91.75714285714285
+  },
+  "Fineas Del Bonta-Smith": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 92.9
+  },
+  "Jose Cuas": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 91.11746031746031
+  },
+  "John Murphy": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 90.26785714285714
+  },
+  "Alberto Baldonado": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 91.47999999999999
+  },
+  "Davis Daniel": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 90.86343201754386
+  },
+  "Jesse Wainscott": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 91.46875
+  },
+  "Jacob Wosinski": {
+    "max_speed": 92.9,
+    "avg_fastball_speed": 90.775
+  },
+  "Avery Weems": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 92.3
+  },
+  "Luis González": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 91.38
+  },
+  "Foster Griffin": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 89.91698113207548
+  },
+  "Jack O'Loughlin": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 91.77777777777777
+  },
+  "Wesley Moore": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 91.52000000000001
+  },
+  "Walter Pennington": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 88.90334249084249
+  },
+  "Jacob Meador": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 91.26666666666667
+  },
+  "Brent Suter": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 87.629262259025
+  },
+  "Tyler Morgan": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 90.17
+  },
+  "Ross Stripling": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 90.75999999999999
+  },
+  "Matt Waldron": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 90.40625
+  },
+  "Nick Nelson": {
+    "max_speed": 92.8,
+    "avg_fastball_speed": 91.86
+  },
+  "Alfred Vega": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 89.7
+  },
+  "Anthony Solometo": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 92.16153846153846
+  },
+  "Gabriel Sosa": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 91.725
+  },
+  "Phil Bickford": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 91.31
+  },
+  "Cody Bradford": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 90.82661943319837
+  },
+  "Zach Thompson": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 88.32862903225805
+  },
+  "Jimmy Kingsbury": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 90.318
+  },
+  "Erasmo Ramírez": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 89.31443107769424
+  },
+  "Nick Jones": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 91.67894736842106
+  },
+  "Cody Stashak": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 89.85143467643468
+  },
+  "Brody Rodning": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 89.07375
+  },
+  "Touki Toussaint": {
+    "max_speed": 92.7,
+    "avg_fastball_speed": 91.83809523809524
+  },
+  "Mason Fluharty": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 90.1551829642412
+  },
+  "Will Brian": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 90.66
+  },
+  "Juan Gámez": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 91.98333333333333
+  },
+  "Jake Palisch": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 89.69404761904762
+  },
+  "Brian Van Belle": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 90.79488888888889
+  },
+  "Dakota Hawkins": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 92.5
+  },
+  "Zack Thompson": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 91.56
+  },
+  "Landon Harper": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 89.89411764705882
+  },
+  "Mason Hickman": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 91.83885714285714
+  },
+  "Tyler Woessner": {
+    "max_speed": 92.6,
+    "avg_fastball_speed": 91.34
+  },
+  "Danny Coulombe": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 87.68800568665797
+  },
+  "Phil Fox": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 91.17625
+  },
+  "Sean Boyle": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 91.10442528735632
+  },
+  "Josh Maciejewski": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 91.045
+  },
+  "Ryan Sandberg": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 90.60833333333333
+  },
+  "Kolby Allard": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 88.75408906799109
+  },
+  "Evan Kravetz": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 90.69873737373736
+  },
+  "Giovanny Gallegos": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 90.55174242424243
+  },
+  "Bryce Bonnin": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 92.5
+  },
+  "Wil Jensen": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 92.15
+  },
+  "Chase Plymell": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 91.96000000000001
+  },
+  "Jonny Cuevas": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 90.84285714285714
+  },
+  "Patrick Monteverde": {
+    "max_speed": 92.5,
+    "avg_fastball_speed": 88.54183862433861
+  },
+  "Jonathan Hughes": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 88.11379310344829
+  },
+  "Brooks Raley": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 89.0689039408867
+  },
+  "Michael Cuevas": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 91.61666666666667
+  },
+  "Justin Bruihl": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 89.8916796188561
+  },
+  "Dionys Rodriguez": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 91.17999999999999
+  },
+  "Jason Ruffcorn": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 89.81363636363636
+  },
+  "Jaylen Nowlin": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 91.50833333333333
+  },
+  "Andrew Misiaszek": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 90.88134032634032
+  },
+  "Ethan Routzahn": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 90.44809523809523
+  },
+  "Andrew Heaney": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 89.99674228787107
+  },
+  "Garrett Stallings": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 90.02420634920634
+  },
+  "Juan Carela": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 88.45833333333333
+  },
+  "Tommy Henry": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 89.62712581699346
+  },
+  "Dylan Covey": {
+    "max_speed": 92.4,
+    "avg_fastball_speed": 90.76153846153846
+  },
+  "Brandon Neeck": {
+    "max_speed": 92.3,
+    "avg_fastball_speed": 90.71944444444445
+  },
+  "Casey Kelly": {
+    "max_speed": 92.3,
+    "avg_fastball_speed": 90.73402777777778
+  },
+  "Brandon Hughes": {
+    "max_speed": 92.3,
+    "avg_fastball_speed": 91.3076923076923
+  },
+  "Tyler Anderson": {
+    "max_speed": 92.3,
+    "avg_fastball_speed": 87.65393190696292
+  },
+  "José De León": {
+    "max_speed": 92.3,
+    "avg_fastball_speed": 90.57083333333333
+  },
+  "Taylor Rashi": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 89.73252839914869
+  },
+  "Austin Gomber": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 89.00609117735053
+  },
+  "Colin Peluse": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 90.23333333333333
+  },
+  "Andrew Chafin": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 89.62919196156368
+  },
+  "Paul Sewald": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 90.33766056740194
+  },
+  "Jesse Chavez": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 88.85564343210588
+  },
+  "Lael Lockhart": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 90.29671052631579
+  },
+  "Philip Abner": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 90.3137617012617
+  },
+  "Amir Garrett": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 91.60000000000001
+  },
+  "Jordan Montgomery": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 89.61803030303031
+  },
+  "Dane Dunning": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 89.09225394960525
+  },
+  "Konnor Ash": {
+    "max_speed": 92.2,
+    "avg_fastball_speed": 90.0875
+  },
+  "Sean Guenther": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 90.22576895326895
+  },
+  "Billy Corcoran": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 90.03999999999999
+  },
+  "Lucas Gilbreath": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 90.30064935064935
+  },
+  "Ben Harris": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 91.24444444444445
+  },
+  "Allan Winans": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 90.40033397803262
+  },
+  "Alejandro Lugo": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 90.8
+  },
+  "Cole Zaffiro": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 90.95
+  },
+  "Vicarte Domingo": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 90.7
+  },
+  "Jack Cushing": {
+    "max_speed": 92.1,
+    "avg_fastball_speed": 92.05
+  },
+  "Daniel Nunez": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 91.225
+  },
+  "Miguel Gomez": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 90.825
+  },
+  "Chase Lee": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 89.27838511207385
+  },
+  "Buck Farmer": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 90.93333333333334
+  },
+  "William Silva": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 90.60000000000001
+  },
+  "Austin Bergner": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 89.38888888888889
+  },
+  "Martín Pérez": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 87.83697606111075
+  },
+  "Chris Kean": {
+    "max_speed": 92.0,
+    "avg_fastball_speed": 91.46666666666665
+  },
+  "Josh White": {
+    "max_speed": 91.9,
+    "avg_fastball_speed": 91.9
+  },
+  "Seth Martinez": {
+    "max_speed": 91.9,
+    "avg_fastball_speed": 88.67932213787286
+  },
+  "César Vargas": {
+    "max_speed": 91.9,
+    "avg_fastball_speed": 89.27777777777777
+  },
+  "Angel Cuenca": {
+    "max_speed": 91.9,
+    "avg_fastball_speed": 90.73333333333333
+  },
+  "Tatsuya Ishikawa": {
+    "max_speed": 91.9,
+    "avg_fastball_speed": 91.24545454545455
+  },
+  "Duque Hebbert": {
+    "max_speed": 91.9,
+    "avg_fastball_speed": 89.75555555555555
+  },
+  "Hidetaka Okadome": {
+    "max_speed": 91.9,
+    "avg_fastball_speed": 91.05555555555556
+  },
+  "Tim Hill": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 88.45954050119097
+  },
+  "Rob Kaminsky": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 90.675
+  },
+  "Jack Anderson": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 90.32499999999999
+  },
+  "Anderson Bido": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 91.6
+  },
+  "Trenton Denholm": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 90.01904761904763
+  },
+  "Mitchell Stumpo": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 91.6
+  },
+  "T.J. Fondtain": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 89.46805555555555
+  },
+  "Andrew Saalfrank": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 89.1504153229811
+  },
+  "Wyatt Lunsford-Shenkman": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 89.92194444444443
+  },
+  "Brooks Crawford": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 91.01136363636363
+  },
+  "Mason Vinyard": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 91.8
+  },
+  "Roman Phansalkar": {
+    "max_speed": 91.8,
+    "avg_fastball_speed": 91.8
+  },
+  "Ryan Anderson": {
+    "max_speed": 91.7,
+    "avg_fastball_speed": 89.94448717948717
+  },
+  "Yorlin Calderon": {
+    "max_speed": 91.7,
+    "avg_fastball_speed": 91.375
+  },
+  "Xzavion Curry": {
+    "max_speed": 91.7,
+    "avg_fastball_speed": 90.62840909090909
+  },
+  "Florencio Serrano": {
+    "max_speed": 91.7,
+    "avg_fastball_speed": 90.1375
+  },
+  "Kevin Kopps": {
+    "max_speed": 91.7,
+    "avg_fastball_speed": 86.67371428571428
+  },
+  "Gabe Mosser": {
+    "max_speed": 91.7,
+    "avg_fastball_speed": 91.7
+  },
+  "Michael Walsh": {
+    "max_speed": 91.7,
+    "avg_fastball_speed": 88.41904761904762
+  },
+  "Darren McCaughan": {
+    "max_speed": 91.6,
+    "avg_fastball_speed": 89.69144281045752
+  },
+  "Shane Murphy": {
+    "max_speed": 91.6,
+    "avg_fastball_speed": 90.21714285714286
+  },
+  "Dakota Hudson": {
+    "max_speed": 91.6,
+    "avg_fastball_speed": 89.57333333333332
+  },
+  "Nabil Crismatt": {
+    "max_speed": 91.6,
+    "avg_fastball_speed": 89.36677477393204
+  },
+  "Jack Carey": {
+    "max_speed": 91.5,
+    "avg_fastball_speed": 89.24611111111112
+  },
+  "Randy Wynne": {
+    "max_speed": 91.5,
+    "avg_fastball_speed": 87.698784992785
+  },
+  "Tom Cosgrove": {
+    "max_speed": 91.5,
+    "avg_fastball_speed": 89.36329365079365
+  },
+  "Spencer Giesting": {
+    "max_speed": 91.5,
+    "avg_fastball_speed": 90.64285714285714
+  },
+  "Clayton Kershaw": {
+    "max_speed": 91.5,
+    "avg_fastball_speed": 89.01056834373776
+  },
+  "Steven Jennings": {
+    "max_speed": 91.5,
+    "avg_fastball_speed": 91.5
+  },
+  "Xavier Martinez": {
+    "max_speed": 91.5,
+    "avg_fastball_speed": 90.5
+  },
+  "Connor Thomas": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 88.6934429400387
+  },
+  "Cooper Criswell": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 88.2503925709335
+  },
+  "Kade Bragg": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 90.55
+  },
+  "Marcus Stroman": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 89.25377793159166
+  },
+  "Edgar Barclay": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 91.4
+  },
+  "Bruce Zimmermann": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 89.39545454545454
+  },
+  "Braeden Fausnaught": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 90.95
+  },
+  "Kenshin Hotta": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 87.68571428571428
+  },
+  "Evan McKendry": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 87.64117647058823
+  },
+  "Blake Weiman": {
+    "max_speed": 91.4,
+    "avg_fastball_speed": 89.92743055555556
+  },
+  "Korey Lee": {
+    "max_speed": 91.3,
+    "avg_fastball_speed": 90.4
+  },
+  "Matt Krook": {
+    "max_speed": 91.3,
+    "avg_fastball_speed": 88.94558479532164
+  },
+  "Carlos Peña": {
+    "max_speed": 91.3,
+    "avg_fastball_speed": 90.81666666666666
+  },
+  "Jackson Lancaster": {
+    "max_speed": 91.3,
+    "avg_fastball_speed": 90.88
+  },
+  "Shane Telfer": {
+    "max_speed": 91.3,
+    "avg_fastball_speed": 89.33333333333333
+  },
+  "Ryan Och": {
+    "max_speed": 91.3,
+    "avg_fastball_speed": 89.14916666666667
+  },
+  "Michael Plassmeyer": {
+    "max_speed": 91.2,
+    "avg_fastball_speed": 89.55714285714285
+  },
+  "Luis Cessa": {
+    "max_speed": 91.2,
+    "avg_fastball_speed": 90.23888888888888
+  },
+  "Keito Mombetsu": {
+    "max_speed": 91.2,
+    "avg_fastball_speed": 89.91818181818182
+  },
+  "Josh Harlow": {
+    "max_speed": 91.2,
+    "avg_fastball_speed": 90.03666666666668
+  },
+  "Trevor Williams": {
+    "max_speed": 91.2,
+    "avg_fastball_speed": 87.50302804368793
+  },
+  "Tyson Miller": {
+    "max_speed": 91.1,
+    "avg_fastball_speed": 88.70613553113553
+  },
+  "Brandon Leibrandt": {
+    "max_speed": 91.1,
+    "avg_fastball_speed": 88.88194444444444
+  },
+  "Rich Hill": {
+    "max_speed": 91.1,
+    "avg_fastball_speed": 87.05996031746031
+  },
+  "Nick Merkel": {
+    "max_speed": 91.1,
+    "avg_fastball_speed": 91.1
+  },
+  "David Buchanan": {
+    "max_speed": 91.1,
+    "avg_fastball_speed": 89.69948717948718
+  },
+  "Danny Wirchansky": {
+    "max_speed": 91.0,
+    "avg_fastball_speed": 89.7625
+  },
+  "Scott Effross": {
+    "max_speed": 91.0,
+    "avg_fastball_speed": 89.10044642857143
+  },
+  "Nick Vespi": {
+    "max_speed": 91.0,
+    "avg_fastball_speed": 89.48805555555556
+  },
+  "Sammy Peralta": {
+    "max_speed": 90.9,
+    "avg_fastball_speed": 89.07928571428572
+  },
+  "Ryan Yarbrough": {
+    "max_speed": 90.9,
+    "avg_fastball_speed": 85.90306901901182
+  },
+  "Joe Mantiply": {
+    "max_speed": 90.9,
+    "avg_fastball_speed": 88.13332637032086
+  },
+  "Mitchell Tyranski": {
+    "max_speed": 90.8,
+    "avg_fastball_speed": 90.8
+  },
+  "Elijah Dale": {
+    "max_speed": 90.8,
+    "avg_fastball_speed": 89.79666666666667
+  },
+  "Kyle Nelson": {
+    "max_speed": 90.8,
+    "avg_fastball_speed": 87.98892857142857
+  },
+  "Luis Quinones": {
+    "max_speed": 90.8,
+    "avg_fastball_speed": 89.76363636363637
+  },
+  "Jarod Bayless": {
+    "max_speed": 90.8,
+    "avg_fastball_speed": 90.2
+  },
+  "Vinny Nittoli": {
+    "max_speed": 90.6,
+    "avg_fastball_speed": 89.10125
+  },
+  "Fernando Sanchez": {
+    "max_speed": 90.6,
+    "avg_fastball_speed": 90.6
+  },
+  "Gabriel Yanez": {
+    "max_speed": 90.6,
+    "avg_fastball_speed": 89.70833333333334
+  },
+  "Taylor Floyd": {
+    "max_speed": 90.5,
+    "avg_fastball_speed": 89.26666666666667
+  },
+  "Aaron Rozek": {
+    "max_speed": 90.5,
+    "avg_fastball_speed": 88.5923076923077
+  },
+  "Takuma Kirishiki": {
+    "max_speed": 90.5,
+    "avg_fastball_speed": 90.26
+  },
+  "Jimmy Joyce": {
+    "max_speed": 90.4,
+    "avg_fastball_speed": 89.59166666666667
+  },
+  "Andrew Marrero": {
+    "max_speed": 90.4,
+    "avg_fastball_speed": 89.9
+  },
+  "Chandler Jozwiak": {
+    "max_speed": 90.3,
+    "avg_fastball_speed": 88.34028138528139
+  },
+  "Ryan Boyer": {
+    "max_speed": 90.3,
+    "avg_fastball_speed": 89.04444444444444
+  },
+  "Jacob Maton": {
+    "max_speed": 90.3,
+    "avg_fastball_speed": 89.92999999999999
+  },
+  "Jhonathan Díaz": {
+    "max_speed": 90.3,
+    "avg_fastball_speed": 88.2989801864802
+  },
+  "Jhonny Pereda": {
+    "max_speed": 90.2,
+    "avg_fastball_speed": 88.04444444444444
+  },
+  "Rhett Kouba": {
+    "max_speed": 90.2,
+    "avg_fastball_speed": 88.80000000000001
+  },
+  "Cory Lewis": {
+    "max_speed": 90.2,
+    "avg_fastball_speed": 89.30000000000001
+  },
+  "Hoby Milner": {
+    "max_speed": 90.1,
+    "avg_fastball_speed": 87.66399281621156
+  },
+  "Brandon Komar": {
+    "max_speed": 90.1,
+    "avg_fastball_speed": 87.88666666666666
+  },
+  "Nate Garkow": {
+    "max_speed": 90.1,
+    "avg_fastball_speed": 88.76363636363637
+  },
+  "Antonio Menendez": {
+    "max_speed": 90.1,
+    "avg_fastball_speed": 86.71136363636363
+  },
+  "Penn Murfee": {
+    "max_speed": 90.1,
+    "avg_fastball_speed": 88.19259770638718
+  },
+  "Reid Morgan": {
+    "max_speed": 89.9,
+    "avg_fastball_speed": 89.9
+  },
+  "Alex Young": {
+    "max_speed": 89.9,
+    "avg_fastball_speed": 89.22929292929294
+  },
+  "Hiromasa Funabasama": {
+    "max_speed": 89.9,
+    "avg_fastball_speed": 89.2
+  },
+  "T.J. McFarland": {
+    "max_speed": 89.8,
+    "avg_fastball_speed": 87.91395042920043
+  },
+  "Josh Fleming": {
+    "max_speed": 89.6,
+    "avg_fastball_speed": 87.11681547619047
+  },
+  "Tyler Cleveland": {
+    "max_speed": 89.5,
+    "avg_fastball_speed": 87.72500000000001
+  },
+  "Adam Laskey": {
+    "max_speed": 89.5,
+    "avg_fastball_speed": 89.45
+  },
+  "Casey Lawrence": {
+    "max_speed": 89.4,
+    "avg_fastball_speed": 87.25390376246193
+  },
+  "Ryan Shreve": {
+    "max_speed": 89.3,
+    "avg_fastball_speed": 87.5
+  },
+  "Kyle Hendricks": {
+    "max_speed": 89.3,
+    "avg_fastball_speed": 86.2716510633861
+  },
+  "Avery Short": {
+    "max_speed": 89.2,
+    "avg_fastball_speed": 89.05000000000001
+  },
+  "Zander Sechrist": {
+    "max_speed": 89.1,
+    "avg_fastball_speed": 87.425
+  },
+  "Zach Greene": {
+    "max_speed": 88.9,
+    "avg_fastball_speed": 88.75
+  },
+  "Nick Krauth": {
+    "max_speed": 88.9,
+    "avg_fastball_speed": 87.35
+  },
+  "José Caballero": {
+    "max_speed": 88.8,
+    "avg_fastball_speed": 0.0
+  },
+  "Thomas Pannone": {
+    "max_speed": 88.7,
+    "avg_fastball_speed": 86.5904761904762
+  },
+  "David Leal": {
+    "max_speed": 88.3,
+    "avg_fastball_speed": 87.125
+  },
+  "Jimmy Reyes": {
+    "max_speed": 88.2,
+    "avg_fastball_speed": 88.2
+  },
+  "Suguru Iwazaki": {
+    "max_speed": 88.1,
+    "avg_fastball_speed": 87.36
+  },
+  "Alek Jacob": {
+    "max_speed": 88.1,
+    "avg_fastball_speed": 85.19370238051721
+  },
+  "Alan Trejo": {
+    "max_speed": 88.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Jakob Hernandez": {
+    "max_speed": 87.8,
+    "avg_fastball_speed": 87.8
+  },
+  "Austin Krob": {
+    "max_speed": 87.7,
+    "avg_fastball_speed": 86.64
+  },
+  "Nolan Clenney": {
+    "max_speed": 87.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Enrique Hernández": {
+    "max_speed": 86.9,
+    "avg_fastball_speed": 0.0
+  },
+  "Kody Clemens": {
+    "max_speed": 86.7,
+    "avg_fastball_speed": 0.0
+  },
+  "Tyler Rogers": {
+    "max_speed": 86.0,
+    "avg_fastball_speed": 83.48493824692638
+  },
+  "Emmanuel Rivera": {
+    "max_speed": 85.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Josh Hejka": {
+    "max_speed": 85.5,
+    "avg_fastball_speed": 82.46000000000001
+  },
+  "Jared Triolo": {
+    "max_speed": 85.5,
+    "avg_fastball_speed": 0.0
+  },
+  "Gary Sánchez": {
+    "max_speed": 85.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Samuel Perez": {
+    "max_speed": 85.3,
+    "avg_fastball_speed": 84.18375
+  },
+  "Christian Koss": {
+    "max_speed": 85.1,
+    "avg_fastball_speed": 0.0
+  },
+  "Nick Wissman": {
+    "max_speed": 85.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Luke Williams": {
+    "max_speed": 83.7,
+    "avg_fastball_speed": 0.0
+  },
+  "Cooper Hummel": {
+    "max_speed": 83.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Jonah Bride": {
+    "max_speed": 83.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Chas McCormick": {
+    "max_speed": 82.2,
+    "avg_fastball_speed": 0.0
+  },
+  "Austin Hedges": {
+    "max_speed": 82.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Jake Rogers": {
+    "max_speed": 81.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Pablo Reyes": {
+    "max_speed": 80.8,
+    "avg_fastball_speed": 0.0
+  },
+  "Luis Torrens": {
+    "max_speed": 80.8,
+    "avg_fastball_speed": 0.0
+  },
+  "Jacob Stallings": {
+    "max_speed": 80.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Jake Bauers": {
+    "max_speed": 80.2,
+    "avg_fastball_speed": 79.33333333333333
+  },
+  "Miles Mastrobuoni": {
+    "max_speed": 79.3,
+    "avg_fastball_speed": 0.0
+  },
+  "Jorge Mateo": {
+    "max_speed": 78.7,
+    "avg_fastball_speed": 0.0
+  },
+  "Anthony Seigler": {
+    "max_speed": 77.3,
+    "avg_fastball_speed": 0.0
+  },
+  "Nate Eaton": {
+    "max_speed": 77.3,
+    "avg_fastball_speed": 0.0
+  },
+  "Ryan Fitzgerald": {
+    "max_speed": 77.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Mike Yastrzemski": {
+    "max_speed": 77.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Ali Sánchez": {
+    "max_speed": 77.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Jared Young": {
+    "max_speed": 76.9,
+    "avg_fastball_speed": 0.0
+  },
+  "Luke Maile": {
+    "max_speed": 76.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Vidal Bruján": {
+    "max_speed": 76.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Isiah Kiner-Falefa": {
+    "max_speed": 76.1,
+    "avg_fastball_speed": 0.0
+  },
+  "Rowdy Tellez": {
+    "max_speed": 75.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Javier Sanoja": {
+    "max_speed": 74.9,
+    "avg_fastball_speed": 0.0
+  },
+  "Kevin Newman": {
+    "max_speed": 74.1,
+    "avg_fastball_speed": 0.0
+  },
+  "Tyler Wade": {
+    "max_speed": 72.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Tyler Heineman": {
+    "max_speed": 70.7,
+    "avg_fastball_speed": 0.0
+  },
+  "Miguel Rojas": {
+    "max_speed": 69.8,
+    "avg_fastball_speed": 0.0
+  },
+  "Logan Davidson": {
+    "max_speed": 69.5,
+    "avg_fastball_speed": 0.0
+  },
+  "Alex Jackson": {
+    "max_speed": 68.8,
+    "avg_fastball_speed": 0.0
+  },
+  "Tomás Nido": {
+    "max_speed": 68.1,
+    "avg_fastball_speed": 0.0
+  },
+  "Jon Berti": {
+    "max_speed": 66.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Will Wilson": {
+    "max_speed": 66.2,
+    "avg_fastball_speed": 0.0
+  },
+  "Tucker Barnhart": {
+    "max_speed": 65.3,
+    "avg_fastball_speed": 0.0
+  },
+  "Amed Rosario": {
+    "max_speed": 64.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Weston Wilson": {
+    "max_speed": 64.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Jose Trevino": {
+    "max_speed": 63.5,
+    "avg_fastball_speed": 0.0
+  },
+  "Michael Stefanic": {
+    "max_speed": 63.3,
+    "avg_fastball_speed": 0.0
+  },
+  "Willi Castro": {
+    "max_speed": 62.9,
+    "avg_fastball_speed": 0.0
+  },
+  "Austin Nola": {
+    "max_speed": 61.8,
+    "avg_fastball_speed": 0.0
+  },
+  "Niko Kavadas": {
+    "max_speed": 61.7,
+    "avg_fastball_speed": 0.0
+  },
+  "César Salazar": {
+    "max_speed": 60.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Abraham Toro": {
+    "max_speed": 58.7,
+    "avg_fastball_speed": 0.0
+  },
+  "Vinny Capra": {
+    "max_speed": 57.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Alec Burleson": {
+    "max_speed": 53.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Jacob Amaya": {
+    "max_speed": 52.5,
+    "avg_fastball_speed": 0.0
+  },
+  "Reese McGuire": {
+    "max_speed": 49.9,
+    "avg_fastball_speed": 0.0
+  },
+  "Jose Herrera": {
+    "max_speed": 49.5,
+    "avg_fastball_speed": 0.0
+  },
+  "Ezequiel Duran": {
+    "max_speed": 49.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Garrett Hampson": {
+    "max_speed": 48.3,
+    "avg_fastball_speed": 0.0
+  },
+  "Leo Rivas": {
+    "max_speed": 47.5,
+    "avg_fastball_speed": 0.0
+  },
+  "Kyle Farmer": {
+    "max_speed": 47.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Travis Jankowski": {
+    "max_speed": 46.2,
+    "avg_fastball_speed": 0.0
+  },
+  "Oswald Peraza": {
+    "max_speed": 45.6,
+    "avg_fastball_speed": 0.0
+  },
+  "Scott Kingery": {
+    "max_speed": 43.7,
+    "avg_fastball_speed": 0.0
+  },
+  "Willie MacIver": {
+    "max_speed": 43.5,
+    "avg_fastball_speed": 0.0
+  },
+  "Austin Slater": {
+    "max_speed": 42.4,
+    "avg_fastball_speed": 0.0
+  },
+  "Luis Vázquez": {
+    "max_speed": 41.0,
+    "avg_fastball_speed": 0.0
+  },
+  "Logan Porter": {
+    "max_speed": 37.9,
+    "avg_fastball_speed": 0.0
+  },
+  "Zach McKinstry": {
+    "max_speed": 36.4,
+    "avg_fastball_speed": 0.0
+  }
+}
